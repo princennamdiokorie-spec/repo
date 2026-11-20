@@ -1,0 +1,19 @@
+# 0001-higgsfield-unlim-unavailable-in-claude-code.md
+id: 1
+title: "Higgsfield unlimited generations are refused from Claude Code; the CLAUDE.md Higgsfield section does not say so"
+status: open
+type: open-source
+skill: [higgsfield-generate]
+proposes_skill: []
+target_file: [CLAUDE.md]
+siblings_checked: "none — no skill-families.md registry exists; higgsfield-generate is the only installed Higgsfield skill"
+area: "Higgsfield section of CLAUDE.md; unlimited-allowance offers"
+date: 2026-11-20
+session_context: "Generating car and location reference images for a video-ad script via the Higgsfield connector"
+parked_until:
+resolved:
+resolution:
+reference:
+commands_verified: "run: generate_image_batch with use_unlim true from Claude Code — all 8 items rejected: unlimited generations are not available in Claude Code, only Claude chat, Claude Cowork, ChatGPT"
+next_actor: review
+---
