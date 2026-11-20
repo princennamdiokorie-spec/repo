@@ -1,3 +1,5 @@
 
 ## 14:57 | claude/hopeful-shannon-kz38dt
 Kendrill Lagos fleet film script v2 written to `designs/kendrill/kendrill-lagos-fleet-film-v2.md` (pushed to branch, Assets section and row 5 updated for all-black fleet, no on-screen car names), and car/location reference-image generation started via Higgsfield (`reference-image-prompts.md` written; unlimited-allowance status reported as not active via connection, so generation may be billed, and character sheets not yet started).
+## 15:02 | claude/hopeful-shannon-kz38dt
+Kendrill Lagos fleet: 8 car reference sheets generated via Higgsfield (22 credits, 3,038 left, downloaded and checked, job IDs in `designs/kendrill/assets.md`, committed; Ghost front view looks like Phantom and redo is pending approval), and 6 location images started at 9:16 2K (~16 credits, in progress, not yet checked); the 14 prompts also saved in `reference-image-prompts.md`, and the Claude Code unlimited-generation limit noted in `CLAUDE.md`.
