@@ -4,7 +4,7 @@
 
 Paired Form holds that one object can carry two lives at once. Every mark is built from a single continuous structure divided by one deliberate seam: one side solid, the other drawn only in outline. Neither half is the lesser; each makes the other legible. The work does not decorate the idea of duality. It builds it, so that the eye understands "two" before the mind has read a word.
 
-Space is warm and generous. Forms sit in wide fields of paper-coloured ground, set with the patience of a tailor laying out cloth, every margin measured and then measured again. Geometry is simple and exact: straight shoulders, one true circle, rounded terminals that feel pleasant in the hand. The shapes should feel familiar and used, never mechanical. They are the product of deep expertise that has removed everything that is not needed.
+Space is warm and generous. Forms sit in wide fields of paper-coloured ground, set with the patience of a tailor laying out cloth, every margin measured and then measured again. Form is drawn from letters themselves: thick stems, hairline bars and bracketed serifs, set so closely that two letters share one stroke. The shapes should feel familiar and used, never mechanical. They are the product of deep expertise that has removed everything that is not needed.
 
 Colour is limited to what a well-loved garment keeps after years of wear: a deep ink nearly black, a cream like unbleached cotton, and one warm terracotta used sparingly, like a single stitch of coloured thread. Material honesty matters more than effect. There are no gradients, no gloss and no shadows. A flat field of colour, perfectly placed, is the whole statement, executed with master-level restraint.
 
