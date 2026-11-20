@@ -1,0 +1,7 @@
+# Memory files (now.md, today-*.md, recent.md, archive*.md, remember*.md,
+# identity.md) are committed on purpose so memory survives cloud sessions.
+# Machine-local state stays out of git:
+logs/
+tmp/
+config.json
+# The plugin writes '*' here only when this file is missing; keep it.
