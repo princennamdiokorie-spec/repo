@@ -8,7 +8,11 @@
 html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
 .f{position:relative;width:1080px;height:1350px;overflow:hidden}
 
-.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* marquee shrunk to the reference's ~60% width: the stage plate is scaled 0.8 about the ring
+   centre (50%, 53.6%) over a blurred, darkened copy that fills the edges */
+.bg-fill{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;filter:blur(18px) brightness(.7) saturate(1.2)}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(.8);transform-origin:50% 53.6%;
+  -webkit-mask:radial-gradient(ellipse 50% 50% at 50% 53.6%,#000 66%,transparent 99%);mask:radial-gradient(ellipse 50% 50% at 50% 53.6%,#000 66%,transparent 99%)}
 .shade-top{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(2,8,28,.75),transparent)}
 .shade-bot{position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(0deg,rgba(2,8,28,.96) 35%,transparent)}
 
@@ -19,11 +23,11 @@ html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
   filter:drop-shadow(0 20px 30px rgba(0,0,0,.7)) drop-shadow(0 0 24px rgba(12,145,251,.35))}
 
 /* round date badge, like the reference's, in Kova blue + chrome */
-.badge{position:absolute;left:50%;top:880px;width:320px;height:320px;transform:translateX(-50%);
+.badge{position:absolute;left:50%;top:930px;width:260px;height:260px;transform:translateX(-50%);
   filter:drop-shadow(0 16px 26px rgba(0,0,0,.75)) drop-shadow(0 0 18px rgba(12,145,251,.55))}
 .badge svg{position:absolute;inset:0}
 .badge .ring-text{font:700 21px Montserrat,sans-serif;letter-spacing:3px;fill:#eef3fa}
-.badge .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:190px}
+.badge .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.8125);text-align:center;width:190px}
 .badge .n{font:86px/.9 Anton,sans-serif;letter-spacing:-1px;
   background:linear-gradient(180deg,#fff 0%,#dfe6ef 40%,#8994a6 52%,#f4f7fb 68%,#b6c0cf 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
@@ -48,6 +52,7 @@ html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
 .contact .dot{width:2px;height:20px;background:var(--kblue-hi);box-shadow:0 0 6px var(--kblue)}
 </style></head><body>
 <div class="f">
+  <img class="bg-fill" src="../assets/stage-bg.png" alt="">
   <img class="bg" src="../assets/stage-bg.png" alt="">
   <div class="shade-top"></div>
   <div class="shade-bot"></div>
