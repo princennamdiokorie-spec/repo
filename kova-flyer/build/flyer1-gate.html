@@ -1,0 +1,133 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&display=block" rel="stylesheet">
+<style>
+:root{--blue:#1f6bff;--cyan:#4fc3ff;--ink:#02040c}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:var(--ink);overflow:hidden}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden;
+  background:radial-gradient(ellipse 70% 45% at 50% 30%,#0b2a7a 0%,#061336 45%,#02040c 80%)}
+/* light rays behind the gate */
+.rays{position:absolute;inset:-200px;background:repeating-conic-gradient(from 0deg at 50% 38%,rgba(40,110,255,.16) 0deg 3deg,transparent 3deg 14deg);
+  -webkit-mask:radial-gradient(circle at 50% 38%,#000 0,#000 25%,transparent 62%);mask:radial-gradient(circle at 50% 38%,#000 0,#000 25%,transparent 62%)}
+/* lasers */
+.laser{position:absolute;height:3px;width:1500px;transform-origin:0 50%;
+  background:linear-gradient(90deg,rgba(120,200,255,.95),rgba(31,107,255,.6) 40%,transparent 85%);
+  filter:drop-shadow(0 0 6px #2f7bff) drop-shadow(0 0 14px #2f7bff);mix-blend-mode:screen}
+/* angular gate frame */
+.gate{position:absolute;left:90px;top:95px;width:900px;height:900px;
+  clip-path:polygon(28% 0,72% 0,100% 22%,100% 100%,0 100%,0 22%);
+  background:linear-gradient(180deg,#9fb6d8 0%,#2b3a57 18%,#0d1630 60%,#060b1c 100%)}
+.gate::after{content:"";position:absolute;inset:14px;
+  clip-path:polygon(27.6% 0,72.4% 0,100% 21.6%,100% 100%,0 100%,0 21.6%);
+  background:radial-gradient(ellipse at 50% 30%,#0c2e86 0%,#06122f 55%,#02050f 100%)}
+.gate-glow{position:absolute;left:90px;top:95px;width:900px;height:900px;
+  clip-path:polygon(28% 0,72% 0,100% 22%,100% 100%,0 100%,0 22%);
+  box-shadow:0 0 0 2px var(--cyan) inset;filter:drop-shadow(0 0 18px var(--blue))}
+.mesh{position:absolute;left:104px;top:330px;width:872px;height:650px;opacity:.22;
+  background:
+   repeating-linear-gradient(45deg,transparent 0 22px,#3d8bff 22px 24px),
+   repeating-linear-gradient(-45deg,transparent 0 22px,#3d8bff 22px 24px);
+  -webkit-mask:linear-gradient(180deg,#000 0,transparent 90%);mask:linear-gradient(180deg,#000 0,transparent 90%)}
+/* side light pillars */
+.pillar{position:absolute;top:240px;width:26px;height:760px;border-radius:13px;
+  background:linear-gradient(180deg,transparent,#2f7bff 20%,#bfe6ff 50%,#2f7bff 80%,transparent);
+  filter:blur(1px) drop-shadow(0 0 16px #2f7bff) drop-shadow(0 0 40px #1f6bff);opacity:.9}
+/* perspective floor */
+.floor{position:absolute;left:-300px;right:-300px;bottom:150px;height:520px;transform:perspective(500px) rotateX(62deg);transform-origin:50% 100%;
+  background:
+   repeating-linear-gradient(90deg,rgba(60,140,255,.55) 0 2px,transparent 2px 70px),
+   repeating-linear-gradient(0deg,rgba(60,140,255,.55) 0 2px,transparent 2px 70px);
+  -webkit-mask:linear-gradient(0deg,#000 0,transparent 85%);mask:linear-gradient(0deg,#000 0,transparent 85%)}
+.spark{position:absolute;border-radius:50%;background:#cfeaff;box-shadow:0 0 8px 2px #4f9bff}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse 85% 75% at 50% 45%,transparent 55%,rgba(0,0,0,.75) 100%)}
+
+.logo{position:absolute;left:46px;top:38px;width:210px;filter:drop-shadow(0 0 12px rgba(31,107,255,.6))}
+.title{position:absolute;left:50%;top:150px;width:960px;transform:translateX(-50%);
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.8)) drop-shadow(0 0 30px rgba(31,107,255,.45))}
+
+.chrome{background:linear-gradient(180deg,#ffffff 0%,#dfe6ef 40%,#8994a6 52%,#f4f7fb 68%,#b6c0cf 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* date cards */
+.cards{position:absolute;left:0;right:0;top:770px;display:flex;justify-content:center;gap:34px}
+.card{position:relative;width:250px;height:250px;padding-top:26px;text-align:center;
+  clip-path:polygon(16% 0,84% 0,100% 16%,100% 84%,84% 100%,16% 100%,0 84%,0 16%);
+  background:linear-gradient(160deg,#e9eef5 0%,#8b97a9 30%,#2a3650 55%,#9aa7ba 100%)}
+.card::before{content:"";position:absolute;inset:5px;
+  clip-path:polygon(15.6% 0,84.4% 0,100% 15.6%,100% 84.4%,84.4% 100%,15.6% 100%,0 84.4%,0 15.6%);
+  background:radial-gradient(ellipse at 50% 0%,#174fd0 0%,#0a1a45 55%,#050b1e 100%)}
+.card>*{position:relative}
+.day{font:800 34px/1 'Barlow Condensed',sans-serif;letter-spacing:6px;color:var(--cyan);text-shadow:0 0 12px #1f6bff}
+.num{font:146px/1 Anton,sans-serif;margin-top:6px;filter:drop-shadow(0 4px 0 #0a1d55) drop-shadow(0 0 14px rgba(79,195,255,.5))}
+.mon{font:20px/1 Michroma,sans-serif;letter-spacing:8px;color:#e8eef7;margin-top:6px}
+
+.time{position:absolute;left:0;right:0;top:1052px;text-align:center}
+.time .pill{display:inline-flex;align-items:center;gap:22px;padding:12px 42px;
+  font:800 italic 54px/1 'Barlow Condensed',sans-serif;color:#fff;letter-spacing:2px;
+  background:linear-gradient(90deg,transparent,rgba(31,107,255,.9) 18%,rgba(31,107,255,.9) 82%,transparent);
+  text-shadow:0 3px 0 #0a1d55}
+.time .pill span{font:22px/1 Michroma,sans-serif;font-style:normal;letter-spacing:6px;color:#dbe9ff}
+
+.side{position:absolute;left:22px;bottom:200px;transform:rotate(-90deg);transform-origin:0 0;
+  font:600 17px/1 'Barlow Condensed',sans-serif;letter-spacing:5px;color:rgba(255,255,255,.75);white-space:nowrap}
+
+/* bottom info bar */
+.bar{position:absolute;left:0;right:0;bottom:0;height:150px;background:#f4f6fa;display:flex;align-items:center;justify-content:space-between;padding:0 40px;
+  box-shadow:0 -6px 30px rgba(31,107,255,.6)}
+.bar::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,#0a1d55,var(--blue),var(--cyan),var(--blue),#0a1d55)}
+.cell{display:flex;align-items:center;gap:14px}
+.cell svg{flex:none}
+.lbl{font:800 15px/1 'Barlow Condensed',sans-serif;letter-spacing:3px;color:var(--blue)}
+.val{font:46px/1 Anton,sans-serif;color:#0b1020;margin-top:6px}
+.val.sm{font:800 28px/1 'Barlow Condensed',sans-serif;letter-spacing:.5px}
+.sep{width:2px;height:80px;background:#d3d9e4}
+</style></head><body>
+<div class="f" id="f">
+  <div class="rays"></div>
+  <div class="floor"></div>
+  <div class="gate"></div><div class="mesh"></div><div class="gate-glow"></div>
+  <div class="pillar" style="left:40px"></div><div class="pillar" style="right:40px"></div>
+  <div class="laser" style="left:0;top:40px;transform:rotate(28deg)"></div>
+  <div class="laser" style="left:0;top:300px;transform:rotate(8deg);opacity:.7"></div>
+  <div class="laser" style="left:1080px;top:40px;transform:rotate(152deg)"></div>
+  <div class="laser" style="left:1080px;top:300px;transform:rotate(172deg);opacity:.7"></div>
+  <div id="sparks"></div>
+  <div class="vignette"></div>
+
+  <img class="logo" src="../logo/kova-logo-transparent.png" alt="">
+  <img class="title" src="../title/grand-opening-title-B.png" alt="">
+
+  <div class="cards">
+    <div class="card"><div class="day">THURSDAY</div><div class="num chrome">10</div><div class="mon">DEC</div></div>
+    <div class="card"><div class="day">FRIDAY</div><div class="num chrome">11</div><div class="mon">DEC</div></div>
+    <div class="card"><div class="day">SATURDAY</div><div class="num chrome">12</div><div class="mon">DEC</div></div>
+  </div>
+  <div class="time"><div class="pill"><span>DOORS OPEN</span>10PM</div></div>
+  <div class="side">DRINK RESPONSIBLY</div>
+
+  <div class="bar">
+    <div class="cell">
+      <svg width="54" height="54" viewBox="0 0 24 24"><path fill="#1f6bff" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <div><div class="lbl">RESERVATIONS</div><div class="val">09166586974</div></div>
+    </div>
+    <div class="sep"></div>
+    <div class="cell">
+      <svg width="46" height="46" viewBox="0 0 24 24"><path fill="#1f6bff" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+      <div><div class="lbl">EMAIL</div><div class="val sm">info@kova-lifestyle.com</div></div>
+    </div>
+    <div class="sep"></div>
+    <div class="cell">
+      <svg width="40" height="40" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="#1f6bff" stroke-width="2.4"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#1f6bff" stroke-width="2.4"/><circle cx="17.4" cy="6.6" r="1.4" fill="#1f6bff"/></svg>
+      <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#1f6bff" d="M12 2.2c3 0 5.3 2.3 5.3 5.4v2.6c.5.2 1.2-.3 1.7-.1.6.3.4 1-.1 1.3-.6.3-1.6.5-1.7 1 .6 1.9 2.2 3.5 4.1 4 .4.1.5.6.1.8-.7.4-1.7.4-2 .8-.2.5-.2 1-.7 1.1-.7.1-1.5-.3-2.4.1-1 .5-1.7 1.6-4.3 1.6s-3.3-1.1-4.3-1.6c-.9-.4-1.7 0-2.4-.1-.5-.1-.5-.6-.7-1.1-.3-.4-1.3-.4-2-.8-.4-.2-.3-.7.1-.8 1.9-.5 3.5-2.1 4.1-4-.1-.5-1.1-.7-1.7-1-.5-.3-.7-1-.1-1.3.5-.2 1.2.3 1.7.1V7.6c0-3.1 2.3-5.4 5.3-5.4z"/></svg>
+      <div><div class="lbl">INSTAGRAM · SNAPCHAT</div><div class="val sm">@kova.lifestyle</div></div>
+    </div>
+  </div>
+</div>
+<script>
+// deterministic sparkles
+let s=7,r=()=>(s=(s*16807)%2147483647)/2147483647,h='';
+for(let i=0;i<70;i++){const z=1+r()*3;h+=`<div class="spark" style="left:${r()*1080}px;top:${r()*1150}px;width:${z}px;height:${z}px;opacity:${.3+r()*.7}"></div>`}
+document.getElementById('sparks').innerHTML=h;
+</script>
+</body></html>
