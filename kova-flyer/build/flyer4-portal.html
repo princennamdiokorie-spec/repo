@@ -25,15 +25,12 @@
 .side .t{margin-top:18px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 18px rgba(31,107,255,.9),0 4px 0 #0a1d55}
 .side .t small{font:600 18px/1 Michroma,sans-serif;letter-spacing:5px;color:var(--cyan);vertical-align:middle;margin-left:10px}
 
-/* phone + socials grouped together under the dates */
-.reach{position:absolute;left:0;right:0;top:1190px;display:flex;justify-content:center;align-items:center;gap:22px;
+/* club name + address, centred under the dates */
+.venue{position:absolute;left:0;right:0;top:1190px;display:flex;justify-content:center;align-items:center;gap:22px;
   font:700 26px/1 'Barlow Condensed',sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px rgba(31,107,255,.8)}
-.reach .it{display:flex;align-items:center;gap:9px;white-space:nowrap}
-.reach svg{width:21px;height:21px;flex:none;filter:drop-shadow(0 0 6px rgba(79,195,255,.8))}
-.reach .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
-/* email alone on the bottom line, slightly larger */
-.contact.solo{font-size:25px;letter-spacing:3px}
-.contact.solo svg{width:20px;height:20px}
+.venue .it{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.venue svg{width:21px;height:21px;flex:none;filter:drop-shadow(0 0 6px rgba(79,195,255,.8))}
+.venue .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
 </style></head><body>
 <div class="f">
   <svg class="tunnel" id="tunnel" width="1080" height="1350"></svg>
@@ -60,8 +57,8 @@
     </div>
   </div>
 
-  <div class="reach" id="reach"></div>
-  <div class="contact solo" id="email"></div>
+  <div class="venue" id="venue"></div>
+  <div class="contact" id="contact"></div>
 </div>
 <script>
 // Receding octagon rings converging on a vanishing point behind the title.
@@ -107,16 +104,16 @@ for (let k = 0; k < 8; k++) {  // tunnel edges joining matching corners
 </script>
 <script src="shared.js"></script>
 <script>
-document.getElementById('reach').innerHTML =
-  `<span class="it">${ICONS.phone}09166586974</span><span class="dot"></span>` +
-  `<span class="it">${ICONS.insta}${ICONS.snap}@kova.lifestyle</span>`;
-document.getElementById('email').innerHTML = `<span class="it">${ICONS.mail}info@kova-lifestyle.com</span>`;
-// centre the phone/socials row between the bottom of the date block and the line above the email
+const PIN = `<svg viewBox="0 0 24 24"><path fill="${ICON_FILL}" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>`;
+document.getElementById('venue').innerHTML =
+  `<span class="it">${PIN}KOVA LIFESTYLE</span><span class="dot"></span>` +
+  `<span class="it">30 OLEH ROAD, OFF AWOLOWO</span>`;
+// centre the venue row between the bottom of the date block and the line above the contact details
 document.fonts.ready.then(() => {
-  const reach = document.getElementById('reach');
+  const venue = document.getElementById('venue');
   const dateBottom = document.querySelector('.info').getBoundingClientRect().bottom;
-  const lineTop = document.getElementById('email').getBoundingClientRect().top;
-  reach.style.top = ((dateBottom + lineTop) / 2 - reach.offsetHeight / 2) + 'px';
+  const lineTop = document.getElementById('contact').getBoundingClientRect().top;
+  venue.style.top = ((dateBottom + lineTop) / 2 - venue.offsetHeight / 2) + 'px';
 });
 </script>
 </body></html>
