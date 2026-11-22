@@ -20,6 +20,8 @@ const LAYERS = [
   { name: 'Date 10-12', show: ['.big .n'] },
   { name: 'DECEMBER', show: ['.big .m'] },
   { name: 'Divider line', show: ['.vline'] },
+  // the panel is .side::before: show .side itself but none of its children
+  { name: 'Day panel', show: ['.side'], extraCss: '.side * { visibility: hidden !important; }' },
   { name: 'THU 10 DEC', show: ['.side .d:nth-child(1)'] },
   { name: 'FRI 11 DEC', show: ['.side .d:nth-child(2)'] },
   { name: 'SAT 12 DEC', show: ['.side .d:nth-child(3)'] },
@@ -33,6 +35,7 @@ const soloCss = (layer) => `
   .f * { visibility: hidden !important; }
   ${layer.show.map((s) => `${s}, ${s} *`).join(', ') || '.none'} { visibility: visible !important; }
   ${layer.blend ? layer.show.join(', ') + ' { mix-blend-mode: normal !important; }' : ''}
+  ${layer.extraCss || ''}
 `;
 
 (async () => {

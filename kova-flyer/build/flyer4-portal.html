@@ -14,8 +14,8 @@
 .haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.45}
 .vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 50%,rgba(0,0,0,.85) 100%)}
 
-.logo{position:absolute;left:50%;top:44px;width:220px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
-.title{position:absolute;left:50%;top:250px;width:920px;transform:translateX(-50%);
+.logo{position:absolute;left:50%;top:90px;width:220px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
+.title{position:absolute;left:50%;top:262px;width:920px;transform:translateX(-50%);
   filter:drop-shadow(0 26px 30px rgba(0,0,0,.9)) drop-shadow(0 0 40px rgba(31,107,255,.5))}
 
 .info{position:absolute;left:0;right:0;top:900px;display:flex;justify-content:center;align-items:center;gap:56px}
@@ -25,7 +25,13 @@
 .big .m{font:500 22px/1 Montserrat,sans-serif;letter-spacing:15px;color:var(--silver);margin-top:16px;text-align:center}
 .vline{width:3px;height:230px;border-radius:2px;background:linear-gradient(180deg,transparent,var(--kblue-hi) 20%,var(--kblue) 50%,var(--kblue-hi) 80%,transparent);box-shadow:0 0 12px #2f74e8,0 0 26px #1446b8}
 .side .d{font:600 30px/1.55 Montserrat,sans-serif;letter-spacing:6px;color:var(--silver)}
-.side .d span{display:inline-block;width:92px;color:var(--kblue);font-size:26px;letter-spacing:5px}
+.side .d span{position:relative;display:inline-block;width:92px;color:var(--kblue);font-size:26px;letter-spacing:5px}
+/* dark navy panel behind the day names, with thin silver dividers between rows */
+.side{position:relative}
+.side::before{content:"";position:absolute;left:-10px;top:6px;width:80px;height:129px;background:rgba(4,12,34,.82)}
+.side .d,.side .t{position:relative}
+.side .d:nth-child(-n+2) span::after{content:"";position:absolute;left:0;right:30px;bottom:-5px;height:1px;
+  background:linear-gradient(90deg,transparent,#a1a9bd 12%,#a1a9bd 88%,transparent)}
 .side .t{margin-top:14px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 16px rgba(47,116,232,.85),0 4px 0 #0a1d55}
 .side .t small{font:600 18px/1 Montserrat,sans-serif;letter-spacing:6px;color:var(--kblue);vertical-align:middle;margin-left:12px}
 
