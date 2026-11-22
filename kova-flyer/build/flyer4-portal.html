@@ -4,13 +4,15 @@
 <link rel="stylesheet" href="shared.css">
 <style>
 /* palette sampled from the club's Instagram post: near-black navy, royal/electric blue, soft silver text */
-:root{--cyan:#2f74e8;--kblue:#2f74e8;--kblue-hi:#6dafff;--silver:#c5c5c6}
-.f{background:radial-gradient(circle at 50% 40%,#051440 0%,#01040d 36%,#000 72%)}
-.tunnel{position:absolute;inset:0;opacity:.62;filter:drop-shadow(0 0 3px #3d85ff) drop-shadow(0 0 12px #1a5ce0) drop-shadow(0 0 26px #1446b8)}
+:root{--cyan:#2a8cff;--kblue:#2a8cff;--kblue-hi:#6dbfff;--silver:#c5c5c6}
+/* portal neon uses the plaque's own blues: glow #1a6ae7, tube #0c91fb, hot core #42d0fb */
+:root{--neon-glow:#1a6ae7;--neon-tube:#0c91fb;--neon-hot:#42d0fb}
+.f{background:radial-gradient(circle at 50% 40%,#0a2a7a 0%,#04102e 35%,#01030a 75%)}
+.tunnel{position:absolute;inset:0;filter:drop-shadow(0 0 4px var(--neon-hot)) drop-shadow(0 0 14px var(--neon-tube)) drop-shadow(0 0 30px var(--neon-glow))}
 .core{position:absolute;left:50%;top:520px;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(circle,rgba(210,228,255,.8) 0%,rgba(47,116,232,.4) 25%,rgba(20,70,184,.12) 55%,transparent 72%);filter:blur(6px);mix-blend-mode:screen}
-.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.16}
-.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 45%,rgba(0,0,0,.92) 100%)}
+  background:radial-gradient(circle,rgba(220,245,255,.9) 0%,rgba(12,145,251,.45) 25%,rgba(26,106,231,.15) 55%,transparent 72%);filter:blur(6px);mix-blend-mode:screen}
+.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.45}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 50%,rgba(0,0,0,.85) 100%)}
 
 .logo{position:absolute;left:50%;top:44px;width:220px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
 .title{position:absolute;left:50%;top:250px;width:920px;transform:translateX(-50%);
@@ -91,11 +93,11 @@ for (let i = 0; i < RINGS; i++) {
   const p = document.createElementNS(NS, 'polygon');
   p.setAttribute('points', pts.map(q => q.join(',')).join(' '));
   p.setAttribute('fill', 'none');
-  p.setAttribute('stroke', i % 3 === 0 ? '#bcd6ff' : '#3d85ff');
+  p.setAttribute('stroke', i % 3 === 0 ? '#42d0fb' : '#0c91fb');
   p.setAttribute('stroke-width', String(Math.max(1.5, 5 * t)));
   p.setAttribute('opacity', String(0.25 + 0.75 * t));
   const halo = p.cloneNode();  // wide soft halo under the crisp line = neon tube
-  halo.setAttribute('stroke', '#1a5ce0');
+  halo.setAttribute('stroke', '#1a6ae7');
   halo.setAttribute('stroke-width', String(Math.max(6, 26 * t)));
   halo.setAttribute('opacity', String(0.18 + 0.5 * t));
   halo.setAttribute('filter', 'url(#soft)');
@@ -106,7 +108,7 @@ for (let k = 0; k < 8; k++) {  // tunnel edges joining matching corners
   const l = document.createElementNS(NS, 'line');
   const a = rings[0][k], b = rings[RINGS - 1][k];
   l.setAttribute('x1', a[0]); l.setAttribute('y1', a[1]); l.setAttribute('x2', b[0]); l.setAttribute('y2', b[1]);
-  l.setAttribute('stroke', '#2f7bff'); l.setAttribute('stroke-width', '1.5'); l.setAttribute('opacity', '.45');
+  l.setAttribute('stroke', '#1a6ae7'); l.setAttribute('stroke-width', '1.5'); l.setAttribute('opacity', '.45');
   svg.appendChild(l);
 }
 </script>
