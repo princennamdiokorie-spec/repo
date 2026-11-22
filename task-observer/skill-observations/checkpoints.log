@@ -11,3 +11,4 @@
 2026-11-21 22:53 no observations — flyer v8 delivered; nano_banana_pro request reported model nano_banana_2 in jobs_wait (told user; single instance, tool-side, not methodology)
 2026-11-22 04:10 no observations — layered PSD delivered; earlier: upload.higgsfield.ai blocked by egress proxy (worked around via job-id reference), remover failed on full scene; both tool/env specifics, no methodology rule
 2026-11-22 04:39 loaded shotlist-and-visual-breakdown — 0 open observations
+2026-11-22 06:47 no observations — user correction: Canva deliverable sent as PPTX (opens as presentation); replaced with single-page layered PDF. Format preference, task-specific
