@@ -47,6 +47,14 @@ const soloCss = (layer) => `
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(200); // let the fonts.ready positioning script run
     await page.addStyleTag({ content: soloCss(layer) });
+    // visibility:hidden does not stop Chrome painting SVG filter output (the haze),
+    // so remove every top-level element that holds none of this layer's targets
+    await page.evaluate((selectors) => {
+      const targets = selectors.flatMap((s) => [...document.querySelectorAll(s)]);
+      for (const el of document.querySelectorAll('.f > *')) {
+        if (!targets.some((t) => el === t || el.contains(t))) el.style.setProperty('display', 'none', 'important');
+      }
+    }, layer.show);
     if (layer.keepBackground) {
       // background only: hide every child of the frame
       await page.addStyleTag({ content: '.f > * { display: none !important; }' });
