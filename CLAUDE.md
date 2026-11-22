@@ -26,6 +26,14 @@ Use the connected Higgsfield MCP tools (`mcp__Higgsfield__*`) for discovery and
 generation instead, and map any CLI command in the skill to the matching tool.
 Show the credit cost and get approval before any paid generation.
 
+## Flyers and event graphics
+
+Before designing any flyer, poster or event graphic, read
+`designs/flyer-preferences.md`: the client's learned taste, layout and process
+preferences. Build the first draft from it without waiting to be directed, and
+add to it (with an evidence tag) whenever a pick or correction teaches
+something new.
+
 ## remember
 
 Session memory lives in `.remember/` and is committed on purpose for the same
