@@ -16,6 +16,8 @@ resolution:
 reference:
 commands_verified: "run: generate_image_batch with use_unlim true from Claude Code — all 8 items rejected: unlimited generations are not available in Claude Code, only Claude chat, Claude Cowork, ChatGPT"
 next_actor: review
+use_evidence:
+  - 2026-11-22 used — quoted credits up front for a Higgsfield title generation instead of offering unlimited
 ---
 
 **Issue:** The user asked whether their Higgsfield unlimited image generations could be used. models_explore reported unlim available false and the connector docs say to send the flag and let the backend decide; the batch submission was then refused for every item because unlimited is not offered from Claude Code at all. The agent had already told the user it could try, and the CLAUDE.md Higgsfield section is silent on this.
