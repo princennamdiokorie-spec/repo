@@ -26,11 +26,11 @@
 .side .t small{font:600 18px/1 Michroma,sans-serif;letter-spacing:5px;color:var(--cyan);vertical-align:middle;margin-left:10px}
 
 /* phone + socials grouped together under the dates */
-.reach{position:absolute;left:0;right:0;top:1168px;display:flex;justify-content:center;align-items:center;gap:30px;
-  font:700 34px/1 'Barlow Condensed',sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px rgba(31,107,255,.8)}
-.reach .it{display:flex;align-items:center;gap:12px;white-space:nowrap}
-.reach svg{width:28px;height:28px;flex:none;filter:drop-shadow(0 0 6px rgba(79,195,255,.8))}
-.reach .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.reach{position:absolute;left:0;right:0;top:1190px;display:flex;justify-content:center;align-items:center;gap:22px;
+  font:700 26px/1 'Barlow Condensed',sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px rgba(31,107,255,.8)}
+.reach .it{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.reach svg{width:21px;height:21px;flex:none;filter:drop-shadow(0 0 6px rgba(79,195,255,.8))}
+.reach .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
 /* email alone on the bottom line, slightly larger */
 .contact.solo{font-size:25px;letter-spacing:3px}
 .contact.solo svg{width:20px;height:20px}
@@ -111,5 +111,12 @@ document.getElementById('reach').innerHTML =
   `<span class="it">${ICONS.phone}09166586974</span><span class="dot"></span>` +
   `<span class="it">${ICONS.insta}${ICONS.snap}@kova.lifestyle</span>`;
 document.getElementById('email').innerHTML = `<span class="it">${ICONS.mail}info@kova-lifestyle.com</span>`;
+// centre the phone/socials row between the bottom of the date block and the line above the email
+document.fonts.ready.then(() => {
+  const reach = document.getElementById('reach');
+  const dateBottom = document.querySelector('.info').getBoundingClientRect().bottom;
+  const lineTop = document.getElementById('email').getBoundingClientRect().top;
+  reach.style.top = ((dateBottom + lineTop) / 2 - reach.offsetHeight / 2) + 'px';
+});
 </script>
 </body></html>
