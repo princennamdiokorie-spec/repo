@@ -1,14 +1,16 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Barlow+Condensed:wght@500;700&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700&display=block" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-.f{background:radial-gradient(circle at 50% 40%,#0a2a7a 0%,#04102e 35%,#01030a 75%)}
-.tunnel{position:absolute;inset:0;filter:drop-shadow(0 0 4px #4f9bff) drop-shadow(0 0 14px #1f6bff) drop-shadow(0 0 30px #1f6bff)}
+/* palette sampled from the club's Instagram post: near-black navy, royal/electric blue, soft silver text */
+:root{--cyan:#2f74e8;--kblue:#2f74e8;--kblue-hi:#6dafff;--silver:#c5c5c6}
+.f{background:radial-gradient(circle at 50% 40%,#051440 0%,#01040d 36%,#000 72%)}
+.tunnel{position:absolute;inset:0;opacity:.62;filter:drop-shadow(0 0 3px #3d85ff) drop-shadow(0 0 12px #1a5ce0) drop-shadow(0 0 26px #1446b8)}
 .core{position:absolute;left:50%;top:520px;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(circle,rgba(220,240,255,.9) 0%,rgba(79,195,255,.45) 25%,rgba(31,107,255,.15) 55%,transparent 72%);filter:blur(6px);mix-blend-mode:screen}
-.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.45}
-.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 50%,rgba(0,0,0,.85) 100%)}
+  background:radial-gradient(circle,rgba(210,228,255,.8) 0%,rgba(47,116,232,.4) 25%,rgba(20,70,184,.12) 55%,transparent 72%);filter:blur(6px);mix-blend-mode:screen}
+.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.16}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 45%,rgba(0,0,0,.92) 100%)}
 
 .logo{position:absolute;left:50%;top:44px;width:220px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
 .title{position:absolute;left:50%;top:250px;width:920px;transform:translateX(-50%);
@@ -18,19 +20,25 @@
 .big{text-align:right}
 .big .n{font:200px/.9 Anton,sans-serif;letter-spacing:-2px}
 .big .n i{font-style:normal;font-size:120px;vertical-align:28px;margin:0 6px;color:var(--cyan);-webkit-text-fill-color:var(--cyan)}
-.big .m{font:22px/1 Michroma,sans-serif;letter-spacing:16px;color:#d6e4f7;margin-top:14px;text-align:center}
-.vline{width:3px;height:230px;border-radius:2px;background:linear-gradient(180deg,transparent,#bfe6ff 20%,#4fc3ff 50%,#bfe6ff 80%,transparent);box-shadow:0 0 14px #2f7bff,0 0 30px #1f6bff}
-.side .d{font:700 40px/1.2 'Barlow Condensed',sans-serif;letter-spacing:7px;color:#fff}
-.side .d span{display:inline-block;width:70px;color:var(--cyan);font-size:28px;letter-spacing:4px}
-.side .t{margin-top:18px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 18px rgba(31,107,255,.9),0 4px 0 #0a1d55}
-.side .t small{font:600 18px/1 Michroma,sans-serif;letter-spacing:5px;color:var(--cyan);vertical-align:middle;margin-left:10px}
+.big .m{font:500 22px/1 Montserrat,sans-serif;letter-spacing:15px;color:var(--silver);margin-top:16px;text-align:center}
+.vline{width:3px;height:230px;border-radius:2px;background:linear-gradient(180deg,transparent,var(--kblue-hi) 20%,var(--kblue) 50%,var(--kblue-hi) 80%,transparent);box-shadow:0 0 12px #2f74e8,0 0 26px #1446b8}
+.side .d{font:600 30px/1.55 Montserrat,sans-serif;letter-spacing:6px;color:var(--silver)}
+.side .d span{display:inline-block;width:92px;color:var(--kblue);font-size:26px;letter-spacing:5px}
+.side .t{margin-top:14px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 16px rgba(47,116,232,.85),0 4px 0 #0a1d55}
+.side .t small{font:600 18px/1 Montserrat,sans-serif;letter-spacing:6px;color:var(--kblue);vertical-align:middle;margin-left:12px}
 
 /* club name + address, centred under the dates */
-.venue{position:absolute;left:0;right:0;top:1190px;display:flex;justify-content:center;align-items:center;gap:22px;
-  font:700 26px/1 'Barlow Condensed',sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px rgba(31,107,255,.8)}
+.venue{position:absolute;left:0;right:0;top:1190px;display:flex;justify-content:center;align-items:center;gap:20px;
+  font:600 19px/1 Montserrat,sans-serif;letter-spacing:4px;color:var(--silver)}
 .venue .it{display:flex;align-items:center;gap:9px;white-space:nowrap}
-.venue svg{width:21px;height:21px;flex:none;filter:drop-shadow(0 0 6px rgba(79,195,255,.8))}
-.venue .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.venue svg{width:24px;height:24px;flex:none;filter:drop-shadow(0 0 5px rgba(47,116,232,.7))}
+/* their thin blue "|" separators */
+.venue .dot,.contact .dot{width:2px;height:20px;border-radius:0;background:var(--kblue-hi);box-shadow:0 0 6px var(--kblue)}
+/* bottom contact line in the same detail typeface */
+.contact{font:500 16px/1 Montserrat,sans-serif;letter-spacing:3px;color:var(--silver);border-top-color:rgba(109,175,255,.28)}
+/* recolour shared icons from cyan to the club's blue */
+.contact svg [fill]:not([fill=none]),.venue svg [fill]:not([fill=none]){fill:var(--kblue)}
+.contact svg [stroke],.venue svg [stroke]{stroke:var(--kblue)}
 </style></head><body>
 <div class="f">
   <svg class="tunnel" id="tunnel" width="1080" height="1350"></svg>
@@ -83,11 +91,11 @@ for (let i = 0; i < RINGS; i++) {
   const p = document.createElementNS(NS, 'polygon');
   p.setAttribute('points', pts.map(q => q.join(',')).join(' '));
   p.setAttribute('fill', 'none');
-  p.setAttribute('stroke', i % 3 === 0 ? '#e2f3ff' : '#5aa8ff');
+  p.setAttribute('stroke', i % 3 === 0 ? '#bcd6ff' : '#3d85ff');
   p.setAttribute('stroke-width', String(Math.max(1.5, 5 * t)));
   p.setAttribute('opacity', String(0.25 + 0.75 * t));
   const halo = p.cloneNode();  // wide soft halo under the crisp line = neon tube
-  halo.setAttribute('stroke', '#1f6bff');
+  halo.setAttribute('stroke', '#1a5ce0');
   halo.setAttribute('stroke-width', String(Math.max(6, 26 * t)));
   halo.setAttribute('opacity', String(0.18 + 0.5 * t));
   halo.setAttribute('filter', 'url(#soft)');
