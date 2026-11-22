@@ -16,4 +16,25 @@ resolution:
 reference:
 commands_verified: "run: generate_image_batch with use_unlim true from Claude Code — all 8 items rejected: unlimited generations are not available in Claude Code, only Claude chat, Claude Cowork, ChatGPT"
 next_actor: review
+use_evidence:
+  - 2026-11-22 used — quoted credits up front for a Higgsfield title generation instead of offering unlimited
+---
+# 0002-event-flyer-workflow.md
+id: 2
+title: "Event-flyer production is a repeatable workflow with a per-client taste profile; no skill captures it"
+status: open
+type: open-source
+skill: []
+proposes_skill: [event-flyer-design]
+target_file: []
+siblings_checked: "none — no skill-families.md registry exists; canvas-design and higgsfield-generate each cover one step, not the pipeline"
+area: "new skill: event flyer from references to layered deliverables"
+date: 2026-11-22
+session_context: "Kova Night Club grand opening flyer, kova-flyer/README.md and designs/flyer-preferences.md"
+parked_until:
+resolved:
+resolution:
+reference: "kova-flyer/build/ (render.js, export-layers.js, build_psd.py, transplant_nameplate.py); designs/flyer-preferences.md"
+commands_verified: "run: build_psd.py flatten check, mean diff 0.40/255 after fixing two isolation bugs; run: transplant_nameplate.py, 2302 ORB inliers"
+next_actor: review
 ---

@@ -1,0 +1,89 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700&display=block" rel="stylesheet">
+<style>
+/* Kova palette: chrome silver + electric blue on navy (see designs/flyer-preferences.md) */
+:root{--kblue:#2a8cff;--kblue-hi:#6dbfff;--neon:#0c91fb;--silver:#c5c5c6;--navy:#02081c}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden}
+
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade-top{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(2,8,28,.75),transparent)}
+.shade-bot{position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(0deg,rgba(2,8,28,.96) 35%,transparent)}
+
+.logo{position:absolute;left:50%;top:40px;width:170px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
+.title{position:absolute;left:50%;top:172px;width:950px;transform:translateX(-50%);
+  filter:drop-shadow(0 22px 26px rgba(0,0,0,.75)) drop-shadow(0 0 30px rgba(12,145,251,.45))}
+.bottles{position:absolute;left:50%;top:660px;width:500px;transform:translateX(-50%);
+  filter:drop-shadow(0 20px 30px rgba(0,0,0,.7)) drop-shadow(0 0 24px rgba(12,145,251,.35))}
+
+/* round date badge, like the reference's, in Kova blue + chrome */
+.badge{position:absolute;left:50%;top:880px;width:320px;height:320px;transform:translateX(-50%);
+  filter:drop-shadow(0 16px 26px rgba(0,0,0,.75)) drop-shadow(0 0 18px rgba(12,145,251,.55))}
+.badge svg{position:absolute;inset:0}
+.badge .ring-text{font:700 21px Montserrat,sans-serif;letter-spacing:3px;fill:#eef3fa}
+.badge .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:190px}
+.badge .n{font:86px/.9 Anton,sans-serif;letter-spacing:-1px;
+  background:linear-gradient(180deg,#fff 0%,#dfe6ef 40%,#8994a6 52%,#f4f7fb 68%,#b6c0cf 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 0 #0a1d55) drop-shadow(0 0 10px rgba(79,195,255,.5))}
+.badge .n i{font-style:normal;color:var(--kblue);-webkit-text-fill-color:var(--kblue);font-size:60px;vertical-align:14px;margin:0 2px}
+.badge .m{font:600 15px/1 Montserrat,sans-serif;letter-spacing:7px;color:var(--silver);margin-top:8px;padding-left:7px}
+.badge .t{font:600 15px/1 Montserrat,sans-serif;letter-spacing:5px;color:var(--kblue-hi);margin-top:8px;padding-left:5px}
+
+/* venue line with rules either side, like the reference */
+.venue{position:absolute;left:0;right:0;top:1222px;display:flex;justify-content:center;align-items:center;gap:22px;
+  font:600 22px/1 Montserrat,sans-serif;letter-spacing:5px;color:var(--silver)}
+.venue .rule{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--kblue-hi));box-shadow:0 0 6px var(--kblue)}
+.venue .rule.r{background:linear-gradient(270deg,transparent,var(--kblue-hi))}
+.venue svg{width:22px;height:22px;flex:none;margin-right:-10px}
+
+/* minimal contact line */
+.contact{position:absolute;left:60px;right:60px;bottom:30px;padding-top:14px;border-top:1px solid rgba(109,175,255,.28);
+  display:flex;justify-content:center;align-items:center;gap:22px;
+  font:500 16px/1 Montserrat,sans-serif;letter-spacing:3px;color:var(--silver)}
+.contact .it{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.contact svg{width:17px;height:17px;flex:none}
+.contact .dot{width:2px;height:20px;background:var(--kblue-hi);box-shadow:0 0 6px var(--kblue)}
+</style></head><body>
+<div class="f">
+  <img class="bg" src="../assets/stage-bg.png" alt="">
+  <div class="shade-top"></div>
+  <div class="shade-bot"></div>
+
+  <img class="logo" src="../assets/kova-logo-transparent.png" alt="">
+  <img class="title" src="../assets/title.png" alt="">
+  <img class="bottles" src="../assets/bottles.png" alt="">
+
+  <div class="badge">
+    <svg viewBox="0 0 320 320">
+      <defs>
+        <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff"/><stop offset=".3" stop-color="#8e9ab0"/><stop offset=".5" stop-color="#eef2f7"/>
+          <stop offset=".7" stop-color="#5d6878"/><stop offset="1" stop-color="#dfe5ee"/></linearGradient>
+        <radialGradient id="ring" cx="50%" cy="35%" r="70%">
+          <stop offset="0" stop-color="#2f8cff"/><stop offset=".6" stop-color="#0f4fd1"/><stop offset="1" stop-color="#082a7a"/></radialGradient>
+        <path id="tp" d="M160,160 m-126,0 a126,126 0 1,1 252,0 a126,126 0 1,1 -252,0"/>
+      </defs>
+      <circle cx="160" cy="160" r="156" fill="url(#ring)" stroke="url(#rim)" stroke-width="5"/>
+      <text class="ring-text"><textPath href="#tp" textLength="786" lengthAdjust="spacing">GRAND OPENING. 3 NIGHTS. GRAND OPENING. 3 NIGHTS.</textPath></text>
+      <circle cx="160" cy="160" r="102" fill="#02060f" stroke="url(#rim)" stroke-width="4"/>
+    </svg>
+    <div class="core">
+      <div class="n">10<i>–</i>12</div>
+      <div class="m">DECEMBER</div>
+      <div class="t">10PM</div>
+    </div>
+  </div>
+
+  <div class="venue" id="venue"></div>
+  <div class="contact" id="contact"></div>
+</div>
+<script src="shared.js"></script>
+<script>
+const PIN = `<svg viewBox="0 0 24 24"><path fill="${ICON_FILL}" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>`;
+document.getElementById('venue').innerHTML =
+  `<span class="rule"></span>${PIN}<span>30 OLEH ROAD, OFF AWOLOWO</span><span class="rule r"></span>`;
+</script>
+</body></html>

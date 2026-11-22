@@ -1,3 +1,4 @@
 2026-11-20 14:37 [repo] session start: 1 storage=ok 2 scan=files 0 parsed 0 3 review=last never, marker absent 6 staged=none 7 log=0 entries; 4-5 in the run report
 2026-11-20 15:10 [repo] session start: 1 storage=ok 2 scan=files 1 parsed 1 3 review=last never, marker absent 6 staged=none 7 log=1 entries; 4-5 in the run report
 2026-11-22 07:49 [repo] session start: 1 storage=ok 2 scan=files 1 parsed 1 3 review=last never, marker absent 6 staged=none 7 log=1 entries; 4-5 in the run report
+2026-11-22 09:11 [repo] session start: 1 storage=ok 2 scan=files 2 parsed 2 3 review=last never, marker absent 6 staged=none 7 log=2 entries; 4-5 in the run report

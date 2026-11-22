@@ -70,6 +70,17 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Final deliverables: PNG, **4K** render, **layered PSD** (named layers),
   Canva-editable version on request. [asked]
 
+## Concept 2: copy a reference layout in our colours
+
+- They bring a third-party flyer and ask to **copy its layout and 3D type
+  effect, re-coloured to Kova's chrome + electric blue**, keeping elements they
+  name (here: the product bottles and the round light-bulb marquee behind the
+  title). [asked]
+- Badge ring text chosen: **"GRAND OPENING. 3 NIGHTS."** (event-focused) over
+  the brand slogan. [picked]
+- Product shots from other brands go in **unbranded** (no logos or labels) unless
+  they say otherwise. [asked]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
