@@ -81,6 +81,16 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Product shots from other brands go in **unbranded** (no logos or labels) unless
   they say otherwise. [asked]
 
+## Concept 3: recolour a scene and swap the people
+
+- When editing a reference scene, **clear the area where the title will go**:
+  remove objects there and leave only background effects (glow, haze,
+  sparkles), not new elements. [fixed]
+- People in their scenes: **beautiful Black women**, same poses as the reference. [asked]
+- Recolour gold scenes to Kova chrome silver + electric blue, with no gold left. [asked]
+- Write the image prompt tightly and show it before spending credits:
+  "I wouldn't want to waste my Higgsfield credits." [asked]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
