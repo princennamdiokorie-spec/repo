@@ -1,0 +1,17 @@
+:root{--blue:#1f6bff;--cyan:#4fc3ff;--ink:#01030a}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:var(--ink);overflow:hidden}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden}
+.chrome{background:linear-gradient(180deg,#ffffff 0%,#dfe6ef 40%,#8994a6 52%,#f4f7fb 68%,#b6c0cf 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 0 #0a1d55) drop-shadow(0 0 16px rgba(79,195,255,.5))}
+.spark{position:absolute;border-radius:50%;background:#dff0ff;box-shadow:0 0 8px 2px #4f9bff}
+
+/* minimal contact line: one slim row pinned to the bottom */
+.contact{position:absolute;left:60px;right:60px;bottom:34px;padding-top:16px;
+  border-top:1px solid rgba(143,208,255,.35);
+  display:flex;justify-content:center;align-items:center;gap:22px;
+  font:500 21px/1 'Barlow Condensed',sans-serif;letter-spacing:2px;color:#d6e4f7}
+.contact .it{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.contact svg{width:17px;height:17px;flex:none}
+.contact .dot{width:4px;height:4px;border-radius:50%;background:var(--cyan);box-shadow:0 0 6px var(--cyan)}

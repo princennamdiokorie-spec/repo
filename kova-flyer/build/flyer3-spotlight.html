@@ -1,0 +1,72 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Barlow+Condensed:wght@500;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.f{background:#000}
+/* stage spotlights */
+.beam{position:absolute;top:-60px;width:560px;height:1150px;transform-origin:50% 0;mix-blend-mode:screen;filter:blur(14px)}
+.beam::before{content:"";position:absolute;inset:0;clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);
+  background:linear-gradient(180deg,rgba(220,240,255,.75) 0%,rgba(80,155,255,.32) 30%,rgba(31,107,255,.10) 70%,transparent 100%)}
+.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:1}
+.horizon{position:absolute;left:0;right:0;top:820px;height:2px;background:linear-gradient(90deg,transparent,#8fd0ff 30%,#fff 50%,#8fd0ff 70%,transparent);
+  box-shadow:0 0 18px 4px rgba(31,107,255,.8)}
+.floor{position:absolute;left:0;right:0;top:821px;bottom:0;background:linear-gradient(180deg,rgba(7,21,55,.92) 0%,rgba(2,6,15,.96) 45%,#000 100%)}
+.grid{position:absolute;left:-400px;right:-400px;top:821px;height:530px;transform:perspective(420px) rotateX(58deg);transform-origin:50% 0;opacity:.5;
+  background:repeating-linear-gradient(90deg,rgba(80,160,255,.6) 0 1px,transparent 1px 80px),repeating-linear-gradient(0deg,rgba(80,160,255,.45) 0 1px,transparent 1px 80px);
+  -webkit-mask:linear-gradient(180deg,#000,transparent 75%);mask:linear-gradient(180deg,#000,transparent 75%)}
+.pool{position:absolute;left:50%;top:760px;width:900px;height:160px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(120,190,255,.55),rgba(31,107,255,.15) 50%,transparent 70%);filter:blur(10px);mix-blend-mode:screen}
+
+.logo{position:absolute;left:50%;top:52px;width:250px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
+.title{position:absolute;left:50%;top:240px;width:900px;transform:translateX(-50%);
+  filter:drop-shadow(0 26px 30px rgba(0,0,0,.9)) drop-shadow(0 0 36px rgba(31,107,255,.45))}
+.reflect{position:absolute;left:50%;top:822px;width:900px;transform:translateX(-50%) scaleY(-1);transform-origin:50% 0;opacity:.4;filter:blur(1px);
+  -webkit-mask:linear-gradient(0deg,transparent 35%,#000 100%);mask:linear-gradient(0deg,transparent 35%,#000 100%)}
+
+/* dates */
+.dates{position:absolute;left:0;right:0;top:905px;display:grid;grid-template-columns:repeat(3,210px);justify-content:center;column-gap:0}
+.dt{text-align:center;position:relative}
+.dt+.dt::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:1px;background:linear-gradient(180deg,transparent,#8fd0ff,transparent)}
+.dt .n{font:150px/1 Anton,sans-serif}
+.dt .w{font:700 24px/1 'Barlow Condensed',sans-serif;letter-spacing:8px;color:var(--cyan);margin-top:8px}
+.month{position:absolute;left:0;right:0;top:880px;text-align:center;font:18px/1 Michroma,sans-serif;letter-spacing:22px;color:#cfe0ff;padding-left:22px}
+.time{position:absolute;left:0;right:0;top:1150px;text-align:center}
+.time div{display:inline-block;padding:10px 34px;border:1px solid rgba(143,208,255,.7);border-radius:40px;
+  font:700 30px/1 'Barlow Condensed',sans-serif;letter-spacing:8px;color:#fff;box-shadow:0 0 20px rgba(31,107,255,.45),inset 0 0 14px rgba(31,107,255,.35)}
+.time b{color:var(--cyan);font-weight:700}
+</style></head><body>
+<div class="f">
+  <div class="beam" style="left:-180px;transform:rotate(-30deg)"></div>
+  <div class="beam" style="left:150px;transform:rotate(-12deg);opacity:.7"></div>
+  <div class="beam" style="left:370px;transform:rotate(12deg);opacity:.7"></div>
+  <div class="beam" style="left:700px;transform:rotate(30deg)"></div>
+  <svg class="haze" width="1080" height="1350">
+    <filter id="smoke"><feTurbulence type="fractalNoise" baseFrequency=".0045 .009" numOctaves="5" seed="4"/>
+      <feColorMatrix values="0 0 0 0 .12  0 0 0 0 .35  0 0 0 0 1  0 0 0 1.5 -.38"/></filter>
+    <radialGradient id="hm" cx="50%" cy="48%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity=".15"/></radialGradient>
+    <mask id="m"><rect width="1080" height="1350" fill="url(#hm)"/></mask>
+    <rect width="1080" height="1350" filter="url(#smoke)" mask="url(#m)"/>
+  </svg>
+  <div class="floor"></div>
+  <div class="grid"></div>
+  <img class="reflect" src="../title/grand-opening-title-B.png" alt="">
+  <div class="pool"></div>
+  <div class="horizon"></div>
+  <div id="sparks"></div>
+
+  <img class="logo" src="../logo/kova-logo-transparent.png" alt="">
+  <img class="title" src="../title/grand-opening-title-B.png" alt="">
+
+  <div class="month">DECEMBER</div>
+  <div class="dates">
+    <div class="dt"><div class="n chrome">10</div><div class="w">THU</div></div>
+    <div class="dt"><div class="n chrome">11</div><div class="w">FRI</div></div>
+    <div class="dt"><div class="n chrome">12</div><div class="w">SAT</div></div>
+  </div>
+  <div class="time"><div><b>DOORS</b> 10PM</div></div>
+
+  <div class="contact" id="contact"></div>
+</div>
+<script src="shared.js"></script>
+</body></html>

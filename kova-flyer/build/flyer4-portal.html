@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Barlow+Condensed:wght@500;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.f{background:radial-gradient(circle at 50% 40%,#0a2a7a 0%,#04102e 35%,#01030a 75%)}
+.tunnel{position:absolute;inset:0;filter:drop-shadow(0 0 4px #4f9bff) drop-shadow(0 0 14px #1f6bff) drop-shadow(0 0 30px #1f6bff)}
+.core{position:absolute;left:50%;top:520px;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(220,240,255,.9) 0%,rgba(79,195,255,.45) 25%,rgba(31,107,255,.15) 55%,transparent 72%);filter:blur(6px);mix-blend-mode:screen}
+.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.45}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 50%,rgba(0,0,0,.85) 100%)}
+
+.logo{position:absolute;left:50%;top:44px;width:220px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
+.title{position:absolute;left:50%;top:250px;width:920px;transform:translateX(-50%);
+  filter:drop-shadow(0 26px 30px rgba(0,0,0,.9)) drop-shadow(0 0 40px rgba(31,107,255,.5))}
+
+.info{position:absolute;left:0;right:0;top:900px;display:flex;justify-content:center;align-items:center;gap:56px}
+.big{text-align:right}
+.big .n{font:200px/.9 Anton,sans-serif;letter-spacing:-2px}
+.big .n i{font-style:normal;font-size:120px;vertical-align:28px;margin:0 6px;color:var(--cyan);-webkit-text-fill-color:var(--cyan)}
+.big .m{font:22px/1 Michroma,sans-serif;letter-spacing:16px;color:#d6e4f7;margin-top:14px;text-align:center}
+.vline{width:3px;height:230px;border-radius:2px;background:linear-gradient(180deg,transparent,#bfe6ff 20%,#4fc3ff 50%,#bfe6ff 80%,transparent);box-shadow:0 0 14px #2f7bff,0 0 30px #1f6bff}
+.side .d{font:700 40px/1.2 'Barlow Condensed',sans-serif;letter-spacing:7px;color:#fff}
+.side .d span{display:inline-block;width:70px;color:var(--cyan);font-size:28px;letter-spacing:4px}
+.side .t{margin-top:18px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 18px rgba(31,107,255,.9),0 4px 0 #0a1d55}
+.side .t small{font:600 18px/1 Michroma,sans-serif;letter-spacing:5px;color:var(--cyan);vertical-align:middle;margin-left:10px}
+</style></head><body>
+<div class="f">
+  <svg class="tunnel" id="tunnel" width="1080" height="1350"></svg>
+  <svg class="haze" width="1080" height="1350">
+    <filter id="smoke"><feTurbulence type="fractalNoise" baseFrequency=".005 .008" numOctaves="5" seed="9"/>
+      <feColorMatrix values="0 0 0 0 .1  0 0 0 0 .32  0 0 0 0 1  0 0 0 1.4 -.45"/></filter>
+    <rect width="1080" height="1350" filter="url(#smoke)"/>
+  </svg>
+  <div class="core"></div>
+  <div id="sparks"></div>
+  <div class="vig"></div>
+
+  <img class="logo" src="../logo/kova-logo-transparent.png" alt="">
+  <img class="title" src="../title/grand-opening-title-B.png" alt="">
+
+  <div class="info">
+    <div class="big"><div class="n chrome">10<i>–</i>12</div><div class="m">DECEMBER</div></div>
+    <div class="vline"></div>
+    <div class="side">
+      <div class="d"><span>THU</span>10 DEC</div>
+      <div class="d"><span>FRI</span>11 DEC</div>
+      <div class="d"><span>SAT</span>12 DEC</div>
+      <div class="t">10PM<small>DOORS</small></div>
+    </div>
+  </div>
+
+  <div class="contact" id="contact"></div>
+</div>
+<script>
+// Receding octagon rings converging on a vanishing point behind the title.
+const svg = document.getElementById('tunnel');
+const NS = 'http://www.w3.org/2000/svg';
+const VP = { x: 540, y: 520 };
+const RINGS = 9;
+const oct = (cx, cy, r) => Array.from({ length: 8 }, (_, i) => {
+  const a = Math.PI / 8 + i * Math.PI / 4;
+  return [cx + r * Math.cos(a), cy + r * Math.sin(a) * 1.08];
+});
+svg.innerHTML = `<defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter></defs>`;
+const rings = [];
+for (let i = 0; i < RINGS; i++) {
+  const t = Math.pow(0.72, i);
+  const r = 900 * t;
+  const cx = VP.x, cy = VP.y + 260 * t;  // outer rings sit lower: viewer looks slightly up the tunnel
+  const pts = oct(cx, cy, r);
+  rings.push(pts);
+  const p = document.createElementNS(NS, 'polygon');
+  p.setAttribute('points', pts.map(q => q.join(',')).join(' '));
+  p.setAttribute('fill', 'none');
+  p.setAttribute('stroke', i % 3 === 0 ? '#e2f3ff' : '#5aa8ff');
+  p.setAttribute('stroke-width', String(Math.max(1.5, 5 * t)));
+  p.setAttribute('opacity', String(0.25 + 0.75 * t));
+  const halo = p.cloneNode();  // wide soft halo under the crisp line = neon tube
+  halo.setAttribute('stroke', '#1f6bff');
+  halo.setAttribute('stroke-width', String(Math.max(6, 26 * t)));
+  halo.setAttribute('opacity', String(0.18 + 0.5 * t));
+  halo.setAttribute('filter', 'url(#soft)');
+  svg.appendChild(halo);
+  svg.appendChild(p);
+}
+for (let k = 0; k < 8; k++) {  // tunnel edges joining matching corners
+  const l = document.createElementNS(NS, 'line');
+  const a = rings[0][k], b = rings[RINGS - 1][k];
+  l.setAttribute('x1', a[0]); l.setAttribute('y1', a[1]); l.setAttribute('x2', b[0]); l.setAttribute('y2', b[1]);
+  l.setAttribute('stroke', '#2f7bff'); l.setAttribute('stroke-width', '1.5'); l.setAttribute('opacity', '.45');
+  svg.appendChild(l);
+}
+</script>
+<script src="shared.js"></script>
+</body></html>
