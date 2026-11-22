@@ -9,3 +9,4 @@
 2026-11-21 22:49 no observations — flyer v6 delivered; layout tweaks only, task-specific
 2026-11-21 22:49 no observations — flyer v7 delivered; layout tweaks only
 2026-11-21 22:53 no observations — flyer v8 delivered; nano_banana_pro request reported model nano_banana_2 in jobs_wait (told user; single instance, tool-side, not methodology)
+2026-11-22 04:10 no observations — layered PSD delivered; earlier: upload.higgsfield.ai blocked by egress proxy (worked around via job-id reference), remover failed on full scene; both tool/env specifics, no methodology rule
