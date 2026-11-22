@@ -24,6 +24,16 @@
 .side .d span{display:inline-block;width:70px;color:var(--cyan);font-size:28px;letter-spacing:4px}
 .side .t{margin-top:18px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 18px rgba(31,107,255,.9),0 4px 0 #0a1d55}
 .side .t small{font:600 18px/1 Michroma,sans-serif;letter-spacing:5px;color:var(--cyan);vertical-align:middle;margin-left:10px}
+
+/* phone + socials grouped together under the dates */
+.reach{position:absolute;left:0;right:0;top:1168px;display:flex;justify-content:center;align-items:center;gap:30px;
+  font:700 34px/1 'Barlow Condensed',sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px rgba(31,107,255,.8)}
+.reach .it{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.reach svg{width:28px;height:28px;flex:none;filter:drop-shadow(0 0 6px rgba(79,195,255,.8))}
+.reach .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+/* email alone on the bottom line, slightly larger */
+.contact.solo{font-size:25px;letter-spacing:3px}
+.contact.solo svg{width:20px;height:20px}
 </style></head><body>
 <div class="f">
   <svg class="tunnel" id="tunnel" width="1080" height="1350"></svg>
@@ -50,7 +60,8 @@
     </div>
   </div>
 
-  <div class="contact" id="contact"></div>
+  <div class="reach" id="reach"></div>
+  <div class="contact solo" id="email"></div>
 </div>
 <script>
 // Receding octagon rings converging on a vanishing point behind the title.
@@ -95,4 +106,10 @@ for (let k = 0; k < 8; k++) {  // tunnel edges joining matching corners
 }
 </script>
 <script src="shared.js"></script>
+<script>
+document.getElementById('reach').innerHTML =
+  `<span class="it">${ICONS.phone}09166586974</span><span class="dot"></span>` +
+  `<span class="it">${ICONS.insta}${ICONS.snap}@kova.lifestyle</span>`;
+document.getElementById('email').innerHTML = `<span class="it">${ICONS.mail}info@kova-lifestyle.com</span>`;
+</script>
 </body></html>
