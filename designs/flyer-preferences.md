@@ -156,6 +156,9 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
   pushing the glow to black and fading it away from the letters. Hard cut-outs
   left grey glow patches, punched holes or left a box edge. [fixed: own check]
 
+- **GRAND OPENING is always followed by KOVA LIFESTYLE** directly under it (the
+  brand line). Never leave the title on its own. [fixed]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
