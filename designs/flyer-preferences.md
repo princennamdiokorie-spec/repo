@@ -150,6 +150,12 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - A blind emboss must be the **same tone as the paper**, shown only by light and
   shadow. A dark filled shape with a black outline looks cheap. [fixed: own check]
 
+- Flyer 1 (Noir) picked. The title should be a **signature piece**: custom 3D
+  chrome serif lettering (client generated two in GPT Image), not a typed font. [picked] [asked]
+- Chrome lettering delivered on black: place it with **screen blending** after
+  pushing the glow to black and fading it away from the letters. Hard cut-outs
+  left grey glow patches, punched holes or left a box edge. [fixed: own check]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
