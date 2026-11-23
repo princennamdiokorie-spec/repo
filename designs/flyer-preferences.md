@@ -131,6 +131,15 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
   restore the exact logo in code. Check label colours and paper, any visible patch
   edges, every line of text, and alignment. [fixed]
 
+## Concept 5: simple luxury (client's new direction)
+
+- After all the busy concepts, the client asked for **something simpler but
+  luxurious**: dark navy, one glowing hero object in the centre, an elegant serif
+  title, and small widely-spaced details (reference: a gold sunburst-and-diamond
+  "opening celebration" flyer). Recoloured to Kova chrome + electric blue. [asked]
+- Built in code with the real Kova symbol as the hero; three hero treatments
+  offered (radiance rays, art-deco arch, spotlight on a reflective floor). [asked]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
