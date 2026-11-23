@@ -1,0 +1,137 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* palette sampled from the club's Instagram post: near-black navy, royal/electric blue, soft silver text */
+:root{--cyan:#2a8cff;--kblue:#2a8cff;--kblue-hi:#6dbfff;--silver:#c5c5c6}
+/* portal neon uses the plaque's own blues: glow #1a6ae7, tube #0c91fb, hot core #42d0fb */
+:root{--neon-glow:#1a6ae7;--neon-tube:#0c91fb;--neon-hot:#42d0fb}
+.f{background:radial-gradient(circle at 50% 40%,#0a2a7a 0%,#04102e 35%,#01030a 75%)}
+.tunnel{position:absolute;inset:0;filter:drop-shadow(0 0 4px var(--neon-hot)) drop-shadow(0 0 14px var(--neon-tube)) drop-shadow(0 0 30px var(--neon-glow))}
+.core{position:absolute;left:50%;top:520px;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(220,245,255,.9) 0%,rgba(12,145,251,.45) 25%,rgba(26,106,231,.15) 55%,transparent 72%);filter:blur(6px);mix-blend-mode:screen}
+.haze{position:absolute;inset:0;mix-blend-mode:screen;opacity:.45}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 42%,transparent 50%,rgba(0,0,0,.85) 100%)}
+
+.logo{position:absolute;left:50%;top:62px;width:214px;transform:translateX(-50%);filter:drop-shadow(0 0 14px rgba(31,107,255,.7))}
+.title{position:absolute;left:50%;top:274px;width:920px;transform:translateX(-50%);
+  filter:drop-shadow(0 26px 30px rgba(0,0,0,.9)) drop-shadow(0 0 40px rgba(31,107,255,.5))}
+
+.info{position:absolute;left:0;right:0;top:900px;display:flex;justify-content:center;align-items:center;gap:56px}
+.big{text-align:right}
+.big .n{font:200px/.9 Anton,sans-serif;letter-spacing:-2px}
+.big .n i{font-style:normal;font-size:120px;vertical-align:28px;margin:0 6px;color:var(--cyan);-webkit-text-fill-color:var(--cyan)}
+.big .m{font:500 22px/1 Montserrat,sans-serif;letter-spacing:15px;color:var(--silver);margin-top:16px;text-align:center}
+.vline{width:3px;height:230px;border-radius:2px;background:linear-gradient(180deg,transparent,var(--kblue-hi) 20%,var(--kblue) 50%,var(--kblue-hi) 80%,transparent);box-shadow:0 0 12px #2f74e8,0 0 26px #1446b8}
+.side .d{font:600 30px/1.55 Montserrat,sans-serif;letter-spacing:6px;color:var(--silver)}
+.side .d span{position:relative;display:inline-block;width:92px;color:var(--kblue);font-size:26px;letter-spacing:5px}
+/* dark navy panel behind the day names, with thin silver dividers between rows */
+.side{position:relative}
+.side::before{content:"";position:absolute;left:-10px;top:6px;width:80px;height:129px;background:rgba(4,12,34,.82)}
+.side .d,.side .t{position:relative}
+.side .d:nth-child(-n+2) span::after{content:"";position:absolute;left:0;right:30px;bottom:-5px;height:1px;
+  background:linear-gradient(90deg,transparent,#a1a9bd 12%,#a1a9bd 88%,transparent)}
+.side .t{margin-top:14px;font:66px/1 Anton,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 16px rgba(47,116,232,.85),0 4px 0 #0a1d55}
+.side .t small{font:600 18px/1 Montserrat,sans-serif;letter-spacing:6px;color:var(--kblue);vertical-align:middle;margin-left:12px}
+
+/* club name + address, centred under the dates */
+.venue{position:absolute;left:0;right:0;top:1190px;display:flex;justify-content:center;align-items:center;gap:20px;
+  font:600 19px/1 Montserrat,sans-serif;letter-spacing:4px;color:var(--silver)}
+.venue .it{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.venue svg{width:24px;height:24px;flex:none;filter:drop-shadow(0 0 5px rgba(47,116,232,.7))}
+/* their thin blue "|" separators */
+.venue .dot,.contact .dot{width:2px;height:20px;border-radius:0;background:var(--kblue-hi);box-shadow:0 0 6px var(--kblue)}
+/* bottom contact line in the same detail typeface */
+.contact{font:500 16px/1 Montserrat,sans-serif;letter-spacing:3px;color:var(--silver);border-top-color:rgba(109,175,255,.28)}
+/* recolour shared icons from cyan to the club's blue */
+.contact svg [fill]:not([fill=none]),.venue svg [fill]:not([fill=none]){fill:var(--kblue)}
+.contact svg [stroke],.venue svg [stroke]{stroke:var(--kblue)}
+.presents{position:absolute;left:0;right:0;top:229px;text-align:center;font:600 17px/1 Montserrat,sans-serif;letter-spacing:7px;padding-left:7px;color:var(--silver);text-shadow:0 0 10px rgba(31,107,255,.6)}
+</style></head><body>
+<div class="f">
+  <svg class="tunnel" id="tunnel" width="1080" height="1350"></svg>
+  <svg class="haze" width="1080" height="1350">
+    <filter id="smoke"><feTurbulence type="fractalNoise" baseFrequency=".005 .008" numOctaves="5" seed="9"/>
+      <feColorMatrix values="0 0 0 0 .1  0 0 0 0 .32  0 0 0 0 1  0 0 0 1.4 -.45"/></filter>
+    <rect width="1080" height="1350" filter="url(#smoke)"/>
+  </svg>
+  <div class="core"></div>
+  <div id="sparks"></div>
+  <div class="vig"></div>
+
+  <img class="logo" src="../logo/kova-logo-transparent.png" alt="">
+  <div class="presents">KOVA LIFESTYLE PRESENTS</div>
+  <img class="title" src="../title/grand-opening-title-B-night-club.png" alt="">
+
+  <div class="info">
+    <div class="big"><div class="n chrome">10<i>–</i>12</div><div class="m">DECEMBER</div></div>
+    <div class="vline"></div>
+    <div class="side">
+      <div class="d"><span>THU</span>10 DEC</div>
+      <div class="d"><span>FRI</span>11 DEC</div>
+      <div class="d"><span>SAT</span>12 DEC</div>
+      <div class="t">10PM<small>DOORS</small></div>
+    </div>
+  </div>
+
+  <div class="venue" id="venue"></div>
+  <div class="contact" id="contact"></div>
+</div>
+<script>
+// Receding octagon rings converging on a vanishing point behind the title.
+const svg = document.getElementById('tunnel');
+const NS = 'http://www.w3.org/2000/svg';
+const VP = { x: 540, y: 520 };
+const RINGS = 9;
+const oct = (cx, cy, r) => Array.from({ length: 8 }, (_, i) => {
+  const a = Math.PI / 8 + i * Math.PI / 4;
+  return [cx + r * Math.cos(a), cy + r * Math.sin(a) * 1.08];
+});
+svg.innerHTML = `<defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+  <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter></defs>`;
+const rings = [];
+for (let i = 0; i < RINGS; i++) {
+  const t = Math.pow(0.72, i);
+  const r = 900 * t;
+  const cx = VP.x, cy = VP.y + 260 * t;  // outer rings sit lower: viewer looks slightly up the tunnel
+  const pts = oct(cx, cy, r);
+  rings.push(pts);
+  const p = document.createElementNS(NS, 'polygon');
+  p.setAttribute('points', pts.map(q => q.join(',')).join(' '));
+  p.setAttribute('fill', 'none');
+  p.setAttribute('stroke', i % 3 === 0 ? '#42d0fb' : '#0c91fb');
+  p.setAttribute('stroke-width', String(Math.max(1.5, 5 * t)));
+  p.setAttribute('opacity', String(0.25 + 0.75 * t));
+  const halo = p.cloneNode();  // wide soft halo under the crisp line = neon tube
+  halo.setAttribute('stroke', '#1a6ae7');
+  halo.setAttribute('stroke-width', String(Math.max(6, 26 * t)));
+  halo.setAttribute('opacity', String(0.18 + 0.5 * t));
+  halo.setAttribute('filter', 'url(#soft)');
+  svg.appendChild(halo);
+  svg.appendChild(p);
+}
+for (let k = 0; k < 8; k++) {  // tunnel edges joining matching corners
+  const l = document.createElementNS(NS, 'line');
+  const a = rings[0][k], b = rings[RINGS - 1][k];
+  l.setAttribute('x1', a[0]); l.setAttribute('y1', a[1]); l.setAttribute('x2', b[0]); l.setAttribute('y2', b[1]);
+  l.setAttribute('stroke', '#1a6ae7'); l.setAttribute('stroke-width', '1.5'); l.setAttribute('opacity', '.45');
+  svg.appendChild(l);
+}
+</script>
+<script src="shared.js"></script>
+<script>
+const PIN = `<svg viewBox="0 0 24 24"><path fill="${ICON_FILL}" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>`;
+document.getElementById('venue').innerHTML =
+  `<span class="it">${PIN}KOVA LIFESTYLE</span><span class="dot"></span>` +
+  `<span class="it">30 OLEH ROAD, OFF AWOLOWO</span>`;
+// centre the venue row between the bottom of the date block and the line above the contact details
+document.fonts.ready.then(() => {
+  const venue = document.getElementById('venue');
+  const dateBottom = document.querySelector('.info').getBoundingClientRect().bottom;
+  const lineTop = document.getElementById('contact').getBoundingClientRect().top;
+  venue.style.top = ((dateBottom + lineTop) / 2 - venue.offsetHeight / 2) + 'px';
+});
+</script>
+</body></html>
