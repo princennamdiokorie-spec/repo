@@ -99,6 +99,16 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Write the image prompt tightly and show it before spending credits:
   "I wouldn't want to waste my Higgsfield credits." [asked]
 
+## Concept 4: replicate a reference flyer in Kova branding
+
+- Approach that worked: GPT Image 2.6 with the reference flyer attached and a
+  "same layout, recolour and rebrand" prompt. All text, small print included,
+  rendered correctly. [picked]
+- Background: **subtle blurred club-party scene** (crowd, haze, lights, bokeh in
+  navy/blue). **No repeating logo-pattern wallpaper**: "irrelevant." [fixed]
+- Use the **real Kova logo** (its symbol can stand in for the A in GRAND as a
+  crest). Never an invented emblem. [asked]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
