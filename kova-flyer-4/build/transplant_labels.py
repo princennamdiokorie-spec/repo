@@ -65,13 +65,13 @@ for rmask, omask in zip([refs[0]] * 3, ours):
     wmask = cv2.warpAffine(rmask.astype(np.uint8) * 255, np.c_[M, t], (w, h), flags=cv2.INTER_LINEAR).astype(float) / 255
     # white balance: make the label's paper a neutral cream
     paper = warp[omask & (wmask > .9) & (warp.max(2) > 150)].reshape(-1, 3).astype(float)
-    gain = np.array([196, 214, 226]) / paper.mean(0)   # BGR cream target
+    gain = np.array([186, 222, 238]) / np.median(paper, axis=0)   # BGR: warm cream paper (RGB 238,222,186)
     lab_img = (warp.astype(float) * gain).clip(0, 255)
-    wm = cv2.GaussianBlur(cv2.erode((wmask > .5).astype(np.uint8), np.ones((5, 5))).astype(float), (0, 0), 2)[..., None]
+    wm = cv2.GaussianBlur(cv2.erode((wmask > .5).astype(np.uint8), np.ones((9, 9))).astype(float), (0, 0), 7)[..., None]   # wide feather: no visible box
     fillc = np.median(lab_img[(wm[..., 0] > .9) & (lab_img.max(2) > 170)], axis=0)
     lab_img = lab_img * wm + fillc * (1 - wm)          # plain paper in the label's own colour around the print
     # cool down under blue club light, keep it a little dimmer than the glass highlights
-    lab_img = lab_img * 0.88 + np.array([30, 8, -6])
+    lab_img = lab_img * 0.94 + np.array([10, 2, -2])          # only a light touch of the blue club light
     lab_img = cv2.addWeighted(lab_img, 1.5, cv2.GaussianBlur(lab_img, (0, 0), 1.2), -0.5, 0)   # sharpen upscale
     a = cv2.GaussianBlur(cv2.erode(omask.astype(np.uint8) * 255, np.ones((5, 5), np.uint8)), (0, 0), 1.5) / 255
     # blue rim on the label edge, as the glass reflects the stage light

@@ -123,6 +123,11 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
   When a request says to move blocks (e.g. "the title goes up"), verify that it
   actually happened. "You're supposed to be looking at them… does it align?" [fixed]
 - When a model fails a precise layout edit, do it in code on the clean version. [asked]
+- **Standing command: assess every flyer thoroughly before sending.** Zoom in on
+  every logo and compare it side by side with the source file. AI refinement
+  passes redraw logos (the Kova symbol came back with doubled loops), so always
+  restore the exact logo in code. Check label colours and paper, any visible patch
+  edges, every line of text, and alignment. [fixed]
 
 ## Past work
 
