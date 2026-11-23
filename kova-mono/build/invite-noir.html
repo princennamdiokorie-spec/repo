@@ -1,0 +1,84 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+/* Kova grand opening invitation card (front), styled from the borderless Noir flyer.
+   1080x1800 css, rounded corners (transparent outside). Title: client's chrome lettering, raw. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1800px;background:transparent;overflow:hidden}
+.card{position:relative;width:1080px;height:1800px;border-radius:72px;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 50% 40%,#191919 0%,#0b0b0b 60%,#050505 100%);color:#f2f2f2}
+.noise{position:absolute;inset:0;width:100%;height:100%}
+.abs{position:absolute;left:0;right:0;text-align:center}
+.sans{font-family:Montserrat,sans-serif;font-weight:500;text-transform:uppercase}
+
+.logo{position:absolute;left:50%;top:92px;width:150px;transform:translateX(-50%)}
+.presents{top:232px;font-size:13px;letter-spacing:9px;padding-left:9px;color:#9c9c9c}
+.the{top:282px;font:400 48px/1 'Cormorant Garamond',serif;font-style:italic;color:#cfcfcf}
+.sig{position:absolute;mix-blend-mode:lighten}
+.club{font:600 36px/1 Cinzel,serif;letter-spacing:15px;padding-left:15px;
+  background:linear-gradient(180deg,#ffffff 0%,#e9e9e9 40%,#9c9c9c 56%,#f4f4f4 74%,#c8c8c8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{position:absolute;left:50%;width:330px;transform:translateX(-50%);display:flex;align-items:center;gap:16px;color:#bdbdbd}
+.rule i{flex:1;height:1px;background:currentColor;opacity:.5}
+.rule b{width:9px;height:9px;border:1px solid currentColor;transform:rotate(45deg)}
+
+.inv{font-size:20px;line-height:1.85;letter-spacing:6px;padding-left:6px;color:#e6e6e6}
+.name{position:absolute;left:120px;right:120px;height:112px;border-radius:14px;
+  background:linear-gradient(180deg,#ffffff 0%,#f1f1f1 60%,#e2e2e2 100%);box-shadow:0 0 0 1px rgba(255,255,255,.55),0 0 0 7px rgba(255,255,255,.06)}
+
+.date{position:absolute;left:96px;right:96px;height:140px}
+.date svg{position:absolute;inset:0;width:100%;height:100%}
+.cells{position:absolute;inset:0;display:flex;align-items:center}
+.cell{flex:1;text-align:center;color:#efefef}
+.cell.s{font:500 22px/1 Montserrat,sans-serif;letter-spacing:5px;padding-left:5px}
+.cell .big{font:400 56px/1 'Bodoni Moda',serif;letter-spacing:2px;color:#fff}
+.cell .sm{font:500 14px/1 Montserrat,sans-serif;letter-spacing:5px;padding-left:5px;margin-top:10px;color:#a6a6a6}
+.sep{width:1px;height:66px;background:#d9d9d9;opacity:.55}
+
+.addr{font-size:24px;line-height:1.7;letter-spacing:5px;padding-left:5px;color:#fff;font-weight:600}
+.addr svg{display:inline-block;width:20px;height:20px;vertical-align:-2px;margin-right:12px}
+.foot{position:absolute;left:50%;bottom:66px;width:96px;transform:translateX(-50%);opacity:.95}
+</style></head><body>
+<div class="card" id="card">
+  <svg class="noise"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .1 0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+  <img class="logo" src="../assets/logo-silver.png" alt="">
+  <div class="abs sans presents">Kova Lifestyle Presents</div>
+  <div class="abs the">The</div>
+  <img class="sig" id="sig" src="../assets/sig-B-src.png" alt="">
+  <div class="abs club" id="club">KOVA LIFESTYLE</div>
+  <div class="rule" id="rule"><i></i><b></b><i></i></div>
+
+  <div class="abs sans inv" id="inv">You are specially invited to<br>join us for the grand opening<br>of our new club</div>
+  <div class="name" id="name"></div>
+
+  <div class="date" id="date">
+    <svg viewBox="0 0 888 140" preserveAspectRatio="none">
+      <path d="M26,1.5 H862 L886.5,26 V114 L862,138.5 H26 L1.5,114 V26 Z" fill="rgba(0,0,0,.35)" stroke="#d9d9d9" stroke-opacity=".75" stroke-width="1.5"/>
+      <path d="M34,10 H854 L878,34 V106 L854,130 H34 L10,106 V34 Z" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1"/>
+    </svg>
+    <div class="cells">
+      <div class="cell s">THURSDAY</div><div class="sep"></div>
+      <div class="cell"><div class="big">10TH</div><div class="sm">DEC. 2026</div></div><div class="sep"></div>
+      <div class="cell s">AT 8:00 PM</div>
+    </div>
+  </div>
+
+  <div class="abs sans addr" id="addr"><svg viewBox="0 0 24 24"><path fill="#d9d9d9" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Awolowo by Oleh Road Junction,<br>Sapele, Delta State.</div>
+  <img class="foot" src="../assets/sym-silver.png" alt="">
+</div>
+<script>
+// Vertical rhythm: each block placed a fixed gap below the previous one's ink (title ink from the source image).
+const K = .42, INK = { cx: 1023.5, top: 573, bottom: 1566 }, DX = 9.5;
+const set = (id, top) => { document.getElementById(id).style.top = top + 'px'; };
+const sig = document.getElementById('sig');
+const titleTop = 352;
+sig.style.cssText = `position:absolute;mix-blend-mode:lighten;width:${2000 * K}px;left:${540 - INK.cx * K + DX}px;top:${titleTop - INK.top * K}px`;
+const titleBottom = titleTop + (INK.bottom - INK.top) * K;
+const clubTop = titleBottom + 22;       set('club', clubTop);
+const ruleTop = clubTop + 36 + 24;      set('rule', ruleTop);
+const invTop = ruleTop + 46;            set('inv', invTop);
+const nameTop = invTop + 111 + 44;      set('name', nameTop);
+const dateTop = nameTop + 112 + 56;     set('date', dateTop);
+set('addr', dateTop + 140 + 58);
+</script>
+</body></html>
