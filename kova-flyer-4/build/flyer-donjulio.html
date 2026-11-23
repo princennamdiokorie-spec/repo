@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@700&family=Playfair+Display:wght@800&family=Arimo:wght@400&display=block" rel="stylesheet">
+<style>
+/* Overlay on the AI base (1744x2336 rendered at 872x1168 css, DPR 2). */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:872px;height:1168px;overflow:hidden;background:#02081c}
+.f{position:relative;width:872px;height:1168px}
+.base{position:absolute;inset:0;width:872px;height:1168px}
+.top{position:absolute;left:0;right:0;top:36px;text-align:center;white-space:nowrap;
+  font:700 16px/1 Montserrat,sans-serif;color:#fff}
+.club{position:absolute;left:0;right:0;top:336px;display:flex;justify-content:center;align-items:center;gap:16px}
+.club .t{white-space:nowrap;font:900 33px/1 Cinzel,serif;
+  background:linear-gradient(180deg,#fff 0%,#e8eef6 38%,#8d98aa 52%,#f6f9fc 66%,#bcc6d4 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 #5c6a80) drop-shadow(0 2px 0 #24324d) drop-shadow(0 0 8px rgba(64,150,255,.85)) drop-shadow(0 0 18px rgba(26,106,231,.55))}
+.club .rule{width:60px;height:2px;background:linear-gradient(90deg,transparent,#6dbfff);box-shadow:0 0 8px #1a6ae7}
+.club .rule.r{background:linear-gradient(270deg,transparent,#6dbfff)}
+.name{position:absolute;left:0;right:0;top:1061px;text-align:center;font:800 37px/1 'Playfair Display',serif;
+  background:linear-gradient(180deg,#fff 0%,#e8eef6 40%,#9aa5b6 55%,#f2f6fb 72%,#c4cdd9 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 #24324d) drop-shadow(0 0 6px rgba(64,150,255,.5))}
+.info{position:absolute;left:0;right:0;top:1009px;text-align:center;font:400 23px/1 Arimo,sans-serif;color:#fff}
+.info b{font-weight:400;color:#05b5f8}
+.sym{position:absolute;width:76px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 5px rgba(64,150,255,.7))}
+</style></head><body>
+<div class="f">
+  <img class="base" src="../assets/scene-donjulio.png" alt="">
+  <div style="position:absolute;left:0;right:0;bottom:0;height:260px;background:linear-gradient(0deg,rgba(2,6,20,.9) 45%,rgba(2,6,20,.55) 75%,transparent)"></div>
+  <img class="base" src="../assets/layer-title-refined.png" alt="">
+  <img class="base" src="../assets/layer-date.png" alt="">
+  <img class="base" src="../assets/layer-doors.png" alt="">
+  <img class="base" src="../assets/layer-script.png" alt="">
+  <img class="base" src="../assets/layer-insta.png" alt="">
+  <img class="base" src="../assets/layer-address.png" alt="">
+  <div class="top"><span id="top">KOVA LIFESTYLE PRESENTS</span></div>
+  <div class="club"><span class="rule"></span><span class="t" id="club">KOVA LIFESTYLE</span><span class="rule r"></span></div>
+  <div class="info"><span id="info">FOR MORE INFO CALL <b>09166586974</b></span></div>
+  <div class="name">Kova Lifestyle</div>
+</div>
+<script>
+// fit tracked text to a target width, matching the original line's width
+function track(el, width){ const n=el.textContent.length; el.style.letterSpacing='0px';
+  const w0=el.getBoundingClientRect().width; el.style.letterSpacing=((width-w0)/(n-1))+'px'; el.style.marginRight='-'+el.style.letterSpacing; }
+document.fonts.ready.then(()=>{ track(document.getElementById('top'),449); track(document.getElementById('club'),400); });
+</script>
+</body></html>
