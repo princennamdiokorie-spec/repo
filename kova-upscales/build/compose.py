@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 CAP = 38              # presents-line cap height (px at 4K); was 50, reduced on request
-CENTRE_Y = 185        # vertical centre of the line's caps, kept where it was
+CENTRE_Y = 150        # vertical centre of the line's caps (raised from 185: more room above "Grand")
 
 bg = cv2.imread('bg.png').astype(np.float32); h, w = bg.shape[:2]
 def over(img, layer):
