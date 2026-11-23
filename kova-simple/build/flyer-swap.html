@@ -1,0 +1,150 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;500;600&display=block" rel="stylesheet">
+<style>
+/* Kova "simple luxury": one glowing hero, serif title, small tracked details. 1080x1350.
+   Variant chosen by ?v=radiance | arch | spotlight */
+:root{--navy:#040a1c;--silver:#c9ced8;--blue:#2a8cff;--blue-hi:#7cc4ff}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden;
+  background:radial-gradient(ellipse 70% 42% at 50% 38%,#0b2257 0%,#06112e 45%,#040a1c 80%)}
+.grain{position:absolute;inset:0;opacity:.06;background:repeating-radial-gradient(circle at 30% 20%,#fff 0 1px,transparent 1px 3px)}
+
+.logo{position:absolute;left:50%;top:40px;width:150px;transform:translateX(-50%);filter:drop-shadow(0 0 10px rgba(42,140,255,.55))}
+
+/* hero area: centre at (540, 470) */
+.hero{position:absolute;left:0;top:190px;width:1080px;height:600px}
+.sym{position:absolute;left:50%;top:50%;width:420px;transform:translate(-50%,-50%);
+  filter:drop-shadow(0 0 18px rgba(42,140,255,.75)) drop-shadow(0 0 60px rgba(42,140,255,.45)) drop-shadow(0 24px 30px rgba(0,0,0,.6))}
+.halo{position:absolute;left:50%;top:50%;width:760px;height:560px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(60,150,255,.42) 0%,rgba(30,100,230,.16) 38%,transparent 68%)}
+svg.fx{position:absolute;inset:0;width:1080px;height:600px}
+
+/* title block */
+.kicker{position:absolute;left:0;right:0;top:936px;text-align:center;font:500 17px/1 Montserrat,sans-serif;letter-spacing:12px;padding-left:12px;color:var(--silver)}
+.title{position:absolute;left:0;right:0;top:826px;text-align:center;font:600 92px/1 Cinzel,serif;letter-spacing:6px;padding-left:6px;
+  background:linear-gradient(180deg,#ffffff 0%,#e6ebf3 38%,#9aa6b8 55%,#f4f7fb 72%,#c3cbd8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 #1a2b55) drop-shadow(0 0 16px rgba(42,140,255,.45))}
+.rule{position:absolute;left:50%;top:984px;width:420px;transform:translateX(-50%);display:flex;align-items:center;gap:16px}
+.rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--blue-hi))}
+.rule i.r{background:linear-gradient(270deg,transparent,var(--blue-hi))}
+.rule img{width:30px;filter:drop-shadow(0 0 6px rgba(42,140,255,.9))}
+
+.d{position:absolute;left:0;right:0;text-align:center;font:500 19px/1 Montserrat,sans-serif;letter-spacing:5px;padding-left:5px;color:#eef2f8}
+.d b{font-weight:600;color:var(--blue-hi)}
+.d1{top:1024px}
+.d2{top:1062px}
+.res{position:absolute;left:0;right:0;top:1130px;text-align:center;font:500 12px/1 Montserrat,sans-serif;letter-spacing:7px;padding-left:7px;color:#8f9ab0}
+.c1{position:absolute;left:0;right:0;top:1158px;text-align:center;font:500 22px/1 Montserrat,sans-serif;letter-spacing:2px;color:#fff}
+.c1 b{color:var(--blue-hi);font-weight:600}
+.c2{position:absolute;left:0;right:0;top:1196px;text-align:center;font:400 18px/1 Montserrat,sans-serif;letter-spacing:1.5px;color:#d8dee9}
+.c2 .bar,.c1 .bar{display:inline-block;width:1px;height:16px;margin:0 16px -2px;background:var(--blue-hi)}
+.age{position:absolute;left:42px;bottom:40px;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--silver);
+  display:flex;align-items:center;justify-content:center;font:500 16px/1 Montserrat,sans-serif;color:var(--silver)}
+.presents{position:absolute;left:0;right:0;top:154px;text-align:center;font:500 13px/1 Montserrat,sans-serif;letter-spacing:8px;padding-left:8px;color:var(--silver)}
+</style></head><body>
+<div class="f">
+  <div class="grain"></div>
+  <img class="logo" src="../assets/kova-logo-transparent.png" alt="">
+  <div class="presents">KOVA LIFESTYLE PRESENTS</div>
+  <div class="hero" id="hero">
+    <svg class="fx" id="fx" viewBox="0 0 1080 600"></svg>
+    <div class="halo"></div>
+    <img class="sym" id="sym" src="../assets/kova-symbol-hd.png" alt="">
+  </div>
+  <div class="kicker">KOVA LIFESTYLE</div>
+  <div class="title">GRAND OPENING</div>
+  <div class="rule"><i></i><img src="../assets/kova-symbol-hd.png" alt=""><i class="r"></i></div>
+  <div class="d d1">THU 10 · FRI 11 · SAT 12 DECEMBER 2026</div>
+  <div class="d d2"><b>DOORS 10 PM</b> · 30 OLEH ROAD, OFF AWOLOWO</div>
+  <div class="res">RESERVATIONS</div>
+  <div class="c1">Call / WhatsApp <b>09166586974</b></div>
+  <div class="c2">info@kova-lifestyle.com<span class="bar"></span>@kova.lifestyle</div>
+  <div class="age">18+</div>
+</div>
+<script>
+const v = new URLSearchParams(location.search).get('v') || 'radiance';
+const fx = document.getElementById('fx'); const CX = 540, CY = 300;
+let rnd = 11; const r = () => (rnd = (rnd * 16807) % 2147483647) / 2147483647;
+const defs = `<defs>
+ <linearGradient id="ray" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9f2ff" stop-opacity=".95"/><stop offset=".5" stop-color="#7cc4ff" stop-opacity=".55"/><stop offset="1" stop-color="#2a8cff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="line" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#9fb0c8"/><stop offset="1" stop-color="#e8eef7"/></linearGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6ff" stop-opacity=".55"/><stop offset=".7" stop-color="#2a8cff" stop-opacity=".12"/><stop offset="1" stop-color="#2a8cff" stop-opacity="0"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter></defs>`;
+let s = defs;
+if (v === 'radiance') {
+  // fine tapered rays fanning out from behind the emblem
+  for (let i = 0; i < 64; i++) {
+    const a = i / 64 * Math.PI * 2 + (r() - .5) * .03;
+    const len = (i % 2 ? 260 : 330) + r() * 60, w = i % 2 ? 2.2 : 3.6, inner = 45 + r() * 30;   // start hidden behind the emblem: no visible ring
+    const x1 = CX + Math.cos(a) * inner, y1 = CY + Math.sin(a) * inner * .92;
+    const x2 = CX + Math.cos(a) * (inner + len), y2 = CY + Math.sin(a) * (inner + len) * .92;
+    const nx = -Math.sin(a) * w, ny = Math.cos(a) * w;
+    s += `<polygon points="${x1 + nx},${y1 + ny} ${x1 - nx},${y1 - ny} ${x2},${y2}" fill="url(#ray)" opacity="${.55 + r() * .4}" filter="url(#glow)"/>`;
+  }
+} else if (v === 'arch') {
+  // art-deco arch: three nested chrome lines with stepped shoulders
+  const arch = (k) => { const W = 230 - k * 24, T = 112 + k * 24, B = 560 - k * 10, st = 30;
+    return `M${CX - W},${B} L${CX - W},${T + W * .62} L${CX - W + st},${T + W * .62} L${CX - W + st},${T + W * .62 - st}
+            A${W - st},${W - st} 0 0 1 ${CX + W - st},${T + W * .62 - st} L${CX + W - st},${T + W * .62} L${CX + W},${T + W * .62} L${CX + W},${B}`; };
+  for (let k = 0; k < 3; k++) s += `<path d="${arch(k)}" fill="none" stroke="url(#line)" stroke-width="${k ? 1.6 : 2.6}" opacity="${1 - k * .22}" filter="url(#glow)"/>`;
+  s += `<path d="${arch(0)}" fill="none" stroke="#2a8cff" stroke-width="10" opacity=".35" filter="url(#soft)"/>`;
+  s += `<line x1="${CX - 330}" y1="560" x2="${CX + 330}" y2="560" stroke="url(#line)" stroke-width="2" filter="url(#glow)"/>`;
+} else if (v === 'spotlight2') {
+  // improved spotlight: beam from the very top (through the logo), haze, streaks, dust, glossy stage floor
+  const FY = 470, TOPY = -190;                                   // floor line and flyer top in hero coords
+  s = s.replace('</defs>', `
+   <linearGradient id="beam2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6f2ff" stop-opacity=".62"/><stop offset=".55" stop-color="#5aa8ff" stop-opacity=".22"/><stop offset="1" stop-color="#2a8cff" stop-opacity=".05"/></linearGradient>
+   <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b4fb0" stop-opacity=".55"/><stop offset=".35" stop-color="#0b2257" stop-opacity=".45"/><stop offset="1" stop-color="#040a1c" stop-opacity="0"/></linearGradient>
+   <radialGradient id="pool" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e8f3ff" stop-opacity=".95"/><stop offset=".3" stop-color="#7cc4ff" stop-opacity=".55"/><stop offset="1" stop-color="#2a8cff" stop-opacity="0"/></radialGradient>
+   <clipPath id="cone"><polygon points="${CX - 55},${TOPY} ${CX + 55},${TOPY} ${CX + 330},${FY} ${CX - 330},${FY}"/></clipPath>
+   <filter id="haze" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".004 .013" numOctaves="3" seed="7"/>
+     <feColorMatrix values="0 0 0 0 .75  0 0 0 0 .88  0 0 0 0 1  0 0 0 1.1 -.35"/></filter>
+   <filter id="soft2"><feGaussianBlur stdDeviation="22"/></filter>
+   <linearGradient id="fadeg" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="${FY - 120}" y2="${FY + 6}"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+   <mask id="fade" maskUnits="userSpaceOnUse" x="0" y="${TOPY}" width="1080" height="${FY - TOPY + 60}"><rect x="0" y="${TOPY}" width="1080" height="${FY - TOPY + 60}" fill="url(#fadeg)"/></mask>
+   <linearGradient id="floor2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b4fb0" stop-opacity="0"/><stop offset=".18" stop-color="#1b4fb0" stop-opacity=".42"/><stop offset=".45" stop-color="#0b2257" stop-opacity=".35"/><stop offset="1" stop-color="#040a1c" stop-opacity="0"/></linearGradient></defs>`);
+  s += `<rect x="0" y="${FY - 24}" width="1080" height="${600 - FY + 64}" fill="url(#floor2)"/>`;
+  s += `<polygon points="${CX - 55},${TOPY} ${CX + 55},${TOPY} ${CX + 330},${FY} ${CX - 330},${FY}" fill="url(#beam2)" filter="url(#soft)" mask="url(#fade)"/>`;
+  s += `<g clip-path="url(#cone)" mask="url(#fade)" opacity=".32"><rect x="0" y="${TOPY}" width="1080" height="${FY - TOPY}" filter="url(#haze)"/></g>`;
+  for (const [dx, wd, op] of [[-120, 26, .22], [-30, 40, .28], [70, 22, .2], [150, 30, .16]])
+    s += `<polygon points="${CX + dx * .12 - 4},${TOPY} ${CX + dx * .12 + 4},${TOPY} ${CX + dx + wd},${FY} ${CX + dx - wd},${FY}" fill="#e8f3ff" opacity="${op}" filter="url(#soft)" mask="url(#fade)"/>`;
+  s += `<ellipse cx="${CX}" cy="${FY}" rx="420" ry="46" fill="#2a8cff" opacity=".45" filter="url(#soft2)"/>`;
+  s += `<ellipse cx="${CX}" cy="${FY}" rx="250" ry="22" fill="url(#pool)"/>`;
+  s += `<ellipse cx="${CX}" cy="${FY - 2}" rx="150" ry="7" fill="#020814" opacity=".55" filter="url(#soft)"/>`;   // contact shadow
+  s += `<line x1="${CX - 420}" y1="${FY}" x2="${CX + 420}" y2="${FY}" stroke="url(#ray)" stroke-width="1" opacity=".0"/>`;
+  for (let i = 0; i < 90; i++) {                                // dust only inside the cone
+    const y = TOPY + 60 + r() * (FY - TOPY - 90), half = 55 + (330 - 55) * (y - TOPY) / (FY - TOPY);
+    const x = CX + (r() * 2 - 1) * half * .9, rad = .5 + r() * 1.8;
+    s += `<circle cx="${x}" cy="${y}" r="${rad}" fill="#eaf4ff" opacity="${.25 + r() * .7}"${rad > 1.6 ? ' filter="url(#glow)"' : ''}/>`;
+  }
+} else {
+  // spotlight: a single beam onto the emblem standing on a reflective floor
+  s += `<polygon points="${CX - 40},18 ${CX + 40},18 ${CX + 300},520 ${CX - 300},520" fill="url(#beam)" filter="url(#soft)"/>`;   // starts just below the presents line
+  s += `<ellipse cx="${CX}" cy="455" rx="300" ry="34" fill="#2a8cff" opacity=".35" filter="url(#soft)"/>`;
+  s += `<ellipse cx="${CX}" cy="455" rx="190" ry="12" fill="#cfe6ff" opacity=".55" filter="url(#soft)"/>`;
+  s += `<line x1="${CX - 380}" y1="455" x2="${CX + 380}" y2="455" stroke="url(#line)" stroke-width="1" opacity=".5"/>`;
+  for (let i = 0; i < 40; i++) s += `<circle cx="${CX + (r() - .5) * 560}" cy="${40 + r() * 400}" r="${.6 + r() * 1.6}" fill="#dbeaff" opacity="${.3 + r() * .6}"/>`;
+}
+fx.innerHTML = s;
+const sym = document.getElementById('sym');
+if (v === 'arch') { sym.style.width = '330px'; sym.style.top = '62%'; }
+if (v === 'spotlight2') {
+  document.querySelector('.logo').style.zIndex = 3;            // logo stays crisp on top of the beam
+  document.getElementById('fx').style.overflow = 'visible';
+  sym.style.width = '430px'; sym.style.top = 'auto'; sym.style.bottom = '130px'; sym.style.transform = 'translateX(-50%)';
+  sym.style.filter = 'drop-shadow(0 -3px 6px rgba(230,242,255,.55)) drop-shadow(0 0 18px rgba(42,140,255,.75)) drop-shadow(0 0 60px rgba(42,140,255,.45))';
+  const ref = sym.cloneNode(); ref.style.cssText = 'position:absolute;left:50%;width:430px;top:470px;transform:translateX(-50%) scaleY(-1);transform-origin:50% 50%;opacity:.42;filter:blur(1px);-webkit-mask:linear-gradient(0deg,#000 0%,transparent 60%);mask:linear-gradient(0deg,#000 0%,transparent 60%)';
+  document.getElementById('hero').appendChild(ref);
+  document.querySelector('.halo').style.top = '55%';
+}
+if (v === 'spotlight') {
+  sym.style.width = '380px'; sym.style.top = 'auto'; sym.style.bottom = '145px'; sym.style.transform = 'translateX(-50%)';
+  const ref = sym.cloneNode(); ref.style.cssText = 'position:absolute;left:50%;width:380px;top:455px;transform:translateX(-50%) scaleY(-1);transform-origin:50% 50%;opacity:.3;filter:blur(1.5px);-webkit-mask:linear-gradient(0deg,#000 0%,transparent 65%);mask:linear-gradient(0deg,#000 0%,transparent 65%)';
+  document.getElementById('hero').appendChild(ref);
+  document.querySelector('.halo').style.top = '58%';
+}
+</script>
+</body></html>
