@@ -1,6 +1,6 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;500;600&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;500;600;700;800&display=block" rel="stylesheet">
 <style>
 /* Kova "simple luxury": one glowing hero, serif title, small tracked details. 1080x1350.
    Variant chosen by ?v=radiance | arch | spotlight */
@@ -22,7 +22,7 @@ html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
 svg.fx{position:absolute;inset:0;width:1080px;height:600px}
 
 /* title block */
-.kicker{position:absolute;left:0;right:0;top:936px;text-align:center;font:500 17px/1 Montserrat,sans-serif;letter-spacing:12px;padding-left:12px;color:var(--silver)}
+.kicker{position:absolute;left:0;right:0;top:934px;text-align:center;font:700 21px/1 Montserrat,sans-serif;letter-spacing:12px;padding-left:12px;color:#e8ecf3}
 .title{position:absolute;left:0;right:0;top:826px;text-align:center;font:600 92px/1 Cinzel,serif;letter-spacing:6px;padding-left:6px;
   background:linear-gradient(180deg,#ffffff 0%,#e6ebf3 38%,#9aa6b8 55%,#f4f7fb 72%,#c3cbd8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 2px 0 #1a2b55) drop-shadow(0 0 16px rgba(42,140,255,.45))}
@@ -60,7 +60,7 @@ svg.fx{position:absolute;inset:0;width:1080px;height:600px}
   <div class="title">GRAND OPENING</div>
   <div class="rule"><i></i><img src="../assets/kova-symbol-hd.png" alt=""><i class="r"></i></div>
   <div class="d d1">THU 10 · FRI 11 · SAT 12 DECEMBER 2026</div>
-  <div class="d d2"><b>DOORS 10 PM</b> · 30 OLEH ROAD, OFF AWOLOWO</div>
+  <div class="d d2"><b>DOORS 10 PM</b> · 30 OLEH ROAD, SAPELE, DELTA STATE</div>
   <div class="res">RESERVATIONS</div>
   <div class="c1">Call / WhatsApp <b>09166586974</b></div>
   <div class="c2"><span class="it"><svg class="ic" viewBox="0 0 24 24"><path fill="#7cc4ff" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>info@kova-lifestyle.com</span><span class="bar"></span><span class="it"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="#7cc4ff" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="#7cc4ff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#7cc4ff"/></svg><svg class="ic" viewBox="0 0 24 24"><path fill="#7cc4ff" d="M12 2.2c3 0 5.3 2.3 5.3 5.4v2.6c.5.2 1.2-.3 1.7-.1.6.3.4 1-.1 1.3-.6.3-1.6.5-1.7 1 .6 1.9 2.2 3.5 4.1 4 .4.1.5.6.1.8-.7.4-1.7.4-2 .8-.2.5-.2 1-.7 1.1-.7.1-1.5-.3-2.4.1-1 .5-1.7 1.6-4.3 1.6s-3.3-1.1-4.3-1.6c-.9-.4-1.7 0-2.4-.1-.5-.1-.5-.6-.7-1.1-.3-.4-1.3-.4-2-.8-.4-.2-.3-.7.1-.8 1.9-.5 3.5-2.1 4.1-4-.1-.5-1.1-.7-1.7-1-.5-.3-.7-1-.1-1.3.5-.2 1.2.3 1.7.1V7.6c0-3.1 2.3-5.4 5.3-5.4z"/></svg>@kova.lifestyle</span></div>
@@ -143,8 +143,8 @@ if (v === 'spotlight2') {
   document.querySelector('.halo').style.top = '55%';
 }
 if (v === 'spotlight') {
-  sym.style.width = '380px'; sym.style.top = 'auto'; sym.style.bottom = '145px'; sym.style.transform = 'translateX(-50%)';
-  const ref = sym.cloneNode(); ref.style.cssText = 'position:absolute;left:50%;width:380px;top:455px;transform:translateX(-50%) scaleY(-1);transform-origin:50% 50%;opacity:.3;filter:blur(1.5px);-webkit-mask:linear-gradient(0deg,#000 0%,transparent 65%);mask:linear-gradient(0deg,#000 0%,transparent 65%)';
+  sym.style.width = '380px'; sym.style.top = 'auto'; sym.style.bottom = '145px'; sym.style.transform = 'translateX(calc(-50% + 10.7px))';   // symbol PNG has 2.8% more empty margin on the right: centre the visible emblem
+  const ref = sym.cloneNode(); ref.style.cssText = 'position:absolute;left:50%;width:380px;top:455px;transform:translateX(calc(-50% + 10.7px)) scaleY(-1);transform-origin:50% 50%;opacity:.3;filter:blur(1.5px);-webkit-mask:linear-gradient(0deg,#000 0%,transparent 65%);mask:linear-gradient(0deg,#000 0%,transparent 65%)';
   document.getElementById('hero').appendChild(ref);
   document.querySelector('.halo').style.top = '58%';
 }

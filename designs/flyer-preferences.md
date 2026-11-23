@@ -159,6 +159,14 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - **GRAND OPENING is always followed by KOVA LIFESTYLE** directly under it (the
   brand line). Never leave the title on its own. [fixed]
 
+## Final pick: the blue set (spotlight flyer + blue invite)
+
+- Client picked **the blue one** (kova-simple spotlight flyer v3 and the blue invite). [picked]
+- **Address is "30 Oleh Road, Sapele, Delta State"** (not "off Awolowo" / "Oleh Road Junction"). [fixed]
+- KOVA LIFESTYLE under GRAND OPENING should be **bolder** than a light tracked line. [fixed]
+- The Kova symbol PNG has uneven empty margins: centre it on its **visible ink**, not its
+  image box (it sat ~10 px left on the spotlight flyer). [fixed: own check]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
