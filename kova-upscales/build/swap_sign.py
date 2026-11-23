@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-W, H = 2284, 1480
+W, H = 2338, 1515                 # top raised to y=250 (closer to the presents line), bottom unchanged
 BOTTOM, CX = 1765, 1536            # bottom edge where the old sign's was, so her hair overlaps it the same way
 h, w = 3840, 3072
 rgb = np.asarray(Image.open('sign-v2-up.png').convert('RGB'))[..., ::-1]
