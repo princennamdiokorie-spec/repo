@@ -112,6 +112,7 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 ## Club name
 
 - **The club's name is "Kova Lifestyle"** (it replaces "Kova Night Club" on flyers). [fixed]
+- **Before editing, confirm which file is meant.** Pick the version most recently delivered to them (usually the latest 4K in `kova-upscales/`). If a name like "the portal one" could mean two files, ask in one line. I once edited the wrong, older flyer: "This is the version you are working on." [fixed]
 - **When reopening any older flyer, update it to the current wording first.** Every "Kova Night Club" becomes "Kova Lifestyle" (use `kova-flyer/title/grand-opening-title-B.png`, not the `-night-club` plaque), without being asked. Reusing an old version with the old name was corrected: "Are you forgetting that we made the change?" [fixed]
 - A logo symbol used inside a title must match the neighbouring letters: same
   chrome palette (sampled from the letters), cap height and baseline. Done in code. [asked]
