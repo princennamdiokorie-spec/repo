@@ -56,14 +56,22 @@ rank = np.searchsorted(np.sort(sl[inside]), sl) / inside.sum()
 col = lut[np.interp(rank.clip(0, 1), np.linspace(0, 1, len(srt)), srt).clip(0, 255).astype(int)]
 symimg = Image.fromarray(np.dstack([col[..., ::-1], al * 255]).clip(0, 255).astype(np.uint8), 'RGBA')
 
+# centre on the symbol's VISIBLE extent in the gap between R and N (the image box has uneven margins)
+solid = (title[..., 3] > 200) & (cv2.cvtColor(title[..., :3], cv2.COLOR_BGR2GRAY) > 120)
+c_ = np.where(solid[cap_top + 45:baseline - 5, :].sum(0) > 3)[0]
+r_right, n_left = c_[c_ < cx].max(), c_[c_ > cx].min()
+vis = np.where((al > 200 / 255).any(0))[0]
+left = int(round((r_right + n_left) / 2 - (vis.min() + vis.max()) / 2)) - 1   # -1: optical balance measured at 4K (R toe vs N serif)
+print('R', r_right, 'N', n_left, '-> symbol left edge', left)
+
 pad = 40
 layer = Image.new('RGBA', (w, h), (0, 0, 0, 0))
 halo = Image.new('RGBA', (sw, sh), (70, 160, 255, 0)); halo.putalpha(symimg.getchannel('A'))
-glow = Image.new('RGBA', (w, h), (0, 0, 0, 0)); glow.alpha_composite(halo, (cx - sw // 2, cap_top))
+glow = Image.new('RGBA', (w, h), (0, 0, 0, 0)); glow.alpha_composite(halo, (left, cap_top))
 glow = glow.filter(ImageFilter.GaussianBlur(10))
 rim = Image.new('RGBA', (sw, sh), (210, 235, 255, 0))
 rim.putalpha(symimg.getchannel('A').filter(ImageFilter.FIND_EDGES).filter(ImageFilter.GaussianBlur(1)))
 layer.alpha_composite(glow); layer.alpha_composite(glow)
-layer.alpha_composite(symimg, (cx - sw // 2, cap_top)); layer.alpha_composite(rim, (cx - sw // 2, cap_top))
+layer.alpha_composite(symimg, (left, cap_top)); layer.alpha_composite(rim, (left, cap_top))
 layer.save('layer-symbol.png')
 print('symbol', sw, 'x', sh, 'at', cx)
