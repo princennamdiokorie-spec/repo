@@ -59,6 +59,39 @@ lay = np.zeros_like(im, dtype=float); la = np.zeros((h, w))
 lay[:h-SHIFT] = im[SHIFT:]; la[:h-SHIFT] = alpha[SHIFT:]
 base = (plate * (1 - la[..., None]) + lay * la[..., None]).clip(0, 255).astype(np.uint8)
 
+# 2b) sparkler fragments that travelled up with the title: small bright specks in
+#     three boxes under OPENING (P, middle N/I, N next to G). Letters are large
+#     components, sparks are small, so remove only the small ones.
+bg = cv2.cvtColor(base, cv2.COLOR_BGR2GRAY)
+spark = np.zeros((h, w), np.uint8)
+for x0, x1, y0, y1 in [(400, 500, 560, 660), (830, 940, 520, 660), (1270, 1380, 560, 660)]:
+    sub = (bg[y0:y1, x0:x1] > 110).astype(np.uint8)
+    n2, l2, s2, _ = cv2.connectedComponentsWithStats(sub, connectivity=8)
+    for i in range(1, n2):
+        if s2[i, 4] < 350:
+            spark[y0:y1, x0:x1][l2 == i] = 255
+# the middle burst touches the N's diagonal: take everything bright below that stroke
+yy, xx = np.mgrid[540:660, 855:935]
+below_diag = (yy - (500 + (xx - 860) * 1.1)) > 16
+spark[540:660, 855:935] |= ((bg[540:660, 855:935] > 70) & below_diag).astype(np.uint8) * 255
+sm = cv2.dilate(spark, np.ones((7, 7), np.uint8)).astype(float) / 255
+keepw = 1 - sm                                           # normalised blur: fill from surroundings only
+num = cv2.GaussianBlur(base.astype(float) * keepw[..., None], (0, 0), 9)
+den = cv2.GaussianBlur(keepw, (0, 0), 9)[..., None] + 1e-6
+fill = num / den
+soft = cv2.GaussianBlur(sm, (0, 0), 2)[..., None]
+base = (base * (1 - soft) + fill * soft).clip(0, 255).astype(np.uint8)
+
+# 2c) sparkler tips: the streams were cut flat where the old title sat (~row 760).
+#     Lighten-blend a copy of each stream shifted up, fading to nothing at the top.
+TIP_SHIFT, CUT = 34, 760
+for x0, x1 in [(400, 540), (840, 940), (1270, 1400)]:
+    src = base[CUT + 5:CUT + 5 + 90, x0:x1].astype(float)
+    ramp = np.linspace(0, 1, src.shape[0])[:, None, None] ** 1.5
+    dst = base[CUT + 5 - TIP_SHIFT:CUT + 5 - TIP_SHIFT + 90, x0:x1].astype(float)
+    sparkw = cv2.GaussianBlur(((src.max(2) > 170).astype(float)), (0, 0), 1.5)[..., None]  # spark pixels only
+    base[CUT + 5 - TIP_SHIFT:CUT + 5 - TIP_SHIFT + 90, x0:x1] = (dst + (src - dst).clip(0) * ramp * sparkw).clip(0, 255).astype(np.uint8)
+
 # 3) chrome symbol matched to the letters
 sym = np.asarray(Image.open('kova-symbol.png').convert('RGBA')).astype(float)
 cap = BASELINE - CAP_TOP
