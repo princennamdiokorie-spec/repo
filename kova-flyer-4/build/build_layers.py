@@ -36,7 +36,8 @@ zone = cv2.GaussianBlur(cv2.dilate(keep, np.ones((25, 25), np.uint8)), (0, 0), 8
 save('title', np.maximum(keep / 255.0, np.clip((L - 30) / 90, 0, 1) * zone), box)
 
 save('date', text_alpha(150, 15, 35, 120), (130, 870, 530, 1160))
-save('doors', text_alpha(150, 11, 40, 130), (1360, 880, 1600, 1030))
+blue_txt = np.clip((B - 150) / 70, 0, 1) * np.clip((B - R - 60) / 60, 0, 1)   # the blue '10PM'
+save('doors', np.maximum(text_alpha(150, 11, 40, 130), blue_txt), (1360, 880, 1600, 1030))
 save('insta', text_alpha(170, 7, 50, 140), (260, 2075, 1480, 2112))
 save('address', text_alpha(170, 7, 50, 140), (400, 2215, 1350, 2265))
 
@@ -51,7 +52,7 @@ keepw = (Ls < 140).astype(float)
 num = cv2.GaussianBlur(sc * keepw[..., None], (0, 0), 14); den = cv2.GaussianBlur(keepw, (0, 0), 14)[..., None] + 1e-6
 calm = num / den
 ys = np.arange(h)[:, None]
-ramp = np.clip((800 - ys) / 120, 0, 1)            # 0 below row 800, 1 above row 680
+ramp = np.clip((880 - ys) / 120, 0, 1)            # sparks fade out by row 760, below the KOVA LIFESTYLE line
 cols = np.zeros((1, w))
 for x0, x1 in [(360, 580), (780, 980), (1150, 1420)]:
     cols[0, x0:x1] = 1
