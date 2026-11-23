@@ -140,6 +140,16 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Built in code with the real Kova symbol as the hero; three hero treatments
   offered (radiance rays, art-deco arch, spotlight on a reflective floor). [asked]
 
+## Concept 6: monochrome luxury (no brand colours)
+
+- Client asked for **casual, simple, minimal flyers that still feel luxurious**,
+  black or white, **not in the brand colours**. Five variants built in code:
+  Noir frame, Ivory editorial, Champagne blind-emboss, Blanc numerals, Silver seal. [asked]
+- In monochrome flyers the Kova logo is shown **neutral** (silver, solid black,
+  champagne foil or blind emboss), never chrome-and-blue. [asked]
+- A blind emboss must be the **same tone as the paper**, shown only by light and
+  shadow. A dark filled shape with a black outline looks cheap. [fixed: own check]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`

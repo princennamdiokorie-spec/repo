@@ -1,0 +1,197 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Montserrat:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+/* Kova monochrome luxury flyers: five variants, chosen with ?v=1..5. 1080x1350. */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden;display:none}
+.f.on{display:block}
+.abs{position:absolute;left:0;right:0;text-align:center}
+.noise{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.sans{font-family:Montserrat,sans-serif;font-weight:500;text-transform:uppercase}
+.bodoni{font-family:'Bodoni Moda',serif;font-optical-sizing:auto}
+.ital{font-family:'Cormorant Garamond',serif;font-style:italic}
+.ic{display:inline-block;width:.95em;height:.95em;vertical-align:-.13em}
+.it{white-space:nowrap}
+.sep{display:inline-block;width:1px;height:.9em;margin:0 .9em;vertical-align:-.1em;background:currentColor;opacity:.45}
+.diamond{display:flex;align-items:center;justify-content:center;gap:16px}
+.diamond i{display:block;height:1px;width:150px;background:currentColor;opacity:.5}
+.diamond b{display:block;width:9px;height:9px;border:1px solid currentColor;transform:rotate(45deg)}
+
+/* 1 NOIR: black, double hairline frame, Bodoni stack */
+.v1{background:radial-gradient(ellipse 80% 60% at 50% 42%,#191919 0%,#0b0b0b 60%,#050505 100%);color:#f2f2f2}
+.v1 .fr1{position:absolute;inset:44px;border:1px solid rgba(255,255,255,.32)}
+.v1 .fr2{position:absolute;inset:54px;border:1px solid rgba(255,255,255,.12)}
+.v1 .logo{position:absolute;left:50%;top:104px;width:150px;transform:translateX(-50%)}
+.v1 .k{top:250px;font-size:13px;letter-spacing:9px;padding-left:9px;color:#9c9c9c}
+.v1 .the{top:338px;font-size:48px;color:#cfcfcf}
+.v1 .t{font-weight:400;font-size:150px;line-height:1;letter-spacing:12px;padding-left:12px}
+.v1 .t1{top:392px}.v1 .t2{top:552px}
+.v1 .rl{top:760px;color:#bdbdbd}
+.v1 .dt{top:806px;font-size:58px;line-height:1;letter-spacing:6px;padding-left:6px}
+.v1 .mo{top:884px;font-size:14px;letter-spacing:10px;padding-left:10px;color:#a6a6a6}
+.v1 .dr{top:950px;font-size:15px;letter-spacing:5px;padding-left:5px;color:#e6e6e6}
+.v1 .rs{top:1086px;font-size:11px;letter-spacing:7px;padding-left:7px;color:#7d7d7d}
+.v1 .ph{top:1112px;font-size:22px;letter-spacing:3px;padding-left:3px;color:#fff}
+.v1 .so{top:1156px;font-size:15px;letter-spacing:1.5px;color:#bdbdbd;text-transform:none}
+
+/* 2 IVORY EDITORIAL: off-white paper, left-aligned, big italic/roman pair, label grid */
+.v2{background:#f3efe7;color:#141414}
+.v2 .logo{position:absolute;left:92px;top:78px;width:118px}
+.v2 .est{position:absolute;right:92px;top:116px;font-size:12px;letter-spacing:6px;color:#6f6a61}
+.v2 .hr{position:absolute;left:92px;right:92px;height:1px;background:#141414;opacity:.75}
+.v2 .k{position:absolute;left:92px;top:262px;font-size:13px;letter-spacing:8px;color:#6f6a61}
+.v2 .g{position:absolute;left:84px;top:288px;font-size:212px;line-height:1;font-style:italic;font-weight:400;letter-spacing:-3px}
+.v2 .o{position:absolute;left:84px;top:494px;font-size:212px;line-height:1;font-weight:400;letter-spacing:-2px}
+.v2 .grid{position:absolute;left:92px;right:92px;top:806px;display:grid;grid-template-columns:1.25fr 1fr;row-gap:46px;column-gap:40px}
+.v2 .lb{font-size:11px;letter-spacing:6px;color:#8a847a;margin-bottom:12px}
+.v2 .vl{font-size:31px;line-height:1.18}
+.v2 .vl i{font-style:italic}
+.v2 .ft{position:absolute;left:92px;right:92px;top:1188px;display:flex;justify-content:space-between;align-items:center;font-size:15px;letter-spacing:1.5px;color:#2b2b2b;text-transform:none}
+.v2 .ft .sym{width:54px}
+
+/* 3 CHAMPAGNE EMBOSS: black, debossed emblem, champagne foil type */
+.v3{background:radial-gradient(ellipse 75% 55% at 50% 30%,#1a1816 0%,#0d0c0b 62%,#070606 100%);color:#d9c497}
+.v3 .k{top:88px;font-size:13px;letter-spacing:10px;padding-left:10px;color:#a8946c}
+.v3 .emb{position:absolute;left:50%;top:190px;width:560px;transform:translateX(-50%)}
+.foil{background:linear-gradient(180deg,#fff3d6 0%,#e7d09f 30%,#a88552 52%,#f1ddb0 70%,#c7a86f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.6))}
+.v3 .t{top:668px;font-size:96px;line-height:1;font-weight:400;letter-spacing:10px;padding-left:10px}
+.v3 .rl{top:806px;color:#b49a68}
+.v3 .dt{top:852px;font-size:17px;letter-spacing:7px;padding-left:7px;color:#e9d9b5}
+.v3 .dr{top:892px;font-size:15px;letter-spacing:5px;padding-left:5px;color:#b3a07a}
+.v3 .rs{top:1010px;font-size:11px;letter-spacing:7px;padding-left:7px;color:#7f7158}
+.v3 .ph{top:1036px;font-size:22px;letter-spacing:3px;padding-left:3px;color:#f0e2c2}
+.v3 .so{top:1080px;font-size:15px;letter-spacing:1.5px;color:#b3a07a;text-transform:none}
+.v3 .logo{position:absolute;left:50%;bottom:62px;width:118px;transform:translateX(-50%)}
+
+/* 4 BLANC NUMERALS: white, date-led, giant Bodoni numerals */
+.v4{background:#f6f4ef;color:#121212}
+.v4 .logo{position:absolute;left:50%;top:74px;width:122px;transform:translateX(-50%)}
+.v4 .k{top:228px;font-size:12px;letter-spacing:9px;padding-left:9px;color:#7a756c}
+.v4 .t{top:282px;font-size:30px;letter-spacing:20px;padding-left:20px;font-weight:500}
+.v4 .n{top:356px;font-size:330px;line-height:1;font-weight:400;letter-spacing:-6px}
+.v4 .n span{font-size:200px;vertical-align:52px;margin:0 14px;font-weight:400}
+.v4 .mo{top:716px;font-size:66px;line-height:1;color:#1c1c1c}
+.v4 .rl{top:830px;color:#121212}
+.v4 .dy{top:872px;font-size:13px;letter-spacing:9px;padding-left:9px;color:#5b5750}
+.v4 .dr{top:912px;font-size:15px;letter-spacing:5px;padding-left:5px;color:#1c1c1c}
+.v4 .rs{top:1088px;font-size:11px;letter-spacing:7px;padding-left:7px;color:#8a847a}
+.v4 .ph{top:1114px;font-size:22px;letter-spacing:3px;padding-left:3px;color:#121212}
+.v4 .so{top:1158px;font-size:15px;letter-spacing:1.5px;color:#3c3a36;text-transform:none}
+
+/* 5 SILVER SEAL: black, engraved circular seal with ring text, italic title */
+.v5{background:radial-gradient(ellipse 70% 55% at 50% 34%,#161616 0%,#090909 60%,#040404 100%);color:#ececec}
+.v5 .k{top:84px;font-size:13px;letter-spacing:10px;padding-left:10px;color:#9a9a9a}
+.v5 .seal{position:absolute;left:50%;top:150px;width:480px;height:480px;transform:translateX(-50%)}
+.v5 .seal svg{position:absolute;inset:0;width:100%;height:100%}
+.v5 .seal img{position:absolute;left:50%;top:50%;width:226px;transform:translate(-50%,-52%)}
+.v5 .the{top:690px;font-size:46px;color:#c9c9c9}
+.v5 .t{top:742px;font-size:112px;line-height:1;font-style:italic;font-weight:400;letter-spacing:1px}
+.v5 .rl{top:900px;color:#9d9d9d}
+.v5 .dt{top:944px;font-size:17px;letter-spacing:7px;padding-left:7px;color:#f2f2f2}
+.v5 .dr{top:984px;font-size:15px;letter-spacing:5px;padding-left:5px;color:#a9a9a9}
+.v5 .rs{top:1092px;font-size:11px;letter-spacing:7px;padding-left:7px;color:#777}
+.v5 .ph{top:1118px;font-size:22px;letter-spacing:3px;padding-left:3px;color:#fff}
+.v5 .so{top:1162px;font-size:15px;letter-spacing:1.5px;color:#b5b5b5;text-transform:none}
+</style></head><body>
+
+<div class="f v1" id="v1">
+  <div class="fr1"></div><div class="fr2"></div>
+  <img class="logo" src="../assets/logo-silver.png" alt="">
+  <div class="abs sans k">Kova Lifestyle Presents</div>
+  <div class="abs ital the">The</div>
+  <div class="abs bodoni t t1">GRAND</div>
+  <div class="abs bodoni t t2">OPENING</div>
+  <div class="abs rl diamond"><i></i><b></b><i></i></div>
+  <div class="abs bodoni dt">10 · 11 · 12</div>
+  <div class="abs sans mo">December 2026</div>
+  <div class="abs sans dr">Doors 10 PM · 30 Oleh Road, off Awolowo</div>
+  <div class="abs sans rs">Reservations</div>
+  <div class="abs sans ph">09166586974</div>
+  <div class="abs sans so" data-contact></div>
+</div>
+
+<div class="f v2" id="v2">
+  <img class="logo" src="../assets/logo-black.png" alt="">
+  <div class="sans est">December 2026</div>
+  <div class="hr" style="top:224px"></div>
+  <div class="sans k">Kova Lifestyle Presents</div>
+  <div class="bodoni g">Grand</div>
+  <div class="bodoni o">Opening</div>
+  <div class="hr" style="top:762px"></div>
+  <div class="grid">
+    <div><div class="sans lb">Dates</div><div class="bodoni vl">Thu 10 — Sat 12<br><i>December 2026</i></div></div>
+    <div><div class="sans lb">Doors</div><div class="bodoni vl">10 PM</div></div>
+    <div><div class="sans lb">Venue</div><div class="bodoni vl">30 Oleh Road,<br><i>off Awolowo</i></div></div>
+    <div><div class="sans lb">Reservations</div><div class="bodoni vl">09166586974</div></div>
+  </div>
+  <div class="hr" style="top:1150px"></div>
+  <div class="sans ft"><span data-contact></span><img class="sym" src="../assets/sym-black.png" alt=""></div>
+</div>
+
+<div class="f v3" id="v3">
+  <div class="abs sans k">Kova Lifestyle Presents</div>
+  <img class="emb" src="../assets/sym-emboss.png" alt="">
+  <div class="abs bodoni t foil">GRAND OPENING</div>
+  <div class="abs rl diamond"><i></i><b></b><i></i></div>
+  <div class="abs sans dt">Thursday 10 — Saturday 12 December 2026</div>
+  <div class="abs sans dr">Doors 10 PM · 30 Oleh Road, off Awolowo</div>
+  <div class="abs sans rs">Reservations</div>
+  <div class="abs sans ph">09166586974</div>
+  <div class="abs sans so" data-contact></div>
+  <img class="logo" src="../assets/logo-champagne.png" alt="">
+</div>
+
+<div class="f v4" id="v4">
+  <img class="logo" src="../assets/logo-black.png" alt="">
+  <div class="abs sans k">Kova Lifestyle Presents</div>
+  <div class="abs sans t">Grand Opening</div>
+  <div class="abs bodoni n">10<span>—</span>12</div>
+  <div class="abs ital mo">December 2026</div>
+  <div class="abs rl diamond"><i></i><b></b><i></i></div>
+  <div class="abs sans dy">Thursday · Friday · Saturday</div>
+  <div class="abs sans dr">Doors 10 PM · 30 Oleh Road, off Awolowo</div>
+  <div class="abs sans rs">Reservations</div>
+  <div class="abs sans ph">09166586974</div>
+  <div class="abs sans so" data-contact></div>
+</div>
+
+<div class="f v5" id="v5">
+  <div class="abs sans k">Kova Lifestyle Presents</div>
+  <div class="seal">
+    <svg viewBox="0 0 480 480">
+      <defs>
+        <linearGradient id="sv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#8f8f8f"/><stop offset=".6" stop-color="#e6e6e6"/><stop offset="1" stop-color="#7a7a7a"/></linearGradient>
+        <path id="rp" d="M240,240 m-196,0 a196,196 0 1,1 392,0 a196,196 0 1,1 -392,0"/>
+      </defs>
+      <circle cx="240" cy="240" r="232" fill="none" stroke="url(#sv)" stroke-width="2"/>
+      <circle cx="240" cy="240" r="224" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="1"/>
+      <circle cx="240" cy="240" r="168" fill="none" stroke="url(#sv)" stroke-width="1.5"/>
+      <text font-family="Montserrat" font-weight="500" font-size="17" letter-spacing="6" fill="#d8d8d8"><textPath href="#rp" textLength="1205" lengthAdjust="spacing">GRAND OPENING · KOVA LIFESTYLE · DECEMBER 2026 · GRAND OPENING · KOVA LIFESTYLE · DECEMBER 2026 ·</textPath></text>
+    </svg>
+    <img src="../assets/sym-silver.png" alt="">
+  </div>
+  <div class="abs ital the">The</div>
+  <div class="abs bodoni t">Grand Opening</div>
+  <div class="abs rl diamond"><i></i><b></b><i></i></div>
+  <div class="abs sans dt">10 · 11 · 12 December 2026</div>
+  <div class="abs sans dr">Doors 10 PM · 30 Oleh Road, off Awolowo</div>
+  <div class="abs sans rs">Reservations</div>
+  <div class="abs sans ph">09166586974</div>
+  <div class="abs sans so" data-contact></div>
+</div>
+
+<script>
+const v = new URLSearchParams(location.search).get('v') || '1';
+document.getElementById('v' + v).classList.add('on');
+const MAIL = '<svg class="ic" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>';
+const IG = '<svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>';
+const SC = '<svg class="ic" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2c3 0 5.3 2.3 5.3 5.4v2.6c.5.2 1.2-.3 1.7-.1.6.3.4 1-.1 1.3-.6.3-1.6.5-1.7 1 .6 1.9 2.2 3.5 4.1 4 .4.1.5.6.1.8-.7.4-1.7.4-2 .8-.2.5-.2 1-.7 1.1-.7.1-1.5-.3-2.4.1-1 .5-1.7 1.6-4.3 1.6s-3.3-1.1-4.3-1.6c-.9-.4-1.7 0-2.4-.1-.5-.1-.5-.6-.7-1.1-.3-.4-1.3-.4-2-.8-.4-.2-.3-.7.1-.8 1.9-.5 3.5-2.1 4.1-4-.1-.5-1.1-.7-1.7-1-.5-.3-.7-1-.1-1.3.5-.2 1.2.3 1.7.1V7.6c0-3.1 2.3-5.4 5.3-5.4z"/></svg>';
+for (const el of document.querySelectorAll('[data-contact]'))
+  el.innerHTML = `<span class="it">${MAIL} info@kova-lifestyle.com</span><span class="sep"></span><span class="it">${IG} ${SC} @kova.lifestyle</span>`;
+// fine paper grain on every variant (stronger on the white ones)
+const grain = (o) => `<svg class="noise"><filter id="g${v}"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 ${o} 0"/></filter><rect width="100%" height="100%" filter="url(#g${v})"/></svg>`;
+document.getElementById('v' + v).insertAdjacentHTML('afterbegin', grain(v === '2' || v === '4' ? .16 : .1));
+</script>
+</body></html>
