@@ -109,6 +109,15 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Use the **real Kova logo** (its symbol can stand in for the A in GRAND as a
   crest). Never an invented emblem. [asked]
 
+## Self-check before sending (always)
+
+- **Inspect every render for alignment and spacing before sending**: even gaps
+  between stacked text blocks, the title block grouped tightly under the top
+  line, everything centred, and no overlaps with sparklers or other elements.
+  When a request says to move blocks (e.g. "the title goes up"), verify that it
+  actually happened. "You're supposed to be looking at them… does it align?" [fixed]
+- When a model fails a precise layout edit, do it in code on the clean version. [asked]
+
 ## Past work
 
 - Kova Night Club grand opening, Dec 10–12: final = `kova-flyer/flyer4-portal*`
