@@ -1,0 +1,67 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700&display=block" rel="stylesheet">
+<style>
+/* Kova concept 3: art-deco blue set, photoreal models, marquee title. 3:4 (1080x1440). */
+:root{--kblue:#2a8cff;--kblue-hi:#6dbfff;--neon:#0c91fb;--silver:#c5c5c6;--navy:#02081c}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1440px;background:var(--navy);overflow:hidden}
+.f{position:relative;width:1080px;height:1440px;overflow:hidden}
+
+.stage{position:absolute;left:0;top:0;width:1080px;height:1447px;object-fit:cover}
+/* same plate again, above the models, showing only the platform rim so their hips sit behind it */
+.stage-front{position:absolute;left:0;top:0;width:1080px;height:1447px;object-fit:cover;
+  -webkit-mask:linear-gradient(180deg,transparent 1098px,#000 1122px);mask:linear-gradient(180deg,transparent 1098px,#000 1122px)}
+.glow{position:absolute;left:50%;top:740px;width:760px;height:560px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(12,145,251,.35),transparent 65%);mix-blend-mode:screen}
+.women{position:absolute;left:50%;top:470px;width:520px;transform:translateX(-50%);
+  filter:drop-shadow(0 0 22px rgba(12,145,251,.45)) drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+.shade-bot{position:absolute;left:0;right:0;bottom:0;height:360px;background:linear-gradient(0deg,rgba(2,8,28,.97) 40%,rgba(2,8,28,.6) 75%,transparent)}
+.shade-top{position:absolute;left:0;right:0;top:0;height:300px;background:linear-gradient(180deg,rgba(2,8,28,.55),transparent)}
+
+.title{position:absolute;left:50%;top:34px;width:640px;transform:translateX(-50%);
+  filter:drop-shadow(0 16px 24px rgba(0,0,0,.7)) drop-shadow(0 0 26px rgba(12,145,251,.5))}
+
+/* date line in the reference's "FRI · 20 · NOV" shape */
+.date{position:absolute;left:0;right:0;top:1150px;display:flex;justify-content:center;align-items:center;gap:18px}
+.date .w{font:56px/1 Anton,sans-serif;letter-spacing:2px;color:#fff;text-shadow:0 0 14px rgba(12,145,251,.8)}
+.date .dot{width:9px;height:9px;border-radius:50%;background:var(--kblue-hi);box-shadow:0 0 8px var(--kblue)}
+.date .n{font:104px/.9 Anton,sans-serif;letter-spacing:1px;
+  background:linear-gradient(180deg,#fff 0%,#dfe6ef 40%,#8994a6 52%,#f4f7fb 68%,#b6c0cf 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 0 #0a1d55) drop-shadow(0 0 14px rgba(79,195,255,.55))}
+.date .n i{font-style:normal;color:var(--kblue);-webkit-text-fill-color:var(--kblue)}
+.line{position:absolute;left:0;right:0;text-align:center;font:600 22px/1 Montserrat,sans-serif;letter-spacing:5px;color:var(--silver)}
+.line b{color:var(--kblue-hi);font-weight:700}
+.l1{top:1268px}
+.l2{top:1306px;font-size:20px;letter-spacing:6px}
+.l2 .bar{display:inline-block;width:2px;height:18px;margin:0 14px -2px;background:var(--kblue-hi);box-shadow:0 0 6px var(--kblue)}
+
+.contact{position:absolute;left:60px;right:60px;bottom:26px;padding-top:13px;border-top:1px solid rgba(109,175,255,.28);
+  display:flex;justify-content:center;align-items:center;gap:22px;
+  font:500 16px/1 Montserrat,sans-serif;letter-spacing:3px;color:var(--silver)}
+.contact .it{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.contact svg{width:17px;height:17px;flex:none}
+.contact .dot{width:2px;height:20px;background:var(--kblue-hi);box-shadow:0 0 6px var(--kblue)}
+</style></head><body>
+<div class="f">
+  <img class="stage" src="../assets/stage.png" alt="">
+  <div class="glow"></div>
+  <img class="women" src="../assets/women-cutout.png" alt="">
+  <img class="stage-front" src="../assets/stage.png" alt="">
+  <div class="shade-top"></div>
+  <div class="shade-bot"></div>
+  <img class="title" src="../assets/title-v1.png" alt="">
+
+  <div class="date">
+    <span class="w">THU</span><span class="dot"></span>
+    <span class="n">10<i>–</i>12</span>
+    <span class="dot"></span><span class="w">DEC</span>
+  </div>
+  <div class="line l1"><b>3 NIGHTS</b> · DOORS OPEN <b>10PM</b></div>
+  <div class="line l2">KOVA NIGHT CLUB<span class="bar"></span>30 OLEH ROAD, OFF AWOLOWO</div>
+
+  <div class="contact" id="contact"></div>
+</div>
+<script src="shared.js"></script>
+</body></html>
