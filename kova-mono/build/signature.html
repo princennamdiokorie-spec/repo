@@ -107,7 +107,7 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 </style></head><body>
 
 <div class="f v1" id="v1">
-  <div class="fr1"></div><div class="fr2"></div>
+  <div class="fr1" id="fr1"></div><div class="fr2" id="fr2"></div>
   <img class="logo" src="../assets/logo-silver.png" alt="">
   <div class="abs sans k">Kova Lifestyle Presents</div>
   <div class="abs ital the">The</div>
@@ -197,6 +197,7 @@ const v = new URLSearchParams(location.search).get('v') || '1';
 document.getElementById('v' + v).classList.add('on');
 const t = new URLSearchParams(location.search).get('t') || 'A';
 const raw = new URLSearchParams(location.search).get('raw') === '1';
+if (new URLSearchParams(location.search).get('frame') === '0') for (const id of ['fr1', 'fr2']) { const e = document.getElementById(id); if (e) e.remove(); }
 const sig = document.getElementById('sig');
 // raw: the client's generated image exactly as delivered (2000x2000), lighten-blended so its
 // black background merges with the flyer. Letters scaled to the same width as before and centred.
