@@ -1,14 +1,14 @@
 """Plaque flyer 4K: swap the nameplate back to the original 'OF KOVA LIFESTYLE'
 (our title-B plaque, registered onto the flyer and AI-upscaled; see plaque_M.npy and
 np-crop-x4.png) and add 'KOVA LIFESTYLE PRESENTS' at the top.
-Input: plaque-flyer-namefix.png, _presents.png. Output: ../grand-opening-plaque-4k-kova-lifestyle.png"""
+Input: plaque-flyer-logoup.png, _presents.png. Output: ../grand-opening-plaque-4k-kova-lifestyle.png"""
 import cv2
 import numpy as np
 from PIL import Image
 
-CAP, CENTRE_Y = 38, 716       # client: logo on top, presents line under it, centred between logo (ink ends 655) and plaque (starts 778)
+CAP, CENTRE_Y = 38, 677       # logo moved up 80px (ink ends 575); centred between logo and plaque (starts 778)
 
-base = cv2.imread('plaque-flyer-namefix.png').astype(np.float32); h, w = base.shape[:2]
+base = cv2.imread('plaque-flyer-logoup.png').astype(np.float32); h, w = base.shape[:2]
 t = np.asarray(Image.open('_presents.png').convert('RGBA')); a = t[..., 3]
 wt = (t[..., :3].min(2) > 200) & (a > 200); r = wt.sum(1)
 ys = np.where(r > 0.12 * r.max())[0]; xs = np.where((a > 128).sum(0) > 0)[0]
