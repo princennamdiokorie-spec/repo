@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-CAP, CENTRE_Y = 38, 110       # same size as on the marquee flyer; above the logo, clear of the neon line
+CAP, CENTRE_Y = 38, 716       # client: logo on top, presents line under it, centred between logo (ink ends 655) and plaque (starts 778)
 
 base = cv2.imread('plaque-flyer-namefix.png').astype(np.float32); h, w = base.shape[:2]
 t = np.asarray(Image.open('_presents.png').convert('RGBA')); a = t[..., 3]
