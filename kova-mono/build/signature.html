@@ -196,11 +196,20 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 const v = new URLSearchParams(location.search).get('v') || '1';
 document.getElementById('v' + v).classList.add('on');
 const t = new URLSearchParams(location.search).get('t') || 'A';
-const sig = document.getElementById('sig'); if (sig) sig.src = `../assets/sig-${t}.png`;
+const raw = new URLSearchParams(location.search).get('raw') === '1';
+const sig = document.getElementById('sig');
+// raw: the client's generated image exactly as delivered (2000x2000), lighten-blended so its
+// black background merges with the flyer. Letters scaled to the same width as before and centred.
+const RAW = { A: { cx: 1051, top: 604, bottom: 1599 }, B: { cx: 1024, top: 571, bottom: 1570 } };
+const K = .465, LETTER_TOP = 364;
+if (sig && raw) {
+  const r = RAW[t]; sig.src = `../assets/sig-${t}-src.png`;
+  sig.style.cssText = `position:absolute;width:${2000 * K}px;left:${540 - r.cx * K}px;top:${LETTER_TOP - r.top * K}px;transform:none;mix-blend-mode:lighten`;
+} else if (sig) sig.src = `../assets/sig-${t}.png`;
 // KOVA LIFESTYLE sits GAP px under the title's lowest ink, the divider GAP px under it,
 // and everything below moves down by the same amount (ink bottoms measured per title).
 if (v === '1') {
-  const GAP = 34, inkBottom = { A: 762, B: 804 }[t] || 780;
+  const GAP = 34, inkBottom = raw ? Math.round(LETTER_TOP + (RAW[t].bottom - RAW[t].top) * K) : ({ A: 762, B: 804 }[t] || 780);
   const club = document.getElementById('club'); club.classList.add(new URLSearchParams(location.search).get('f') || 'cinzel'); const clubTop = inkBottom + GAP; club.style.top = clubTop + 'px';
   const shift = (clubTop + 26 + GAP) - 836;
   for (const c of ['rl', 'dt', 'mo', 'dr', 'rs', 'ph', 'so']) {
