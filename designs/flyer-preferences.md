@@ -109,6 +109,12 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Use the **real Kova logo** (its symbol can stand in for the A in GRAND as a
   crest). Never an invented emblem. [asked]
 
+## Club name
+
+- **The club's name is "Kova Lifestyle"** (it replaces "Kova Night Club" on flyers). [fixed]
+- A logo symbol used inside a title must match the neighbouring letters: same
+  chrome palette (sampled from the letters), cap height and baseline. Done in code. [asked]
+
 ## Self-check before sending (always)
 
 - **Inspect every render for alignment and spacing before sending**: even gaps
