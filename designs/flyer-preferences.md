@@ -92,6 +92,7 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - People in their scenes: **beautiful Black women**, same poses as the reference. [asked]
 - People must look **super realistic, like a real photograph**: real skin texture, pores, real hair and hands. Painted or airbrushed "AI look" is rejected ("it looks too AI and I don't like it"). Put photographic cues in every people prompt. [fixed]
 - Recolour gold scenes to Kova chrome silver + electric blue, with no gold left. [asked]
+- Models wear **the flyer's palette** (chrome silver, electric blue), lit with electric-blue rim light, not teal. Poses: **sultry and confident**, e.g. fingertip touching the lip, preferred over a reaching hand. [fixed]
 - Write the image prompt tightly and show it before spending credits:
   "I wouldn't want to waste my Higgsfield credits." [asked]
 
