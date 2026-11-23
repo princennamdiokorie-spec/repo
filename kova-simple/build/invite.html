@@ -52,9 +52,7 @@ svg.fx{position:absolute;left:0;top:0;width:1080px;height:1800px}
       <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
       <radialGradient id="pool" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7cc4ff" stop-opacity=".55"/><stop offset="1" stop-color="#2a8cff" stop-opacity="0"/></radialGradient>
     </defs>
-    <polygon points="500,230 580,230 900,780 180,780" fill="url(#beam)" filter="url(#soft)"/>
     <ellipse cx="540" cy="1712" rx="300" ry="34" fill="url(#pool)"/>
-    <g id="dust"></g>
   </svg>
   <div class="grain"></div>
   <div class="edge"></div>
@@ -85,10 +83,4 @@ svg.fx{position:absolute;left:0;top:0;width:1080px;height:1800px}
   <div class="addr"><svg class="pin" viewBox="0 0 24 24"><path fill="#7cc4ff" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>AWOLOWO BY OLEH ROAD JUNCTION,<br>SAPELE, DELTA STATE.</div>
   <img class="foot" src="../assets/kova-symbol-hd.png" alt="">
 </div>
-<script>
-let r0 = 5; const r = () => (r0 = (r0 * 16807) % 2147483647) / 2147483647; let h = '';
-for (let i = 0; i < 60; i++) { const y = 240 + r() * 520, half = 40 + 320 * (y - 230) / 550;
-  h += `<circle cx="${540 + (r() * 2 - 1) * half * .9}" cy="${y}" r="${.6 + r() * 1.7}" fill="#e3f0ff" opacity="${.25 + r() * .6}"/>`; }
-document.getElementById('dust').innerHTML = h;
-</script>
 </body></html>
