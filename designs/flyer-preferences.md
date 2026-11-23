@@ -57,6 +57,9 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 
 ## Process they expect
 
+- **Default: give them the prompt to run themselves in Higgsfield** (they have
+  free credits there that this connection can't use): "next time give me the
+  prompt." Only generate through the connection when they ask. [asked]
 - **Show the credit cost and get approval before any paid generation**, with
   options for 1 or 2 variations. [asked]
 - When they say "use code", build backgrounds and layout in HTML/CSS, not AI. [asked]
