@@ -31,6 +31,7 @@ letter_lum_sorted = np.sort(lum)
 # 1) erase top line, bottle emblems, bottom serif name
 m = np.zeros((h, w), np.uint8)
 m[41:81, 413:1331] = 255
+m[2022:2071, 430:1312] = 255                  # 'FOR VIP AND INFO CALL ...' line
 for cx, cy in LABELS:
     r = im[cy-62:cy+56, cx-75:cx+75]; b = (r.max(2) > 55).astype(np.uint8) * 255
     m[cy-62:cy+56, cx-75:cx+75] |= cv2.dilate(b, np.ones((9, 9), np.uint8))

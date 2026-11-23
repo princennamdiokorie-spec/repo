@@ -1,13 +1,13 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@700&family=Playfair+Display:wght@800&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@700&family=Playfair+Display:wght@800&family=Arimo:wght@400&display=block" rel="stylesheet">
 <style>
 /* Overlay on the AI base (1744x2336 rendered at 872x1168 css, DPR 2). */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:872px;height:1168px;overflow:hidden;background:#02081c}
 .f{position:relative;width:872px;height:1168px}
 .base{position:absolute;inset:0;width:872px;height:1168px}
-.top{position:absolute;left:0;right:0;top:22px;text-align:center;white-space:nowrap;
+.top{position:absolute;left:0;right:0;top:48px;text-align:center;white-space:nowrap;
   font:700 16px/1 Montserrat,sans-serif;color:#fff}
 .club{position:absolute;left:0;right:0;top:336px;display:flex;justify-content:center;align-items:center;gap:16px}
 .club .t{white-space:nowrap;font:900 33px/1 Cinzel,serif;
@@ -19,12 +19,15 @@ html,body{width:872px;height:1168px;overflow:hidden;background:#02081c}
 .name{position:absolute;left:0;right:0;top:1061px;text-align:center;font:800 37px/1 'Playfair Display',serif;
   background:linear-gradient(180deg,#fff 0%,#e8eef6 40%,#9aa5b6 55%,#f2f6fb 72%,#c4cdd9 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 2px 0 #24324d) drop-shadow(0 0 6px rgba(64,150,255,.5))}
+.info{position:absolute;left:0;right:0;top:1009px;text-align:center;font:400 23px/1 Arimo,sans-serif;color:#fff}
+.info b{font-weight:400;color:#05b5f8}
 .sym{position:absolute;width:76px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 5px rgba(64,150,255,.7))}
 </style></head><body>
 <div class="f">
   <img class="base" src="../assets/base4.png" alt="">
   <div class="top"><span id="top">KOVA LIFESTYLE PRESENTS</span></div>
   <div class="club"><span class="rule"></span><span class="t" id="club">KOVA LIFESTYLE</span><span class="rule r"></span></div>
+  <div class="info"><span id="info">FOR MORE INFO CALL <b>09166586974</b></span></div>
   <div class="name">Kova Lifestyle</div>
   <img class="sym" src="../assets/kova-symbol.png" style="left:322.5px;top:739px;transform:translate(-50%,-50%) rotate(-3deg)" alt="">
   <img class="sym" src="../assets/kova-symbol.png" style="left:446.5px;top:654px" alt="">
