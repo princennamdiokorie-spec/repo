@@ -95,6 +95,7 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
 - Models wear **the flyer's palette** (chrome silver, electric blue), lit with electric-blue rim light, not teal. Poses: **sultry and confident**, e.g. fingertip touching the lip, preferred over a reaching hand. [fixed]
 - 3D titles: **depth yes, sideways turn no.** A title rotated about 15° was "too sideways… we can't use it." Keep titles front-facing (a slight low angle is fine) and get depth from extrusion and layering. When they ask for options, give several distinct prompts. [fixed] [asked]
 - **"Make it better" means a NEW design**, not a polished copy. Don't attach the old image as a reference or say "keep the format" unless they ask; that reproduced the same design and frustrated them. [fixed]
+- **Titles need a flat, level top edge** with clear space above them for the logo. Tall script loops or ascenders (the G and d of "Grand") crashing into the logo must be fixed in the title prompt itself. On the flyer, measure the title's real top edge and keep a fixed gap below the logo. [fixed]
 - Write the image prompt tightly and show it before spending credits:
   "I wouldn't want to waste my Higgsfield credits." [asked]
 
