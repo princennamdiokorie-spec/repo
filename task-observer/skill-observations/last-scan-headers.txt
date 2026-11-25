@@ -17,3 +17,41 @@ reference:
 commands_verified: "run: generate_image_batch with use_unlim true from Claude Code — all 8 items rejected: unlimited generations are not available in Claude Code, only Claude chat, Claude Cowork, ChatGPT"
 next_actor: review
 ---
+# 0002-retouch-verified-only-inside-patch.md
+id: 2
+title: "Code retouch declared done after checking only the edited rectangle; the defect extended beyond it"
+status: open
+type: open-source
+skill: []
+proposes_skill: []
+target_file: [designs/kendrill/tools/patch_fabric.py]
+siblings_checked: "none — no skill-families.md registry exists; no installed skill covers local image retouching"
+area: "verifying a pixel-level image fix before reporting it"
+date: 2026-11-25
+session_context: "Removing an extra jacket pocket flap from an AI character sheet with a local texture-clone script"
+parked_until:
+resolved:
+resolution:
+reference: "designs/kendrill/characters/hero-sheet-pocketfix-before-after.jpg"
+commands_verified: "run: patch_fabric.py on the sheet with one region (x1221-1263 y467-525) — the director saw the flap still present; a gridded 5x zoom of the whole hip showed the flap ran to y545; a second region fixed it"
+next_actor: review
+---
+# 0003-outfit-reference-not-in-sheet-format.md
+id: 3
+title: "New character outfit made as a single view although the project's reference format is a multi-panel sheet"
+status: open
+type: open-source
+skill: []
+proposes_skill: []
+target_file: [CLAUDE.md]
+siblings_checked: "none — no skill-families.md registry exists; the format lives in the project's asset checklist, not a skill"
+area: "producing character reference assets"
+date: 2026-11-25
+session_context: "Making the hero's airport-arrival outfit reference for an AI video ad"
+parked_until:
+resolved:
+resolution:
+reference: "designs/kendrill/characters/hero-arrival-sheet-v1.png"
+commands_verified: none
+next_actor: review
+---
