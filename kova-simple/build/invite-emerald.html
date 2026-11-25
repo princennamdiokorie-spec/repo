@@ -1,0 +1,86 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+/* Kova grand opening invitation card (front), styled from the spotlight flyer. 1080x1800 css, rounded corners. */
+:root{--navy:#01140e;--silver:#c9d8d1;--blue:#18b07a;--blue-hi:#e8cf9a}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1800px;background:transparent;overflow:hidden}
+.card{position:relative;width:1080px;height:1800px;border-radius:72px;overflow:hidden;
+  background:radial-gradient(ellipse 75% 40% at 50% 30%,#04382a 0%,#021d15 50%,#01140e 85%)}
+.grain{position:absolute;inset:0;opacity:.06;background:repeating-radial-gradient(circle at 30% 20%,#fff 0 1px,transparent 1px 3px)}
+svg.fx{position:absolute;left:0;top:0;width:1080px;height:1800px}
+.edge{position:absolute;inset:18px;border-radius:56px;border:1.5px solid rgba(232,207,154,.35);box-shadow:inset 0 0 22px rgba(24,176,122,.18)}
+
+.logo{position:absolute;left:50%;top:70px;width:210px;transform:translateX(-50%);filter:drop-shadow(0 0 12px rgba(24,176,122,.6))}
+.chrome{background:linear-gradient(180deg,#ffffff 0%,#e6f3ed 38%,#8fb3a3 55%,#f4fbf8 72%,#c3d8ce 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 #043322) drop-shadow(0 0 16px rgba(24,176,122,.5))}
+.t1,.t2{position:absolute;left:0;right:0;text-align:center;font:600 150px/1 Cinzel,serif;letter-spacing:8px;padding-left:8px}
+.t1{top:300px}
+.t2{top:455px}
+.of{position:absolute;left:50%;top:640px;width:74px;height:74px;transform:translateX(-50%) rotate(45deg);border:1.5px solid var(--blue-hi);
+  box-shadow:0 0 14px rgba(24,176,122,.6),inset 0 0 10px rgba(24,176,122,.4);background:rgba(1,20,14,.85)}
+.of span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform:rotate(-45deg);font:600 26px/1 Cinzel,serif;color:#eef8f3;letter-spacing:2px;padding-left:2px}
+.brand{position:absolute;left:0;right:0;top:752px;text-align:center;font:800 74px/1 Cinzel,serif;letter-spacing:14px;padding-left:14px}
+.rule{position:absolute;left:50%;top:868px;width:440px;transform:translateX(-50%);display:flex;align-items:center;gap:16px}
+.rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--blue-hi))}
+.rule i.r{background:linear-gradient(270deg,transparent,var(--blue-hi))}
+.rule img{width:32px;filter:drop-shadow(0 0 6px rgba(24,176,122,.9))}
+
+.inv{position:absolute;left:0;right:0;top:926px;text-align:center;font:500 22px/1.75 Montserrat,sans-serif;letter-spacing:5px;padding-left:5px;color:#e8f5ef}
+.name{position:absolute;left:110px;right:110px;top:1080px;height:120px;border-radius:18px;
+  background:linear-gradient(180deg,#ffffff 0%,#eef8f3 60%,#ddeee6 100%);box-shadow:0 0 0 2px rgba(232,207,154,.55),0 0 26px rgba(24,176,122,.35)}
+
+.date{position:absolute;left:90px;right:90px;top:1270px;height:150px}
+.date svg{position:absolute;inset:0;width:100%;height:100%}
+.cells{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.cell{flex:1;text-align:center;color:#eef8f3}
+.cell.s{font:600 24px/1 Montserrat,sans-serif;letter-spacing:4px;padding-left:4px}
+.cell.m .big{font:600 58px/1 Cinzel,serif;letter-spacing:2px}
+.cell.m .sm{font:600 16px/1 Montserrat,sans-serif;letter-spacing:4px;margin-top:8px;color:var(--silver)}
+.sep{width:2px;height:70px;background:var(--blue-hi);box-shadow:0 0 8px var(--blue)}
+.cell b{color:var(--blue-hi);font-weight:600}
+
+.addr{position:absolute;left:0;right:0;top:1490px;text-align:center;font:600 28px/1.6 Montserrat,sans-serif;letter-spacing:4px;padding-left:4px;color:#fff}
+.addr .pin{display:inline-block;width:22px;height:22px;vertical-align:-2px;margin-right:12px}
+.foot{position:absolute;left:50%;bottom:62px;width:120px;transform:translateX(calc(-50% + 3.4px));opacity:.9;filter:drop-shadow(0 0 10px rgba(24,176,122,.7))}
+</style></head><body>
+<div class="card">
+  <svg class="fx" viewBox="0 0 1080 1800">
+    <defs>
+      <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cff5e5" stop-opacity=".5"/><stop offset=".65" stop-color="#18b07a" stop-opacity=".12"/><stop offset="1" stop-color="#18b07a" stop-opacity="0"/></linearGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+      <radialGradient id="pool" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e8cf9a" stop-opacity=".55"/><stop offset="1" stop-color="#18b07a" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="540" cy="1712" rx="300" ry="34" fill="url(#pool)"/>
+  </svg>
+  <div class="grain"></div>
+  <div class="edge"></div>
+
+  <img class="logo" src="../assets/kova-logo-transparent-emerald.png" alt="">
+  <div class="t1 chrome">GRAND</div>
+  <div class="t2 chrome">OPENING</div>
+  <div class="of"><span>OF</span></div>
+  <div class="brand chrome">KOVA LIFESTYLE</div>
+  <div class="rule"><i></i><img src="../assets/kova-symbol-hd-emerald.png" alt=""><i class="r"></i></div>
+
+  <div class="inv">YOU ARE SPECIALLY INVITED TO<br>JOIN US FOR THE GRAND OPENING<br>OF OUR NEW CLUB</div>
+  <div class="name"></div>
+
+  <div class="date">
+    <svg viewBox="0 0 900 150" preserveAspectRatio="none">
+      <defs><linearGradient id="ln" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#9fc8b6"/><stop offset="1" stop-color="#e8f4ef"/></linearGradient></defs>
+      <path d="M30,2 H870 L898,30 V120 L870,148 H30 L2,120 V30 Z" fill="rgba(1,20,14,.6)" stroke="url(#ln)" stroke-width="2"/>
+      <path d="M40,14 H860 L886,40 V110 L860,136 H40 L14,110 V40 Z" fill="none" stroke="#e8cf9a" stroke-width="1" opacity=".55"/>
+    </svg>
+    <div class="cells">
+      <div class="cell s">SATURDAY</div><div class="sep"></div>
+      <div class="cell m"><div class="big chrome">12TH</div><div class="sm">DEC. 2026</div></div><div class="sep"></div>
+      <div class="cell s">AT <b>10:00 PM</b></div>
+    </div>
+  </div>
+
+  <div class="addr"><svg class="pin" viewBox="0 0 24 24"><path fill="#e8cf9a" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>30 OLEH ROAD,<br>SAPELE, DELTA STATE.</div>
+  <img class="foot" src="../assets/kova-symbol-hd-emerald.png" alt="">
+</div>
+</body></html>
