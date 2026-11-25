@@ -1,0 +1,3 @@
+
+## 14:28 | claude/hopeful-shannon-kz38dt
+Removed the extra upper pocket flap on the right hip of hero sheet `2e8efd43` in code (no AI generation, no credits) via `designs/kendrill/tools/patch_fabric.py`, saved as `designs/kendrill/characters/hero-sheet-suit-v1-pocketfix.png` and pushed, but the user reports the fix did not work, so the pocket remains unresolved and the sheet is not approved; Higgsfield upload and user approval are still pending.

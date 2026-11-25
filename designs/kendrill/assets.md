@@ -25,7 +25,7 @@ Pre-plate originals: Escalade 4f8436eb-94f6-453f-9fe6-1da474077b8e · LX600 446f
 | Asset | Job / file | Status |
 |---|---|---|
 | Hero face (Soul Cinema) | hf_20261124_135842_458eb8ca-3f19-4ba7-8b02-02f6fac51e02 | Approved |
-| Hero three-panel sheet, suit (Nano Banana Pro) | source job 2e8efd43-e480-4190-b057-b2e9806ceaa3 → fixed locally: `characters/hero-sheet-suit-v1-pocketfix.png` | Extra ticket pocket removed in code (`tools/patch_fabric.py`, region x1221–1263 y467–525); awaiting director approval |
+| Hero three-panel sheet, suit (Nano Banana Pro) | source job 2e8efd43-e480-4190-b057-b2e9806ceaa3 → fixed locally: `characters/hero-sheet-suit-v1-pocketfix.png` | Extra ticket pocket removed in code (`tools/patch_fabric.py`, regions x1221–1263 y467–525 and x1213–1264 y512–544); awaiting director approval |
 | Hero arrival outfit, night outfit, details (watch/button, shoe) | — | To make |
 | Girlfriend / host | — | To make; voice to be fixed by reference or recording + lip sync |
 | Chauffeurs 1–3 | — | To make; same uniform, clearly different faces |
