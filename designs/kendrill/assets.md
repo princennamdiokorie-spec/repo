@@ -64,3 +64,42 @@ The real Lekki–Ikoyi Link Bridge: one grey concrete pylon splitting into two p
 | F Club + host | 1:20–1:38 | 18s, host line 1:25–1:33 |
 
 Balance at handover: 2,659.01 credits (Ultra). Prices: Nano Banana Pro image 2 credits; Seedance 2.5 omni_reference 9:16 — 480p draft 3 cr/s, 720p 7 cr/s.
+
+## Autonomous run, 2026-11-25 — all checked by Claude, awaiting director approval
+
+### Supporting cast — Soul Cinema close-up → Nano Banana Pro three-panel sheet (16:9)
+
+| Character | Close-up (Soul Cinema) | Sheet (Nano Banana Pro) | File |
+|---|---|---|---|
+| Girlfriend / host | 33722e90-a6c6-49a2-a620-36e93e1da054 | 73440d65-36ba-49a6-b061-518223c9c4dc | `characters/girlfriend-sheet-v1.png` |
+| Chauffeur 1 (Ghost, hero) | 1398d4e5-9159-436e-944e-3b63a769e217 | 4aa5d8cd-f972-4d7b-acb3-c0fd95112652 | `characters/chauffeur1-sheet-v1.png` |
+| Chauffeur 2 (Escalade, Friend 1) | 6f36f14b-177a-4669-bb62-a7d176745a5b | 2ef46bff-b415-46aa-9ca0-0b68795e67ea | `characters/chauffeur2-sheet-v1.png` |
+| Chauffeur 3 (Escalade, Friend 2) | f0023148-5105-4ff6-8121-d9dbe075980e | 1618ef98-3574-483d-a16b-88863621f384 | `characters/chauffeur3-sheet-v1.png` |
+| Friend 1 (olive blazer) | ed5736ac-46d5-43ce-a4a9-aa255463dfc2 | e1a5b9f9-d904-4c36-b064-a74fb0fb101e | `characters/friend1-sheet-v1.png` |
+| Friend 2 (black blazer) | 316210b2-acca-4a04-9c52-74c386eb578a | 24746b62-29f0-4417-b2ec-b84182cd6ba2 | `characters/friend2-sheet-v1.png` |
+
+Unused close-up takes: 912e2cd1 (girlfriend), 2e048354 (chauffeur), d76762cc (chauffeur), 50737e79 (chauffeur), 2e201542 (friend 1), edfb5411 (friend 2). All 12 on `characters/cast-closeup-options.jpg`.
+
+### Locations — Nano Banana Pro 9:16, each built from a real photo (Wikimedia Commons, imported into Higgsfield)
+
+| Location | Frame job | Real photo used (Higgsfield media ID ← Commons file) | File |
+|---|---|---|---|
+| Lekki–Ikoyi Link Bridge, day | a6873abc-5be1-4b9f-9e15-6756c20a2662 | 22f14775 ← Lekki_Ikoyi_Link_Bridge.jpg | `locations/bridge_day-v1.jpg` |
+| Lekki–Ikoyi Link Bridge, night | 2a84a2d9-6f02-4299-a0d0-e4bd0d933052 | 22f14775 + 1674e6ad ← Lekki_link_bridge_at_night.jpg | `locations/bridge_night-v1.jpg` |
+| MMIA arrivals kerb | 1a097bb1-fece-4b2f-a2b6-02f18bbd0b39 | e972e95b ← MMIA_T2_and_garage.png (new international terminal) | `locations/airport_kerb-v1.jpg` |
+| MMIA runway, jet landing | 5d4fc8d8-84ec-4241-aa01-df8083fe5698 | 248053fa ← MMIA_Intl_Terminal_2019.jpg (control tower) | `locations/runway-v1.jpg` |
+| Third Mainland Bridge | 4023abba-1fcc-4167-ae63-6f1fbebf8d22 | ddd8a42f ← Long_view_of_Third_Mainland_Bridge_from_Makoko.jpg | `locations/tmb-v1.jpg` |
+| Banana Island mansion, gate | 373efe69-eb09-435f-a4d1-efcf7ec2f13c | 7b681103 ← Banana_Island_Lagos.jpg (panorama) | `locations/mansion_gate-v1.jpg` |
+| Banana Island mansion, aerial | f5e5804b-2f39-4b17-82da-5ced673e2443 | gate frame + 7b681103 | `locations/mansion_aerial-v1.jpg` |
+| Victoria Island tower (Civic Centre Towers), kerb | f3761d65-df4d-4efa-b298-9942bd932fbf (emblem removed; original c226fad7) | f86f067b + 6a7be98f ← Civic Towers photos | `locations/tower_kerb-v1.jpg` |
+| Victoria Island tower, aerial | 7950cafc-d68f-4f04-bb82-255bc52850f6 | kerb frame + 6a7be98f | `locations/tower_aerial-v1.jpg` |
+| Waterfront restaurant, night (VI lagoon, Civic Centre Towers across the water) | 722b7efd-3e85-4d97-addb-629d27a6d8ff | 6a7be98f | `locations/restaurant-v1.jpg` |
+| Club entrance, night (Eko Atlantic towers behind) | af6c3ec0-1ed1-4319-85ce-5c684317c61f | 780b4706 ← Eko_Atlantic_(Lagos)_Skyline.jpg | `locations/club-v1.jpg` |
+
+### Interior and details
+
+| Asset | Job | File |
+|---|---|---|
+| Rolls-Royce Ghost rear cabin (16:9), from a real Ghost cabin photo (3e4021bc ← Rolls-Royce_Ghost_II_Mandarin_Navy_Blue_(4).jpg) | b3eae01d-815a-4360-a99e-ca2900bfe2f0 | `details/ghost-interior-v1.jpg` |
+| Hero shoe stepping onto paving | 3203ddfd-14b1-4878-aa48-41a88a6f698e | `details/hero-shoe-v1.jpg` |
+| Hero hands buttoning jacket + watch | 52d8e5ea-002f-4832-b7a1-533f465b090e (retry; first try f4f0c3a5 failed) | pending |
