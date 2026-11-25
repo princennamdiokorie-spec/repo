@@ -1,3 +1,5 @@
 
 ## 14:28 | claude/hopeful-shannon-kz38dt
 Removed the extra upper pocket flap on the right hip of hero sheet `2e8efd43` in code (no AI generation, no credits) via `designs/kendrill/tools/patch_fabric.py`, saved as `designs/kendrill/characters/hero-sheet-suit-v1-pocketfix.png` and pushed, but the user reports the fix did not work, so the pocket remains unresolved and the sheet is not approved; Higgsfield upload and user approval are still pending.
+## 14:33 | claude/hopeful-shannon-kz38dt
+Fixed the extra right-hip pocket flap on hero sheet `2e8efd43` by removing its full height in code (no credits), saved as `designs/kendrill/characters/hero-sheet-suit-v1-pocketfix.png` and pushed, pending user pass check and Higgsfield upload; generated casual airport arrival outfit `df50fc48` (2 credits, saved as `designs/kendrill/characters/hero-arrival-outfit-v1.png`), then regenerating as a two-panel front/back sheet at 16:9 (2 credits) per user feedback, which is still in progress with the back view and night outfit not yet made.
