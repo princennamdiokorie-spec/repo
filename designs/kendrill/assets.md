@@ -28,7 +28,8 @@ Pre-plate originals: Escalade 4f8436eb-94f6-453f-9fe6-1da474077b8e · LX600 446f
 | Hero three-panel sheet, suit (Nano Banana Pro) | source job 2e8efd43-e480-4190-b057-b2e9806ceaa3 → fixed locally: `characters/hero-sheet-suit-v1-pocketfix.png` | Extra ticket pocket removed in code (`tools/patch_fabric.py`, regions x1221–1263 y467–525 and x1213–1264 y512–544); awaiting director approval |
 | Hero arrival outfit, full body (Nano Banana Pro, 2:3) | df50fc48-5f2f-45d4-a173-cab50960f677 · `characters/hero-arrival-outfit-v1.png` | Awaiting director approval |
 | Hero arrival outfit, two-panel sheet front+back (Nano Banana Pro, 16:9) | 19bbb172-d858-49cd-8b88-9311dae3ed3e · `characters/hero-arrival-sheet-v1.png` | Awaiting director approval — use this as the arrival reference |
-| Hero night outfit, details (watch/button, shoe) | — | To make (night outfit as a two-panel sheet) |
+| Hero night outfit, two-panel sheet front+back (Nano Banana Pro, made at 9:16) | b5d073e6-546f-461c-b757-d9353ab87d49 · `characters/hero-night-sheet-v1.png` | Checked ✓ (jacket buttoned, not open); awaiting director approval |
+| Hero details (watch/button, shoe) | — | To make |
 | Girlfriend / host | — | To make; voice to be fixed by reference or recording + lip sync |
 | Chauffeurs 1–3 | — | To make; same uniform, clearly different faces |
 | Friends 1–2 | — | To make; one outfit all day |
