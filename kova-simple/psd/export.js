@@ -7,7 +7,8 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const URL = 'file://' + path.resolve(__dirname, '../build/flyer-swap.html') + '?v=spotlight';
+const FLYER = process.env.FLYER || 'flyer-swap.html';           // e.g. FLYER=flyer-red.html for the red theme
+const URL = 'file://' + path.resolve(__dirname, '../build', FLYER) + '?v=spotlight';
 const DPR = 2;
 const OUT = path.resolve(process.argv[2] || 'out');
 

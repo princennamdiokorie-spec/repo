@@ -3,7 +3,7 @@
 // two-colour lines as style runs); the GRAND OPENING chrome is a gradient-overlay + drop-shadow +
 // outer-glow layer style, so it stays editable too. Each text layer also carries its rendered
 // pixels, so the file previews correctly before Photoshop re-renders the type.
-// Usage: node build.js <exportDir> <out.psd>
+// Usage: node build.js <exportDir> <out.psd> [theme.json]
 const fs = require('fs');
 const path = require('path');
 const { PNG } = require('pngjs');
@@ -36,14 +36,17 @@ const style = (r) => {
 };
 
 const hex = (h) => ({ r: parseInt(h.slice(1, 3), 16), g: parseInt(h.slice(3, 5), 16), b: parseInt(h.slice(5, 7), 16) });
-const CHROME = {   // same as the flyer's CSS: linear-gradient(180deg, #fff 0, #e6ebf3 38%, #9aa6b8 55%, #f4f7fb 72%, #c3cbd8 100%)
+// theme: chrome gradient stops, shadow and glow for the GRAND OPENING layer style (default = blue flyer)
+const TH = process.argv[4] ? JSON.parse(fs.readFileSync(process.argv[4], 'utf8'))
+  : { chrome: [['#ffffff', 0], ['#e6ebf3', .38], ['#9aa6b8', .55], ['#f4f7fb', .72], ['#c3cbd8', 1]], shadow: '#1a2b55', glow: '#2a8cff' };
+const CHROME = {   // matches the flyer's CSS linear-gradient(180deg, ...) on the title
   gradientOverlay: [{ enabled: true, blendMode: 'normal', opacity: 1, angle: -90, type: 'linear', scale: 1, align: true,
-    gradient: { name: 'Kova chrome', type: 'solid', smoothness: 1,
-      colorStops: [['#ffffff', 0], ['#e6ebf3', .38], ['#9aa6b8', .55], ['#f4f7fb', .72], ['#c3cbd8', 1]].map(([c, l]) => ({ color: hex(c), location: l, midpoint: 50 })),
+    gradient: { name: 'Kova chrome ' + (process.argv[4] ? path.basename(process.argv[4], '.json') : 'blue'), type: 'solid', smoothness: 1,
+      colorStops: TH.chrome.map(([c, l]) => ({ color: hex(c), location: l, midpoint: 50 })),
       opacityStops: [{ opacity: 1, location: 0, midpoint: 50 }, { opacity: 1, location: 1, midpoint: 50 }] } }],
-  dropShadow: [{ enabled: true, blendMode: 'normal', color: hex('#1a2b55'), opacity: 1, angle: 90, useGlobalLight: false,
+  dropShadow: [{ enabled: true, blendMode: 'normal', color: hex(TH.shadow), opacity: 1, angle: 90, useGlobalLight: false,
     distance: { units: 'Pixels', value: 4 }, size: { units: 'Pixels', value: 0 } }],
-  outerGlow: { enabled: true, blendMode: 'screen', color: hex('#2a8cff'), opacity: .45, size: { units: 'Pixels', value: 32 } },
+  outerGlow: { enabled: true, blendMode: 'screen', color: hex(TH.glow), opacity: .45, size: { units: 'Pixels', value: 32 } },
 };
 
 const raster = m.raster.map((r, i) => ({ name: r.name, ...loadCropped(r.file, i === 0) }));
