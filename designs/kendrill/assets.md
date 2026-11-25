@@ -11,10 +11,10 @@ https://claude.ai/artifact/6RvGwCwauTaL1bTLQbWGmX
 | Mercedes G63 | 30a56c73-bf23-48fc-b34e-de95d4e7691c | Plates checked ✓ |
 | Lexus LX600 | 5852fe56-990f-44b6-888d-fcf68703f3b3 | Plates checked ✓ |
 | Jetour T2 | 710306cb-55a2-4058-97ff-1665397c328d | Approved by director |
-| Rolls-Royce Ghost | b2d526c0-2235-4042-bef8-df3dc77d0f9b | Plates not yet checked |
-| Rolls-Royce Cullinan | 69cfe77f-5331-4959-97f9-ea4bb56b596d | Plates not yet checked |
-| Mercedes S580 | 73adb5a8-deac-4bf4-93f5-718860b6abff | Plates not yet checked |
-| Ferrari SF90 (red) | 11ac39c6-0515-403d-8e04-7ac1db496f2a | Not in the film yet; colour to check |
+| Rolls-Royce Ghost | b2d526c0-2235-4042-bef8-df3dc77d0f9b | Plates checked ✓ (2026-11-25) |
+| Rolls-Royce Cullinan | 69cfe77f-5331-4959-97f9-ea4bb56b596d | Plates checked ✓ (2026-11-25) |
+| Mercedes S580 | 73adb5a8-deac-4bf4-93f5-718860b6abff | Plates checked ✓ (2026-11-25) |
+| Ferrari SF90 (red) | 11ac39c6-0515-403d-8e04-7ac1db496f2a | Colour ✓ Rosso Corsa red, plates ✓; not in the film yet |
 
 Not used: Land Cruiser/Prado aa13908b-89c0-4758-910a-dffe0f740aff · Corvette 3f18ecc5-77bf-4c64-897e-f6f693d86466 · black SF90 da3636a7-9d0e-401c-b43c-1c3b25a7cfe3.
 
