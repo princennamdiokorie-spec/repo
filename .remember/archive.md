@@ -1,1 +1,4 @@
 # Archive
+
+## Week of 2026-11-16
+Installed design skills (taste-skill, typography-designer, top-design, logo-design, canvas-design, others), superpowers, remember, ECC minimal profile, and task-observer; created HIS & HERS logo variants; merged PRs #1 and #2 into main. Added `shotlist-and-visual-breakdown` skill and skipped `higgsfield-shotlist-director` (size and project-rule conflict). Kendrill Lagos fleet film reached script v3 (8s opening, all-black fleet, no on-screen car names), with 8 car and 6 location ref images generated via Higgsfield (~38 cr) and a Claude-chat runbook written for unlimited gens. Open items: 9-image regen (~25 cr) awaiting approval, memory untrack-vs-remove decision, and default-branch switch before deleting `claude/hopeful-shannon-kz38dt`.
