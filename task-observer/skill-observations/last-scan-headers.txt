@@ -55,3 +55,22 @@ reference: "designs/kendrill/characters/hero-arrival-sheet-v1.png"
 commands_verified: none
 next_actor: review
 ---
+# 0004-import-real-photos-server-side.md
+id: 4
+title: "Real reference photos can be imported server-side via media_import_url even when the sandbox network blocks the photo host"
+status: open
+type: open-source
+skill: [higgsfield-generate]
+proposes_skill: []
+target_file: [CLAUDE.md]
+siblings_checked: "none — no skill-families.md registry exists; higgsfield-generate is the only installed Higgsfield skill"
+area: "sourcing real-location reference photos for generation"
+date: 2026-11-25
+session_context: "Autonomous run building Lagos location frames from real photos"
+parked_until:
+resolved:
+resolution:
+reference: "designs/kendrill/autonomous-run-ledger.md"
+commands_verified: "run: media_import_url on commons.wikimedia.org/wiki/Special:FilePath/<file> — imported 12 Commons photos while direct fetches from the sandbox failed with ENOTFOUND"
+next_actor: review
+---
