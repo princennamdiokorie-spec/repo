@@ -29,7 +29,9 @@ svg.fx{position:absolute;left:0;top:0;width:1080px;height:1350px}
 .rule i.r{background:linear-gradient(270deg,transparent,var(--blue-hi))}
 .rule img{width:26px;filter:drop-shadow(0 0 6px rgba(42,140,255,.9))}
 .label{position:absolute;left:0;right:0;text-align:center;font:600 14px/1 Montserrat,sans-serif;letter-spacing:9px;padding-left:9px;color:var(--blue-hi)}
-.name{position:absolute;left:0;right:0;text-align:center;font:700 86px/1 Cinzel,serif;letter-spacing:4px;padding-left:4px}
+.name{position:absolute;left:0;right:0;text-align:center;font:700 92px/1 Cinzel,serif;letter-spacing:4px;padding-left:4px}
+/* artist name: Cinzel Bold, glow matched to the client's Runtown flyer (about twice the title glow) */
+.name.chrome{filter:drop-shadow(0 2px 0 #1a2b55) drop-shadow(0 0 8px rgba(160,205,255,.75)) drop-shadow(0 0 26px rgba(42,140,255,.65))}
 
 .dt{position:absolute;left:0;right:0;text-align:center;font:500 30px/1 Montserrat,sans-serif;letter-spacing:6px;padding-left:6px;color:#eef2f8}
 .dt b{font-weight:800;color:var(--blue-hi)}
@@ -82,7 +84,7 @@ document.getElementById('dt').innerHTML = `${DAY} <b>${DATE}</b> 2026`;
 const set = (id, y) => document.getElementById(id).style.top = y + 'px';
 let y = 924; set('r1', y); y += 32;
 if (LABEL) { set('label', y); y += 14 + 14; } else document.getElementById('label').remove();
-set('name', y); y += 86 + 16; set('r2', y); y += 32;
+set('name', y); y += 92 + 16; set('r2', y); y += 32;
 set('dt', y); y += 30 + 20; set('d2', y); y += 19 + 36;
 set('res', y); y += 12 + 20; set('c1', y); y += 22 + 18; set('c2', y);
 let s = 9, r = () => (s = (s * 16807) % 2147483647) / 2147483647, h = '';
