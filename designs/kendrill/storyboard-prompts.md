@@ -149,3 +149,35 @@ Panel 6 (1:35–1:38): following from behind: the couple walk through the glowin
 ---
 
 **After each run:** send me the job ID. I'll check it panel by panel against the fail list, and record it in `assets.md`. Panels that come out well can serve as start frames for their shots.
+
+---
+
+## Opening 30 seconds (0:00–0:30), v2 — new aerial opener, for Seedance as one 30s clip
+
+Replaces Clips A + B1 + B2 above with one storyboard. The opener follows the approved camera sketch (`storyboards/clipA-camera-sketch.png`) and Seedance draft v2 (`c9e58cb1`): drone outside the bridge, three-quarter view, descending.
+
+**Settings:** Nano Banana Pro · 16:9 · 2K · Unlimited on.
+
+**Attach (14, the maximum), in this order:** Hero arrival sheet `19bbb172` · Friend 1 `e1a5b9f9` · Friend 2 `24746b62` · Chauffeur 1 `4aa5d8cd` · Chauffeur 2 `2ef46bff` · Chauffeur 3 `1618ef98` · Escalade `d923c693` · G63 `30a56c73` · Ghost `b2d526c0` · Ghost interior `b3eae01d` · Link Bridge day `a6873abc` · director's aerial frame `57d93c12` (in your uploads) · Airport kerb `1a097bb1` · Third Mainland Bridge `4023abba`
+
+(LX600, Jetour T2 and the runway frame are left out to stay within 14; they're tiny or described in the prompt.)
+
+```
+Cinematic storyboard sheet for a luxury chauffeur-car commercial set in Lagos, Nigeria. A clean grid of 13 vertical 9:16 panels on a dark background, each panel numbered in its top-left corner. Every panel is a photorealistic film frame, using the attached references for every person, car and place, so the same faces, cars and locations appear in every panel. Every moving car has a chauffeur visible at the wheel. Every car plate reads KENDRILL. No other text.
+Layout: two rows, seven panels on top and six below.
+Panel 1 (0:00–0:05): very high and far, a drone out over the lagoon to the side of the Lekki–Ikoyi Link Bridge, seeing the whole bridge in three-quarter view: the single grey pylon splitting into two prongs at the top, white cables fanning to one side, black-and-white kerbs, the Ikoyi skyline across the water; a tiny convoy of six gloss-black SUVs in the right-hand lane driving away. The camera stays outside the bridge.
+Panel 2 (0:05): extreme macro of the chrome Cadillac crest on a black Escalade's grille, bridge cables reflected across the chrome.
+Panel 3 (0:06): close on a black Mercedes G63's round headlight and slatted grille, the grey pylon soft behind, the chauffeur visible through the windscreen.
+Panel 4 (0:07–0:08): low close-up of a black Escalade's wheel, Cadillac crest on the centre cap, rolling over a bridge expansion joint.
+Panel 5 (0:08–0:10): car-mounted camera inches off the road beside the lead black Escalade's spinning front wheel, a Lagos expressway blurred behind.
+Panel 6 (0:10–0:12): drone chase from behind: a three-car convoy racing left to right on a Lagos expressway, black Escalade, black Rolls-Royce Ghost in the middle, black Escalade, a chauffeur visible at each wheel.
+Panel 7 (0:12–0:14): 200mm long lens with heat shimmer: a passenger jet touching down at Murtala Muhammed International Airport, the control tower and terminal beyond.
+Panel 8 (0:14–0:17): Steadicam leading backward: the hero from the first reference, in his arrival outfit and sunglasses, walks out of the arrivals hall, bag in hand, glancing at his gold watch; Friend 1 (olive blazer) and Friend 2 (black blazer) a pace behind.
+Panel 9 (0:17–0:20): medium wide along the arrivals kerb, as in the kerb reference: three chauffeurs in identical black suits and white gloves, each beside his car (black Escalade, black Rolls-Royce Ghost, black Escalade), nod and take the bags.
+Panel 10 (0:20–0:22): wide from across the kerb: all three rear doors swing open at the same moment; the hero steps into the Ghost in the middle, each friend into an Escalade.
+Panel 11 (0:22–0:24): inside the Ghost: the hero sinks into the cream leather rear seat under the starlight headliner, the door closing gently.
+Panel 12 (0:24–0:27): wide over the bonnet: Chauffeur 1 walks round past the Spirit of Ecstasy and takes the wheel; the convoy begins to pull away.
+Panel 13 (0:27–0:30): drone top-down tracking: the convoy, Escalade, Ghost, Escalade, crossing Lagos's Third Mainland Bridge left to right over the lagoon.
+```
+
+**Check:** panel 1 is outside the bridge in three-quarter view, not on the road; the bridge convoy has six cars in the right-hand lane driving away; the airport convoy is Escalade–Ghost–Escalade with the Ghost in the middle, moving left to right; the hero is in the arrival outfit with the watch glance; no friend gets into the Ghost; the three doors open together; a chauffeur at every wheel.
