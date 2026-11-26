@@ -103,3 +103,11 @@ Unused close-up takes: 912e2cd1 (girlfriend), 2e048354 (chauffeur), d76762cc (ch
 | Rolls-Royce Ghost rear cabin (16:9), from a real Ghost cabin photo (3e4021bc ← Rolls-Royce_Ghost_II_Mandarin_Navy_Blue_(4).jpg) | b3eae01d-815a-4360-a99e-ca2900bfe2f0 | `details/ghost-interior-v1.jpg` |
 | Hero shoe stepping onto paving | 3203ddfd-14b1-4878-aa48-41a88a6f698e | `details/hero-shoe-v1.jpg` |
 | Hero hands buttoning jacket + watch | 52d8e5ea-002f-4832-b7a1-533f465b090e (retry; first try f4f0c3a5 failed) | pending |
+
+## Storyboards
+
+| Clip | Job | File | Status |
+|---|---|---|---|
+| A · Bridge opener (5 panels, 0:00–0:08) | 1c19928e-dd0a-463d-82a7-0293d717f240 | `storyboards/clipA-storyboard-v1.png` | Fails checks: panel 3 wheel has a Mercedes hub (should be Escalade); panel 4 convoy comes head-on instead of passing side-on; panel 5 shows five cars, not six, and travels up-frame, not left to right |
+
+**Model note (found 2026-11-26):** every image this project logged as "Nano Banana Pro" was actually generated with Higgsfield's `nano_banana_2` (Nano Banana 2, served as `nano_banana_flash`). The real Nano Banana Pro is `nano_banana_pro`, also 2 credits at 2K.
