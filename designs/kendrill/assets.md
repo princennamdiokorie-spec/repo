@@ -108,6 +108,7 @@ Unused close-up takes: 912e2cd1 (girlfriend), 2e048354 (chauffeur), d76762cc (ch
 
 | Clip | Job | File | Status |
 |---|---|---|---|
-| A · Bridge opener (5 panels, 0:00–0:08) | 1c19928e-dd0a-463d-82a7-0293d717f240 | `storyboards/clipA-storyboard-v1.png` | Fails checks: panel 3 wheel has a Mercedes hub (should be Escalade); panel 4 convoy comes head-on instead of passing side-on; panel 5 shows five cars, not six, and travels up-frame, not left to right |
+| A · Bridge opener v2 (Nano Banana Pro) | edb4a9d1-1fcb-4d04-b38c-9e7651c3401f | `storyboards/clipA-storyboard-v2.png` | Panels 1–3 pass (Cadillac crest, G63 with chauffeur, Escalade wheel with Cadillac cap). Panel 4: side-on Escalade with chauffeur and correct pylon, but it drives right to left and only one car shows. Panel 5 fails: an extra wide panel was added, and the panels show 8–11 cars in two lanes instead of six in single file |
+| A · Bridge opener v1 (5 panels, 0:00–0:08) | 1c19928e-dd0a-463d-82a7-0293d717f240 | `storyboards/clipA-storyboard-v1.png` | Fails checks: panel 3 wheel has a Mercedes hub (should be Escalade); panel 4 convoy comes head-on instead of passing side-on; panel 5 shows five cars, not six, and travels up-frame, not left to right |
 
-**Model note (found 2026-11-26):** every image this project logged as "Nano Banana Pro" was actually generated with Higgsfield's `nano_banana_2` (Nano Banana 2, served as `nano_banana_flash`). The real Nano Banana Pro is `nano_banana_pro`, also 2 credits at 2K.
+**Model note (2026-11-26):** all autonomous-run images were submitted as `nano_banana_pro` (Nano Banana Pro) ✓. Higgsfield's job status reports Nano Banana Pro under the internal name `nano_banana_2`, while the catalogue model `nano_banana_2` is Nano Banana 2, reported as `nano_banana_flash`. Always submit `nano_banana_pro`. Only the Clip A storyboard v1 (1c19928e) was made on the wrong model (Nano Banana 2).
