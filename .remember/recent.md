@@ -1,1 +1,4 @@
 # Recent
+
+## 2026-11-25
+Kendrill Lagos fleet film: installed film-pipeline skill (pushed); wrote 8 director rules to CLAUDE.md; rebuilt assets.md v4 (committed, pushed). Hero suit sheet pocket fix done in code (no credits), but user says it failed and the pocket bug is unresolved; suit, arrival (2-panel front/back), and night (9:16, not 16:9) sheets all await approval. Friend 1 blazer changed to olive; 7 outfit-sheet prompts pushed for user to run in Unlimited. Autonomous run started with 100-credit cap (ledger kept); batch assets generated and Wikimedia Lagos location search run. Unfinished: girlfriend/host, remaining chauffeur/friend sheets, location refs, video runs (no video gen without explicit approval).
