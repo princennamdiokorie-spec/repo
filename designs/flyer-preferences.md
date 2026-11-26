@@ -173,3 +173,4 @@ gave · **[made]** an edit they made themselves · **[asked]** an explicit reque
   (see `kova-flyer/README.md`).
 
 - Artist/host names on Kova flyers: match the client RUNTOWN flyer weight, which measures heavier than Cinzel Bold (thick stem to cap height about 0.29). Use Cinzel Black (900) at about 66px cap height, with double glow. [evidence: user said "see the runtown weight" after a Cinzel 700 render, Nov 2026]
+- Host/artist photos: show more of the person (head to mid-torso, outfit visible), not a tight head-and-shoulders "passport" crop. Fade the photo out before the title so the text stays clean. [evidence: client on Highprince flyer, "Can't the pic be more full? Instead of being like a passport", Nov 2026]

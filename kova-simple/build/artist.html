@@ -15,10 +15,10 @@ svg.fx{position:absolute;left:0;top:0;width:1080px;height:1350px}
 .logo{position:absolute;left:50%;top:40px;width:150px;transform:translateX(-50%);filter:drop-shadow(0 0 10px rgba(42,140,255,.55))}
 .presents{position:absolute;left:0;right:0;top:154px;text-align:center;font:500 13px/1 Montserrat,sans-serif;letter-spacing:8px;padding-left:8px;color:var(--silver)}
 
-.photo{position:absolute;left:calc(50% + 18px);top:188px;width:650px;transform:translateX(-50%);filter:grayscale(1) contrast(1.08) brightness(1.02);
-  -webkit-mask-image:linear-gradient(180deg,#000 50%,transparent 69%),linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+.photo{--pw:650px;--f0:50%;--f1:69%;--px:18px;position:absolute;left:calc(50% + var(--px));top:188px;width:var(--pw);transform:translateX(-50%);filter:grayscale(1) contrast(1.08) brightness(1.02);
+  -webkit-mask-image:linear-gradient(180deg,#000 var(--f0),transparent var(--f1)),linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);
   -webkit-mask-composite:source-in;mask-composite:intersect;
-  mask-image:linear-gradient(180deg,#000 50%,transparent 69%),linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
+  mask-image:linear-gradient(180deg,#000 var(--f0),transparent var(--f1)),linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
 
 .chrome{background:linear-gradient(180deg,#ffffff 0%,#e6ebf3 38%,#9aa6b8 55%,#f4f7fb 72%,#c3cbd8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
   filter:drop-shadow(0 2px 0 #1a2b55) drop-shadow(0 0 16px rgba(42,140,255,.45))}
@@ -79,6 +79,8 @@ if (P.get('nw')) document.getElementById('name').style.fontWeight = P.get('nw');
 const NAME = P.get('name') || 'YHEMOLEE', LABEL = P.get('label') ?? 'HOSTED BY', DAY = P.get('day') || 'THU', DATE = P.get('date') || '10TH DEC';
 document.getElementById('photo').src = P.get('photo') || '../artists/yhemolee.png';
 // ?bw=0 keeps the photo in colour (default black & white)
+// ?pw=760&f0=58&f1=80&px=0 : photo width (px) and bottom fade start/end (% of photo height), horizontal nudge
+for (const [k, u] of [['pw', 'px'], ['f0', '%'], ['f1', '%'], ['px', 'px']]) if (P.get(k)) document.getElementById('photo').style.setProperty('--' + k, P.get(k) + u);
 if (P.get('bw') === '0') document.getElementById('photo').style.filter = 'contrast(1.05) brightness(1.06) saturate(1.05)';
 document.getElementById('name').textContent = NAME;
 document.getElementById('label').textContent = LABEL;
