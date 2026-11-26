@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;500;600;700;800&display=block" rel="stylesheet">
 <style>
 /* Kova artist/host flyer (blue, matches the client's Runtown flyer). 1080x1350.
-   ?name=YHEMOLEE&label=HOSTED%20BY&day=THU&date=10TH%20DEC&photo=../artists/yhemolee.png */
+   ?name=YHEMOLEE&label=HOSTED%20BY&day=THU&date=10TH%20DEC&photo=../artists/yhemolee.png&bw=0 */
 :root{--navy:#040a1c;--silver:#c9ced8;--blue:#2a8cff;--blue-hi:#7cc4ff}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
@@ -78,6 +78,8 @@ const P = new URLSearchParams(location.search);
 if (P.get('nw')) document.getElementById('name').style.fontWeight = P.get('nw');
 const NAME = P.get('name') || 'YHEMOLEE', LABEL = P.get('label') ?? 'HOSTED BY', DAY = P.get('day') || 'THU', DATE = P.get('date') || '10TH DEC';
 document.getElementById('photo').src = P.get('photo') || '../artists/yhemolee.png';
+// ?bw=0 keeps the photo in colour (default black & white)
+if (P.get('bw') === '0') document.getElementById('photo').style.filter = 'contrast(1.05) brightness(1.06) saturate(1.05)';
 document.getElementById('name').textContent = NAME;
 document.getElementById('label').textContent = LABEL;
 document.getElementById('dt').innerHTML = `${DAY} <b>${DATE}</b> 2026`;
