@@ -1,0 +1,2 @@
+{ "chrome": [["#ffffff", 0], ["#e6ebf3", 0.38], ["#9aa6b8", 0.55], ["#f4f7fb", 0.72], ["#c3cbd8", 1]],
+  "shadow": "#1a2b55", "glow": "#2a8cff", "glowOpacity": 0.75, "glowSize": 44 }

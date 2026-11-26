@@ -13,7 +13,7 @@ const [dir, out] = [path.resolve(process.argv[2]), path.resolve(process.argv[3])
 const m = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8'));
 
 const FONTS = { 'Montserrat:400': 'Montserrat-Regular', 'Montserrat:500': 'Montserrat-Medium', 'Montserrat:600': 'Montserrat-SemiBold',
-                'Montserrat:700': 'Montserrat-Bold', 'Cinzel:600': 'Cinzel-SemiBold' };
+                'Montserrat:700': 'Montserrat-Bold', 'Cinzel:600': 'Cinzel-SemiBold', 'Cinzel:900': 'Cinzel-Black' };
 
 function loadCropped(file, full = false) {
   const png = PNG.sync.read(fs.readFileSync(path.join(dir, file)));
@@ -46,7 +46,7 @@ const CHROME = {   // matches the flyer's CSS linear-gradient(180deg, ...) on th
       opacityStops: [{ opacity: 1, location: 0, midpoint: 50 }, { opacity: 1, location: 1, midpoint: 50 }] } }],
   dropShadow: [{ enabled: true, blendMode: 'normal', color: hex(TH.shadow), opacity: 1, angle: 90, useGlobalLight: false,
     distance: { units: 'Pixels', value: 4 }, size: { units: 'Pixels', value: 0 } }],
-  outerGlow: { enabled: true, blendMode: 'screen', color: hex(TH.glow), opacity: .45, size: { units: 'Pixels', value: 32 } },
+  outerGlow: { enabled: true, blendMode: 'screen', color: hex(TH.glow), opacity: TH.glowOpacity ?? .45, size: { units: 'Pixels', value: TH.glowSize ?? 32 } },
 };
 
 const raster = m.raster.map((r, i) => ({ name: r.name, ...loadCropped(r.file, i === 0) }));
