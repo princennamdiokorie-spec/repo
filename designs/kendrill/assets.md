@@ -130,3 +130,20 @@ Unused close-up takes: 912e2cd1 (girlfriend), 2e048354 (chauffeur), d76762cc (ch
 |---|---|---|---|
 | 1 · panels 1–7 (0:00–0:14) | 0a0e2016-187f-43d9-8c63-d2abc25492e9 | `storyboards/opening30-sheet1-v1.png` | Cars now match their references exactly (Cadillac crest and wheel cap, G63 with chauffeur, Ghost grille) ✓; real MMIA tower and terminal ✓. Panel 1 is on the bridge axis, not outside, with 8 cars in two lanes ✗. Panel 6 has the convoy side by side coming toward camera, with extra G63s ✗ |
 | 2 · panels 8–13 (0:14–0:30) | 8b734d77-3ed3-4e3b-9461-563e339a9bcc | `storyboards/opening30-sheet2-v1.png` | Hero face consistent, watch glance ✓; kerb with Escalade–Ghost–Escalade and three chauffeurs ✓; Ghost interior with starlight ✓; chauffeur past the Spirit of Ecstasy ✓. Friends don't match (one copies the hero's outfit) ✗; chauffeurs in waistcoats, no jackets or gloves ✗; the doors-opening panel is missing and the interior appears twice ✗; panel 13 convoy is side by side toward camera, not single file left to right ✗ |
+
+### Opening 30s — single 9:16 frames with Elements (Nano Banana Pro, 2 credits each), `storyboards/opening30-frames/`
+
+**Director's change (2026-11-26): the airport convoy is three 2026 Escalades — no Ghost at the airport.** Hero in the middle Escalade. The Escalade element now says 2026 model; the chauffeur elements say full suit jacket, no waistcoat.
+
+| Shot | Job | Review |
+|---|---|---|
+| 1 Bridge aerial | 31d6d827-284e-41a7-95d2-761bcba9ca67 | Correct order and 2026 Escalade ✓, but driving toward camera on the wrong side and the camera is near the deck edge ✗ |
+| 6 Run to the airport | 6ba76975-7b83-477c-a967-0d81fbfe17c9 | Three 2026 Escalades single file ✓, KENDRILL plates ✓, right-hand side ✓; coming toward camera instead of a chase from behind |
+| 8 Walk-out | 2d05d0f0-663f-41d9-9f86-13dff8e9c88c | Three distinct men in their own outfits ✓, watch glance ✓ |
+| 9 Kerb | cfb5a240-ac81-4ba3-ad54-eebd3721bbef | Three 2026 Escalades, chauffeurs in full suits and gloves ✓ |
+| 10 Doors | 177b3fd6-d525-4a0b-8d43-01a2fc5734f6 | Doors open along the line ✓; people small |
+| 11 Interior | 15e4fba1-c8ac-41ce-8a8d-719bea68e8fe | Hero getting into the Escalade rear seat, watch ✓ |
+| 12 Chauffeur to the wheel | 6e4f0e20-20ee-4a26-b18f-bc745f5fcb5b | Past the Cadillac crest, KENDRILL plate, gloves ✓ |
+| 13 Third Mainland Bridge | f4873ed8-3a1a-46d1-9b98-0e758b04273f | Three Escalades single file ✓ but the bridge is drawn as a crossing overpass, not the long straight Third Mainland Bridge ✗ |
+
+Superseded before review (Ghost versions, made just before the change): 6 f247f2c5, 9 6ac85eac, 10 a0966a73, 13 c5d70b44.
