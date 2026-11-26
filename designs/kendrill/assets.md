@@ -147,3 +147,6 @@ Unused close-up takes: 912e2cd1 (girlfriend), 2e048354 (chauffeur), d76762cc (ch
 | 13 Third Mainland Bridge | f4873ed8-3a1a-46d1-9b98-0e758b04273f | Three Escalades single file ✓ but the bridge is drawn as a crossing overpass, not the long straight Third Mainland Bridge ✗ |
 
 Superseded before review (Ghost versions, made just before the change): 6 f247f2c5, 9 6ac85eac, 10 a0966a73, 13 c5d70b44.
+| 1 Bridge aerial (replacement) | last frame of Seedance draft v2 c9e58cb1 | Outside, three-quarter view, convoy in the near lane driving away ✓; five cars visible. File `shot01-bridge-aerial-from-seedance-v2.png` (free) |
+| 12 Chauffeur to the wheel v2 | c6488dca-049b-4e33-9ddd-f7c6e924b10a | Three Escalades lined up ✓, walks round the front ✓, but the chauffeur is not Chauffeur 1 (wrong face and ethnicity) ✗ |
+| 13 Third Mainland Bridge v2 | 98575230-e5c5-4900-8403-2cf05d25b241 | Real Third Mainland look with Makoko ✓, three Escalades single file ✓; as generated they drove toward camera on the wrong side, so it was mirrored (free): `shot13-tmb-escalades-v2-mirrored.png` puts them on the correct side |
