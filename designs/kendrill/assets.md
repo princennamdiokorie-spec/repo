@@ -115,3 +115,9 @@ Unused close-up takes: 912e2cd1 (girlfriend), 2e048354 (chauffeur), d76762cc (ch
 | A · Opening aerial frame v1 (Nano Banana Pro edit of the director's aerial frame, ref 57d93c12) | 15082484-aa87-42cd-93f2-d3776423c43d | `storyboards/clipA-opening-frame-v1.png` | Fails: 7 cars (one cut off at lower left), order wrong (from the front: two unclear SUVs, Jetour, LX600, G63, Escalade, Escalade). Scene, cables, skyline and light are right. Video not started |
 | A · Opening aerial frame v2 | 80f0bd5f-f30f-404b-b327-aeda16ee8fd0 | `storyboards/clipA-opening-frame-v2.png` | Six cars ✓, all in frame ✓, but they face the camera, and the order from the nearest is Escalade, G63, Jetour, LX600, LX600, Escalade (needs Escalade, G63, LX600, Jetour, G63, Escalade). Plates garbled. Video not started |
 | A · Opening aerial frame v3 (edit of v2) | 3b50557b-121e-4896-9cec-1c1545f4ee54 | `storyboards/clipA-opening-frame-v3.png` | Edit had almost no effect: still Escalade, G63, Jetour, LX600, non-G63 SUV, Escalade from the front; plates still garbled. Video not started |
+
+### Clip A video drafts
+
+| Draft | Job | File | Review |
+|---|---|---|---|
+| Aerial descent, 8s 480p (Seedance 2.5 omni-reference: 4 car sheets + bridge day frame, no start frame) | 4c53025e-96d9-45aa-82c7-c00f7d3e88c3 | `clips/clipA-aerial-480p-draft-v1.mp4` | Real Link Bridge (split pylon, chequered median, Ikoyi skyline) ✓; convoy in the right-hand lane driving away ✓; six cars in the mid and end frames ✓; Escalade at the back, G-Wagon ahead of it ✓, the front cars are too small at 480p to confirm the order; descent along the bridge toward the pylon. Chauffeurs not visible (cars seen from behind and above). 24 credits |
