@@ -1,0 +1,92 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=block" rel="stylesheet">
+<style>
+/* Kova artist/host flyer (blue, matches the client's Runtown flyer). 1080x1350.
+   ?name=YHEMOLEE&label=HOSTED%20BY&day=THU&date=10TH%20DEC&photo=../artists/yhemolee.png */
+:root{--navy:#040a1c;--silver:#c9ced8;--blue:#2a8cff;--blue-hi:#7cc4ff}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:var(--navy);overflow:hidden}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden;
+  background:radial-gradient(ellipse 70% 42% at 50% 34%,#0b2257 0%,#06112e 45%,#040a1c 80%)}
+.grain{position:absolute;inset:0;opacity:.06;background:repeating-radial-gradient(circle at 30% 20%,#fff 0 1px,transparent 1px 3px)}
+svg.fx{position:absolute;left:0;top:0;width:1080px;height:1350px}
+
+.logo{position:absolute;left:50%;top:40px;width:150px;transform:translateX(-50%);filter:drop-shadow(0 0 10px rgba(42,140,255,.55))}
+.presents{position:absolute;left:0;right:0;top:154px;text-align:center;font:500 13px/1 Montserrat,sans-serif;letter-spacing:8px;padding-left:8px;color:var(--silver)}
+
+.photo{position:absolute;left:calc(50% + 18px);top:188px;width:650px;transform:translateX(-50%);filter:grayscale(1) contrast(1.08) brightness(1.02);
+  -webkit-mask-image:linear-gradient(180deg,#000 50%,transparent 69%),linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
+  mask-image:linear-gradient(180deg,#000 50%,transparent 69%),linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
+
+.chrome{background:linear-gradient(180deg,#ffffff 0%,#e6ebf3 38%,#9aa6b8 55%,#f4f7fb 72%,#c3cbd8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 #1a2b55) drop-shadow(0 0 16px rgba(42,140,255,.45))}
+.title{position:absolute;left:0;right:0;top:766px;text-align:center;font:600 92px/1 Cinzel,serif;letter-spacing:6px;padding-left:6px}
+.kicker{position:absolute;left:0;right:0;top:874px;text-align:center;font:700 21px/1 Montserrat,sans-serif;letter-spacing:12px;padding-left:12px;color:#e8ecf3}
+.rule{position:absolute;left:50%;width:420px;transform:translateX(-50%);display:flex;align-items:center;gap:16px}
+.rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--blue-hi))}
+.rule i.r{background:linear-gradient(270deg,transparent,var(--blue-hi))}
+.rule img{width:26px;filter:drop-shadow(0 0 6px rgba(42,140,255,.9))}
+.label{position:absolute;left:0;right:0;text-align:center;font:600 14px/1 Montserrat,sans-serif;letter-spacing:9px;padding-left:9px;color:var(--blue-hi)}
+.name{position:absolute;left:0;right:0;text-align:center;font:700 86px/1 Cinzel,serif;letter-spacing:4px;padding-left:4px}
+
+.dt{position:absolute;left:0;right:0;text-align:center;font:500 30px/1 Montserrat,sans-serif;letter-spacing:6px;padding-left:6px;color:#eef2f8}
+.dt b{font-weight:800;color:var(--blue-hi)}
+.d2{position:absolute;left:0;right:0;text-align:center;font:500 19px/1 Montserrat,sans-serif;letter-spacing:5px;padding-left:5px;color:#eef2f8}
+.d2 b{font-weight:600;color:var(--blue-hi)}
+.res{position:absolute;left:0;right:0;text-align:center;font:500 12px/1 Montserrat,sans-serif;letter-spacing:7px;padding-left:7px;color:#8f9ab0}
+.c1{position:absolute;left:0;right:0;text-align:center;font:500 22px/1 Montserrat,sans-serif;letter-spacing:2px;color:#fff}
+.c1 b{color:var(--blue-hi);font-weight:600}
+.c2{position:absolute;left:0;right:0;text-align:center;font:400 18px/1 Montserrat,sans-serif;letter-spacing:1.5px;color:#d8dee9}
+.c2 .it{display:inline-flex;align-items:center;gap:8px;vertical-align:middle}
+.c2 .ic{width:19px;height:19px;flex:none;filter:drop-shadow(0 0 4px rgba(42,140,255,.6))}
+.c2 .bar{display:inline-block;width:1px;height:16px;vertical-align:middle;margin:0 18px;background:var(--blue-hi)}
+</style></head><body>
+<div class="f">
+  <svg class="fx" viewBox="0 0 1080 1350">
+    <defs>
+      <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6ff" stop-opacity=".5"/><stop offset=".6" stop-color="#2a8cff" stop-opacity=".16"/><stop offset="1" stop-color="#2a8cff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#3c96ff" stop-opacity=".55"/><stop offset=".5" stop-color="#1f6be0" stop-opacity=".2"/><stop offset="1" stop-color="#1f6be0" stop-opacity="0"/></radialGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <ellipse cx="540" cy="420" rx="300" ry="240" fill="url(#halo)"/>
+    <polygon points="495,185 585,185 790,720 290,720" fill="url(#beam)" filter="url(#soft)"/>
+    <g id="dust"></g>
+  </svg>
+  <div class="grain"></div>
+  <img class="logo" src="../assets/kova-logo-transparent.png" alt="">
+  <div class="presents">KOVA LIFESTYLE PRESENTS</div>
+  <img class="photo" id="photo" alt="">
+
+  <div class="title chrome">GRAND OPENING</div>
+  <div class="kicker">KOVA LIFESTYLE</div>
+  <div class="rule" id="r1"><i></i><img src="../assets/kova-symbol-hd.png" alt=""><i class="r"></i></div>
+  <div class="label" id="label"></div>
+  <div class="name chrome" id="name"></div>
+  <div class="rule" id="r2"><i></i><img src="../assets/kova-symbol-hd.png" alt=""><i class="r"></i></div>
+  <div class="dt" id="dt"></div>
+  <div class="d2" id="d2"><b>DOORS 10 PM</b> · 30 OLEH ROAD, SAPELE, DELTA STATE</div>
+  <div class="res" id="res">RESERVATIONS</div>
+  <div class="c1" id="c1">Call / WhatsApp <b>09166586974</b></div>
+  <div class="c2" id="c2"><span class="it"><svg class="ic" viewBox="0 0 24 24"><path fill="#7cc4ff" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>info@kova-lifestyle.com</span><span class="bar"></span><span class="it"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="none" stroke="#7cc4ff" stroke-width="2.2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="#7cc4ff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#7cc4ff"/></svg><svg class="ic" viewBox="0 0 24 24"><path fill="#7cc4ff" d="M12 2.2c3 0 5.3 2.3 5.3 5.4v2.6c.5.2 1.2-.3 1.7-.1.6.3.4 1-.1 1.3-.6.3-1.6.5-1.7 1 .6 1.9 2.2 3.5 4.1 4 .4.1.5.6.1.8-.7.4-1.7.4-2 .8-.2.5-.2 1-.7 1.1-.7.1-1.5-.3-2.4.1-1 .5-1.7 1.6-4.3 1.6s-3.3-1.1-4.3-1.6c-.9-.4-1.7 0-2.4-.1-.5-.1-.5-.6-.7-1.1-.3-.4-1.3-.4-2-.8-.4-.2-.3-.7.1-.8 1.9-.5 3.5-2.1 4.1-4-.1-.5-1.1-.7-1.7-1-.5-.3-.7-1-.1-1.3.5-.2 1.2.3 1.7.1V7.6c0-3.1 2.3-5.4 5.3-5.4z"/></svg>@kova.lifestyle</span></div>
+</div>
+<script>
+const P = new URLSearchParams(location.search);
+const NAME = P.get('name') || 'YHEMOLEE', LABEL = P.get('label') ?? 'HOSTED BY', DAY = P.get('day') || 'THU', DATE = P.get('date') || '10TH DEC';
+document.getElementById('photo').src = P.get('photo') || '../artists/yhemolee.png';
+document.getElementById('name').textContent = NAME;
+document.getElementById('label').textContent = LABEL;
+document.getElementById('dt').innerHTML = `${DAY} <b>${DATE}</b> 2026`;
+// vertical rhythm under the title block (css px); label is optional
+const set = (id, y) => document.getElementById(id).style.top = y + 'px';
+let y = 924; set('r1', y); y += 32;
+if (LABEL) { set('label', y); y += 14 + 14; } else document.getElementById('label').remove();
+set('name', y); y += 86 + 16; set('r2', y); y += 32;
+set('dt', y); y += 30 + 20; set('d2', y); y += 19 + 36;
+set('res', y); y += 12 + 20; set('c1', y); y += 22 + 18; set('c2', y);
+let s = 9, r = () => (s = (s * 16807) % 2147483647) / 2147483647, h = '';
+for (let i = 0; i < 40; i++) h += `<circle cx="${r() * 1080}" cy="${150 + r() * 650}" r="${.6 + r() * 1.6}" fill="#dbeaff" opacity="${.25 + r() * .55}"/>`;
+document.getElementById('dust').innerHTML = h;
+</script>
+</body></html>
